@@ -109,8 +109,8 @@ text{
             });
         }
 
-        // Keyboard navigation for slides
-        document.addEventListener('keydown', function(e) {
+        // Helper function to navigate slides
+        function navigateSlides(direction) {
             const slides = document.querySelectorAll('.slide');
 
             // Find currently visible slide by checking computed style
@@ -124,9 +124,9 @@ text{
 
             let nextIndex = currentIndex;
 
-            if (e.key === 'ArrowRight' && currentIndex < slides.length - 1) {
+            if (direction === 'next' && currentIndex < slides.length - 1) {
                 nextIndex = currentIndex + 1;
-            } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+            } else if (direction === 'prev' && currentIndex > 0) {
                 nextIndex = currentIndex - 1;
             }
 
@@ -134,6 +134,30 @@ text{
             if (nextIndex !== currentIndex && nextIndex >= 0) {
                 slides[currentIndex].style.display = 'none';
                 slides[nextIndex].style.display = 'block';
+            }
+        }
+
+        // Keyboard navigation for slides
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') {
+                navigateSlides('next');
+            } else if (e.key === 'ArrowLeft') {
+                navigateSlides('prev');
+            }
+        });
+
+        // Touch navigation for mobile
+        svg.addEventListener('click', function(e) {
+            const svgRect = svg.getBoundingClientRect();
+            const clickX = e.clientX - svgRect.left;
+            const svgWidth = svgRect.width;
+            const leftThird = svgWidth / 3;
+            const rightThird = svgWidth * 2 / 3;
+
+            if (clickX < leftThird) {
+                navigateSlides('prev');
+            } else if (clickX > rightThird) {
+                navigateSlides('next');
             }
         });
     })();
