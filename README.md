@@ -58,9 +58,9 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 
 ## References
 
-{% if jekyll.environment == "production" %}
+{{% if jekyll.environment == "production" %}}
 
   <p>This content is only visible on GitHub Pages.</p>
-{% else %}
+{{% else %}}
   <p>This content is visible during local development.</p>
-{% endif %}
+{{% endif %}}
