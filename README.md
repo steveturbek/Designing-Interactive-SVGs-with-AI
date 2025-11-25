@@ -61,6 +61,8 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 {% if jekyll.environment == "production" %}
 
   <p>This content is only visible on GitHub Pages.</p>
-{% else %}
-  <p>This content is visible during local development.</p>
 {% endif %}
+
+<!-- {% if jekyll.environment == "production" %}
+  <p>This should not show GitHub readme page in  markdown</p>
+{% endif %}  -->
