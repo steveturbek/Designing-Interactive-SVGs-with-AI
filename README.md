@@ -43,6 +43,12 @@ I made this color wheel for our Goldman Sachs Design System (which was public wh
 
 _Hover over any color segment to view its name, RGB values, and hex code. Click to lock the color information._
 
+<figcaption>In this Github Readme Page, you much click image, to interact in new window</figcaption>
+
+{% if jekyll %}
+This shows in Jekyll but not in GitHub's markdown preview
+{% endif %}
+
 <object data="images/GSDS-color-wheel-v2.svg" type="image/svg+xml" width="700" height="800">
   <img src="images/GSDS-color-wheel-v2.svg" alt="Goldman Sachs Design System Color Wheel" />
 </object>
@@ -57,12 +63,3 @@ https://chatgpt.com/share/690a222c-f46c-800d-9600-128b0e82be92
 One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section).
 
 ## References
-
-{% if jekyll.environment == "production" %}
-
-  <p>This content is only visible on GitHub Pages.</p>
-{% endif %}
-
-<!-- {% if jekyll.environment == "production" %}
-  <p>This should not show GitHub readme page in  markdown</p>
-{% endif %}  -->
