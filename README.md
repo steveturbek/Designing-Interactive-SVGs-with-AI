@@ -11,7 +11,7 @@ A short course for designers on making interactive SVGs with AI help. It will be
 - SVG is a vector format, but is written in a language like HTML
 - LLMs are great at manipulating language
 - With proper set up, a designer can upload an image and collaborate the interaction into life!
-- One can ‘round trip’ between Design tool and AI
+- One can 'round trip' between Design tool and AI
 - The SVG is now portable, contains its code.
 
 ## Background
