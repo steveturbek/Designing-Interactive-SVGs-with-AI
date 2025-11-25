@@ -43,11 +43,7 @@ I made this color wheel for our Goldman Sachs Design System (which was public wh
 
 _Hover over any color segment to view its name, RGB values, and hex code. Click to lock the color information._
 
-<figcaption>In this Github Readme Page, you much click image, to interact in new window</figcaption>
-
-{% if jekyll %}
-This shows in Jekyll but not in GitHub's markdown preview
-{% endif %}
+<figcaption>Note: In this Github Readme Page, you must click the image below, then click the image preview, to interact with it.</figcaption>
 
 <object data="images/GSDS-color-wheel-v2.svg" type="image/svg+xml" width="700" height="800">
   <img src="images/GSDS-color-wheel-v2.svg" alt="Goldman Sachs Design System Color Wheel" />
