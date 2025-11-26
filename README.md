@@ -9,7 +9,7 @@ A short course for designers on making interactive SVGs with AI help. It will be
 
 - Designers know design tools, but coding and interaction is often a challenge
 - The SVG file format, known for icons, is unexpectedly, a powerful format similar to HTML. One can have style sheets and javascript in the file.
-- SVG can be used to include interactivity and delight in a project where dev resources or rules bock it.
+- Designers can use SVGs to include interactivity and delight in a project without breaking dev resources or code rules.
 - SVG is a vector format, but is written in a language like HTML
 - LLMs are great at manipulating language
 - With proper set up, a designer can upload an image and collaborate the interaction into life.
@@ -279,14 +279,15 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 - [USD to GBP Exchange Rate](https://api.coinbase.com/v2/prices/GBP-USD/spot)
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)
 
-The end
+The end... or it it?
 
 <div class="toc-wrapper" markdown="1">
 
 ## Table of Contents
+
 {: .no_toc}
 
-* TOC
-{:toc}
+- TOC
+  {:toc}
 
 </div>
