@@ -5,6 +5,16 @@ A short course for designers on making interactive SVGs with AI help. It will be
 <figcaption>
 <b> for the best experience, go to the <a href="https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/">actual article web page</a></b></figcaption>
 
+<div class="toc-wrapper" markdown="1">
+
+## Designing Interactive SVGs with AI
+
+{: .no_toc}
+
+- TOC
+{:toc}
+</div>
+
 ## TLDR
 
 - Designers know design tools, but coding and interaction is often a challenge
@@ -266,19 +276,11 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 
 ### APIs to consider
 
-- [where is the International Space Station](http://api.open-notify.org/iss-now.json)
-- [weather on Mt Everest](https://api.open-meteo.com/v1/forecast?latitude=27.9882&longitude=86.9254&current_weather=true)
+(choosing ones that change frequently)
+
+- [Where is the International Space Station](http://api.open-notify.org/iss-now.json)
+- [Weather on Mt Everest](https://api.open-meteo.com/v1/forecast?latitude=27.9882&longitude=86.9254&current_weather=true)
 - [USD to GBP Exchange Rate](https://api.coinbase.com/v2/prices/GBP-USD/spot)
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)
 
 <!-- https://commons.wikimedia.org/wiki/File:International_Space_Station_top_view.svg -->
-
-<div class="toc-wrapper" markdown="1">
-
-## Designing Interactive SVGs with AI
-
-{: .no_toc}
-
-- TOC
-{:toc}
-</div>
