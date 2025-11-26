@@ -2,12 +2,12 @@
 
 A short course for designers on making interactive SVGs with AI help. It will be presented as a [CreativeMornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.
 
+[View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)
+
 <figcaption>
 <b>> for the best experience, go to the [actual article web page](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/) (this is a Github Readme preview)</b>></figcaption>
 
 ## Intro
-
-[Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)
 
 - Designers know design tools, but coding and interaction is often a challenge
 - The SVG file format, known for icons, is unexpectedly, a powerful format similar to HTML. One can have style sheets and javascript in the file.
