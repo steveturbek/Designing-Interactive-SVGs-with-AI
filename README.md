@@ -271,3 +271,13 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)
 
 <!-- https://commons.wikimedia.org/wiki/File:International_Space_Station_top_view.svg -->
+
+<div class="toc-wrapper" markdown="1">
+
+## Table of Contents
+
+{: .no_toc}
+
+- TOC
+{:toc}
+</div>

@@ -35,27 +35,34 @@
       }
 
       #content-container {
-        display: flex;
-        gap: 2em;
-        align-items: flex-start;
+        position: relative;
       }
 
       #content {
-        flex: 1;
         text-align: left;
         margin-bottom: 2em;
         max-width: 800px;
       }
 
-      /* TOC Styling */
+      /* TOC Styling - positioned outside to the right */
       .toc-wrapper {
-        position: sticky;
-        top: 1em;
+        position: absolute;
+        top: 0;
+        left: calc(800px + 2em); /* Position to the right of max-width content */
         width: 250px;
-        flex-shrink: 0;
-        margin-bottom: 2em;
         padding: 1em;
         font-size: 90%;
+      }
+
+      /* Make TOC sticky as you scroll */
+      @supports (position: sticky) {
+        .toc-wrapper {
+          position: sticky;
+          top: 1em;
+          float: right;
+          margin-left: 2em;
+          margin-right: calc(-250px - 2em); /* Pull it out to the right */
+        }
       }
 
       .toc-wrapper h2 {
@@ -134,10 +141,6 @@ h1,h2,h3,h4 {
       }
 
       @media screen and (max-width: 1100px) {
-        #content-container {
-          flex-direction: column;
-        }
-
         .toc-wrapper {
           display: none; /* Hide TOC on smaller screens */
         }
@@ -172,13 +175,6 @@ h1,h2,h3,h4 {
       </div>
       <div id="content-container">
         <div id="content">{{ content }}</div>
-        <aside class="toc-wrapper" markdown="1">
-## Table of Contents
-{: .no_toc}
-
-- TOC
-{:toc}
-        </aside>
       </div>
       <footer>
         <p>© steve turbek</p>
