@@ -29,14 +29,11 @@ The workshop is not specifically about dashboard elements. It is more conceptual
 
 ## What is SVG and can it be cured?
 
-As we all know, markup languages were given to humans by ancient aliens. We don't have the capability to understand their original language, but we have be able to reconstruct parts of it as "SGML" or Standard Generalized Markup Language. No one speaks SGML today, but it is hypothesized to be the proto-indo-markup language. Archeological evidence suggests SGML was used in "newspapers" and "magazines", which appeared to made by primitive people from trees or bark.
+As we all know, markup languages were given to humans by ancient aliens. We have be able to reconstruct it as "SGML" or Standard Generalized Markup Language. No one speaks SGML today, but archeological evidence suggests SGML was used in "newspapers" and "magazines", which appeared to made by primitive people from trees or bark.
 
-SGML had many descendants, not just the Hyper Text Markup Language we "know" and "love" today.
-This includes XML `<person><name>Alice</name><age>30</age></person>` which begat hundreds of niche markup formats, but has declined in popularity.
+The basic idea is to wrap data in tags so both computers and people could understand it. `<person><name>Alice</name><age>30</age></person>`
 
-The one that survived till today is SVG or Scalable Vector Graphics
-
-## Why SVGs Matter
+SGML had many descendants, including Hyper Text Markup Language, XML, and hundreds of niche markup formats. The main one that survives today is SVG or Scalable Vector Graphics.
 
 SVGs are an **graphic** format, like JPEG, GIF, PNG. But they store the information not as pixels, but math. It has lines, rectangles, circles, and any complex curved shape. (If you think of the drawing tools in Adobe Illustrator or Figma, these are **vector** shapes.). This means that the file size is tiny, but they are **scalable** up to a billboard size without becoming blurry. Fonts are a kind of vector file as well. They are used everywhere, especially on the web.
 
