@@ -8,11 +8,10 @@ A short course for designers on making interactive SVGs with AI help. It will be
 <div class="toc-wrapper" markdown="1">
 
 ## Table of Contents
-
 {: .no_toc}
 
-- TOC
-  {:toc}
+* TOC
+{:toc}
 
 </div>
 
@@ -151,7 +150,8 @@ You need:
 1. Go to an <a href="ChatGPT.com" target="new">AI</a> an paste in this starter prompt
 
 ```
-I'm a design student, adding interactivity to a SVG file using javascript.  I don't understand programming, so you will need to be my guide and do it for me.
+I want to add interactivity to a SVG file using javascript.
+I'm a design student and don't understand programming, so you will need to be my guide and do it for me.
 
 This project uses an open source guide found at https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI
 
