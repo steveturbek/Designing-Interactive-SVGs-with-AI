@@ -7,7 +7,7 @@ A short course for designers on making interactive SVGs with AI help. It will be
 
 <div class="toc-wrapper" markdown="1">
 
-## Designing Interactive SVGs with AI
+## Contents
 
 {: .no_toc}
 
@@ -50,9 +50,11 @@ SVGs are an **graphic** format, like JPEG, GIF, PNG. But they store the informat
 
 ## What was Flash and why did it matter?
 
-Flash was a program that made animations that ran in the web browsers of the 90's and early 2000's. By working quickly and consistently across browsers (a huge problem of the time), it enabled designers to deliver a beautiful experience. It was the only way to deliver video and music streams, and became wildly popular, to the point that entire websites would simply be a flash file. This was controversial, and it was ultimately 'killed' by Steve Jobs by excluding it from the iPhone.
+Flash was a program that made animations that ran in the web browsers of the 90's and early 2000's. By working quickly and consistently across browsers (a huge problem of the time), it enabled designers to deliver a beautiful experience. It was the only way to deliver video and music streams, and became wildly popular, to the point that entire websites would simply be a flash file.
 
-For all its flaws, Flash was a designer's program, and there has not been a replacement. Flash empowered designers to lay out scenes and animations with drawing tools and interactivity, without requiring programming knowledge. When Flash was killed, complex JavaScript-driven websites took over, which effectively meant the web became the domain of programmers rather than visual designers.
+Flash had a visual style that defined 1990s websites, for better and worse. Like any tool that empowers many people, it became associated with cheaply written web games and cartoons. When Steve Jobs killed Flash for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash) LOL, and not for competing with the App store.
+
+For all its flaws, Flash was a designer's program, and there has not been a replacement. Flash empowered designers to lay out scenes and animations with drawing tools and interactivity, without requiring programming knowledge. When Flash was killed, complex JavaScript-driven websites took over, which effectively meant the web became the domain of programmers rather than visual designers. The web changed from wacky personal experiences to a more professional, some would say banal, standard.
 
 I was never a Flash designer/developer. Like many 90's kid designers, I learned programming in a program called Macromedia Director, most famous for making interactive CD-ROMs, which, I swear, were a big deal. I used its "Shockwave" web framework to make interactive games and experiences. Sadly, none are visible on today's technology.
 
@@ -178,60 +180,6 @@ Like all code, javascript can be used to harm people. Some websites have strict 
 
 ![Meme of The Simpson's, with caption "Gentlemen, To Evil"](images/simpsons-gentlemen-to-evil.gif "Gentlemen, To Evil")
 
-### SVG History (I swear this matters)
-
-[Wikipedia on SVG](https://en.wikipedia.org/wiki/SVG)
-
-**Early development (late 1990s)**
-
-- Multiple competing proposals submitted to W3C for vector graphics on the web
-- Microsoft had VML (Vector Markup Language)
-- Adobe, Sun, others had PGML (Precision Graphics Markup Language)
-- Macromedia had proposals too
-- W3C merged ideas into SVG specification
-
-**SVG 1.0 (2001)**
-
-- First official W3C recommendation
-- XML-based vector graphics format
-- Designed to work with other web standards (CSS, JavaScript, DOM)
-
-**The plugin era (2001-2010)**
-
-- Browsers had poor native support
-- Adobe SVG Viewer plugin was common
-- Competed with Flash, which dominated vector/animation on web
-- SVG existed but wasn't widely used for actual websites
-
-**Mobile/Flash's decline (2007-2010)**
-
-- iPhone didn't support Flash
-- Steve Jobs's famous letter against Flash (2010)
-- Suddenly need for open, standard vector format
-- Browsers started implementing native SVG support seriously
-- Mobile phones supported it before most desktop browsers.
-
-**Modern era (2010s+)**
-
-- All major browsers support SVG natively
-- Became standard for responsive icons, logos, data visualizations
-- Tools like D3.js made SVG the de facto standard for web-based charts
-- Design tools (Sketch, Figma, Illustrator) all export SVG
-
-**_The irony: took 10+ years to become useful because browser support lagged, then Flash's death suddenly made it essential._**
-
-## Why does the history of SVG matter?
-
-_Side note: its fascinating to see the present from the perspective of the past. Things that are fact today, was just someone's, like, opinion._
-
-People thought that slow phone speeds meant we should have a completely web for phone written in "[WML(https://en.wikipedia.org/wiki/Wireless_Markup_Language)]".
-
-## Death of Flash
-
-Flash had a visual style that defined 1990s websites, for better and worse. Like any tool that empowers many people, it became associated with cheaply written web games and cartoons. When Steve Jobs killed Flash for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash) LOL, and not for competing with the App store.
-
-The web also changed from wacky personal experiences to a more professional, some would say banal, standard.
-
 ### Fonts
 
 One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section).
@@ -284,3 +232,47 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)
 
 <!-- https://commons.wikimedia.org/wiki/File:International_Space_Station_top_view.svg -->
+
+### SVG History
+
+[Wikipedia on SVG](https://en.wikipedia.org/wiki/SVG)
+
+**Early development (late 1990s)**
+
+- Multiple competing proposals submitted to W3C for vector graphics on the web
+- Microsoft had VML (Vector Markup Language)
+- Adobe, Sun, others had PGML (Precision Graphics Markup Language)
+- Macromedia had proposals too
+- W3C merged ideas into SVG specification
+
+**SVG 1.0 (2001)**
+
+- First official W3C recommendation
+- XML-based vector graphics format
+- Designed to work with other web standards (CSS, JavaScript, DOM)
+
+**The plugin era (2001-2010)**
+
+- Browsers had poor native support
+- Adobe SVG Viewer plugin was common
+- Competed with Flash, which dominated vector/animation on web
+- SVG existed but wasn't widely used for actual websites
+
+**Mobile/Flash's decline (2007-2010)**
+
+- iPhone didn't support Flash
+- Steve Jobs's famous letter against Flash (2010)
+- Suddenly need for open, standard vector format
+- Browsers started implementing native SVG support seriously
+- Mobile phones supported it before most desktop browsers.
+
+**Modern era (2010s+)**
+
+- All major browsers support SVG natively
+- Became standard for responsive icons, logos, data visualizations
+- Tools like D3.js made SVG the de facto standard for web-based charts
+- Design tools (Sketch, Figma, Illustrator) all export SVG
+
+**_The irony: took 10+ years to become useful because browser support lagged, then Flash's death suddenly made it essential._**
+
+Side note: its fascinating to see the present from the perspective of the past. Things that are fact today, was just one of many options being debated. People thought that slow phone speeds meant we should have a completely web for phone written in "[WML](https://en.wikipedia.org/wiki/Wireless_Markup_Language)".
