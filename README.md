@@ -124,19 +124,19 @@ You need:
 
 ### Workshop 1: Chart the International Space Station's location on a map
 
-Let's start with [Equirectangular World Map](https://commons.wikimedia.org/wiki/File:BlankMap-World-Equirectangular.svg) _Thanks Wikipedia and John Harvey_
+Let's start with a [Equirectangular World Map](https://commons.wikimedia.org/wiki/File:BlankMap-World-Equirectangular.svg) _Thanks Wikipedia and John Harvey_
 
 ![World Map](images/BlankMap-World-Equirectangular1.svg)
 
 Let's make is dark by editing the CSS in the file
 ![World Map](images/BlankMap-World-Equirectangular2.svg)
 
-Let's add a circle in the middle
+Let's add a red circle in the middle, to represent the ISS
 ![World Map](images/BlankMap-World-Equirectangular3.svg)
 
 <!-- https://commons.wikimedia.org/wiki/File:International_Space_Station_top_view.svg -->
 
-### Background on Submarine Instruments
+### Workshop 4: Submarine Instruments and working with apps
 
 Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9600-128b0e82be92) to show the back and forth redesigning a dashboard instrument.
 
