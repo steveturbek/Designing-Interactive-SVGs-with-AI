@@ -2,26 +2,28 @@
 
 A short course for designers on making interactive SVGs with AI help. It will be presented as a [CreativeMornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.
 
-## Table of Contents
-{: .no_toc}
-
-* TOC
-{:toc}
-
 [View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)
 
 <figcaption>
 <b>> for the best experience, go to the [actual article web page](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/) (this is a Github Readme preview)</b>></figcaption>
 
-## Intro
+## Table of Contents
+
+{: .no_toc}
+
+- TOC
+  {:toc}
+
+## TLDR
 
 - Designers know design tools, but coding and interaction is often a challenge
 - The SVG file format, known for icons, is unexpectedly, a powerful format similar to HTML. One can have style sheets and javascript in the file.
+- SVG can be used to include interactivity and delight in a project where dev resources or rules bock it.
 - SVG is a vector format, but is written in a language like HTML
 - LLMs are great at manipulating language
-- With proper set up, a designer can upload an image and collaborate the interaction into life!
-- One can 'round trip' between design programs and AI
+- With proper set up, a designer can upload an image and collaborate the interaction into life.
 - The SVG is now portable, contains its code.
+- One can 'round trip' between design programs and AI, made easier with the tools iincluded here
 
 ![Animation of a letter Z](images/z-animation.svg)
 
