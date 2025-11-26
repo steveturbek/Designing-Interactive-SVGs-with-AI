@@ -31,21 +31,22 @@ The workshop is not specifically about dashboard elements. It is more conceptual
 
 As we all know, markup languages were given to humans by ancient aliens. We have be able to reconstruct it as "SGML" or Standard Generalized Markup Language. No one speaks SGML today, but archeological evidence suggests SGML was used in "newspapers" and "magazines", which appeared to made by primitive people from trees or bark.
 
-The basic idea is to wrap data in tags so both computers and people could understand it. `<person><name>Alice</name><age>30</age></person>`
+The basic idea is to wrap data in tags so both computers and people could understand it.
+`<person><name>Alice</name><age>30</age></person>`
 
-SGML had many descendants, including Hyper Text Markup Language, XML, and hundreds of niche markup formats. The main one that survives today is SVG or Scalable Vector Graphics.
+SGML had many descendants, including Hyper Text Markup Language, XML, and hundreds of niche markup formats. The main one that survives today is _SVG (Scalable Vector Graphics)_.
 
 SVGs are an **graphic** format, like JPEG, GIF, PNG. But they store the information not as pixels, but math. It has lines, rectangles, circles, and any complex curved shape. (If you think of the drawing tools in Adobe Illustrator or Figma, these are **vector** shapes.). This means that the file size is tiny, but they are **scalable** up to a billboard size without becoming blurry. Fonts are a kind of vector file as well. They are used everywhere, especially on the web.
 
 ## What was Flash and why did it matter?
 
-Flash was a program that made animations that ran in the web browsers of the 90's and early 2000's. By working consistently across browsers (a huge problem of the time), it enabled designers to deliver a beautiful experience. It was the only way to deliver video and music streams, and became wildly popular, to the point that entire websites would simply be a flash file.
+Flash was a program that made animations that ran in the web browsers of the 90's and early 2000's. By working quickly and consistently across browsers (a huge problem of the time), it enabled designers to deliver a beautiful experience. It was the only way to deliver video and music streams, and became wildly popular, to the point that entire websites would simply be a flash file. This was controversial, and it was ultimately 'killed' by Steve Jobs by excluding it from the iPhone.
 
-Flash was a designer's program. Flash empowered designers to lay out scenes and animations with drawing tools and interactivity, without requiring programming knowledge. When Flash was killed, complex JavaScript-driven websites took over, which effectively meant the web became the domain of programmers rather than visual designers.
+For all its flaws, Flash was a designer's program, and there has not been a replacement. Flash empowered designers to lay out scenes and animations with drawing tools and interactivity, without requiring programming knowledge. When Flash was killed, complex JavaScript-driven websites took over, which effectively meant the web became the domain of programmers rather than visual designers.
 
-I was never a Flash designer/developer. Like many 90's kid designers, I learned programming in a program called Macromedia Director, most famous for making interactive CD-ROMs, which, I swear, were a big deal. I used to it to make interactive games and experiences, sadly, not visible on today's technology.
+I was never a Flash designer/developer. Like many 90's kid designers, I learned programming in a program called Macromedia Director, most famous for making interactive CD-ROMs, which, I swear, were a big deal. I used its "Shockwave" web framework to make interactive games and experiences. Sadly, none are visible on today's technology.
 
-**_We should morn the loss of a tool that empowered designers to think in their own visual language and create the item rather than write specification documents to instruct others what to do._**
+**_We should mourn the loss of a tool that empowered designers to think in their own visual language and create the item rather than write specification documents to instruct others what to do._**
 
 ## "OK, Old timer, why does SVG matter to-day"?
 
@@ -274,7 +275,7 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 
 <div class="toc-wrapper" markdown="1">
 
-## Table of Contents
+## Designing Interactive SVGs with AI
 
 {: .no_toc}
 
