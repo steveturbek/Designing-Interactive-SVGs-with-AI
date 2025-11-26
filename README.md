@@ -8,7 +8,9 @@ A short course for designers on making interactive SVGs with AI help. It will be
 <div class="toc-wrapper" markdown="1">
 
 <!-- prettier-ignore-start -->
+
 ## Table of Contents
+
 {: .no_toc}
 
 - TOC
@@ -155,17 +157,11 @@ I am next going to paste 2 texts
 - svg-AI-helper-SKILL.md is a AI Skill instructions to guide you.
 - a SVG file which has the code we want to adjust
 
-As output, I want you to make an new SVG I can download with different behavior:
-
 Here is what I want to happen:
+
+There is
 In the SVG file is a group with the ID 'ISS", which contains a red circle
 
-I want to rotate in place the "elevator-shape" element of the svg.
-instrumentValue is the input variable, and it goes from -100 to 100
-
-When instrumentValue is 0, "elevator-shape" should be at the initial orientation
-When instrumentValue is -100, "elevator-shape" should rotate -30 degrees from the initial orientation
-When instrumentValue is 100, "elevator-shape" should rotate +30 degrees from the initial orientation
 
 As output, I want you to create a svg file so I can download it and put it in the game as a 'drop in' replacement for elevator.svg
 
@@ -276,9 +272,10 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 
 #### Design Software with SVG Support
 
-- Affinity Designer
 - Adobe Illustrator
 - Inkscape
+- Figma
+- Affinity Designer (I haven't used)
 
 ### APIs to consider
 
