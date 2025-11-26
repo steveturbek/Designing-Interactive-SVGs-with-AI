@@ -24,15 +24,21 @@
       #main {
         margin: auto;
         margin-top: 1em;
-        max-width: 800px;
+        max-width: 1100px;
       }
 
       #mini-header,
-      #content,
       footer {
         width: 100%;
         text-align: left;
         margin-bottom: 2em;
+      }
+
+      #content {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 2em;
+        max-width: 800px;
       }
 
       /* TOC Styling */
@@ -43,7 +49,7 @@
         width: 250px;
         margin-left: 2em;
         margin-bottom: 2em;
-        padding: 1em;
+        margin-right: -280px;
         font-size: 90%;
       }
 
@@ -65,8 +71,12 @@
         margin-top: 0.25em;
       }
 
-.toc-wrapper ul a,   .toc-wrapper ul ul ul {
+      .toc-wrapper ul ul ul {
         display: none; /* Hide depth 3+ */
+      }
+
+      .toc-wrapper > ul > li:first-child {
+        display: none; /* Hide h1 page title from TOC */
       }
 
       .toc-wrapper li {
