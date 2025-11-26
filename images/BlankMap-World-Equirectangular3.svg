@@ -10,6 +10,7 @@
    viewBox="0 0 2750 1500"
    version="1.0"
    width="800"
+   height="435"
    id="svg1926"
    inkscape:version="0.48.2 r9819"
    sodipodi:docname="BlankMap-World6-Equirectangular.svg">
@@ -7956,6 +7957,7 @@
      style="fill:#525151;fill-opacity:1;stroke:#ffffff;stroke-width:0.50000000000000000;stroke-miterlimit:3.97446822999999982;stroke-opacity:1;stroke-dasharray:none"
      sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccscccccccscccccccccccccccccccccccccccccccsccccccccssccccccc" />
 
-
-<circle id="ISS" style="fill:red;fill-opacity:1" cx="1000" cy="1000" r="25"/>
+<g id="ISS">
+<circle id="ISS-circle" style="fill:red;fill-opacity:1" cx="1000" cy="1000" r="25"/>
+</g>
 </svg>

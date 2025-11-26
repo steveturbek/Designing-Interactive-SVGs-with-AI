@@ -124,15 +124,51 @@ You need:
 
 ### Workshop 1: Chart the International Space Station's location on a map
 
-Let's start with a [Equirectangular World Map](https://commons.wikimedia.org/wiki/File:BlankMap-World-Equirectangular.svg) _Thanks Wikipedia and John Harvey_
+1. Let's start with a [Equirectangular World Map](https://commons.wikimedia.org/wiki/File:BlankMap-World-Equirectangular.svg) _Thanks Wikipedia and John Harvey_
 
 ![World Map](images/BlankMap-World-Equirectangular1.svg)
 
-Let's make is dark by editing the CSS in the file
+1. Let's make is dark by editing the CSS in the file
+
 ![World Map](images/BlankMap-World-Equirectangular2.svg)
 
-Let's add a red circle in the middle, to represent the ISS
+1. Let's add a red circle in the middle, to represent the ISS
+   Do it in your design program OR try simply pasting `<circle id="ISS" style="fill:red;fill-opacity:1" cx="1000" cy="1000" r="25"/>` right before the closing `</svg>`. (It makes a circle.)
+
 ![World Map](images/BlankMap-World-Equirectangular3.svg)
+
+1. Let's use the first of my helpers, the [SVG Code Setup](helpers/svg-code-setup.html). It adds a blank javascript template to the SVG so you can tell the AI where to put the code. It doesn't look different, but open the file in textEdit to look at the text.
+
+![World Map](images/BlankMap-World-Equirectangular3-with-code.svg)
+
+1. Go to an <a href="ChatGPT.com" target="new">AI</a> an paste in this starter prompt
+
+```
+I'm a design student, adding interactivity to a SVG file using javascript.  I don't understand programming, so you will need to be my guide and do it for me.
+
+This project uses an open source guide found at https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI
+
+I am next going to paste 2 texts
+- svg-AI-helper-SKILL.md is a AI Skill instructions to guide you.
+- a SVG file which has the code we want to adjust
+
+As output, I want you to make an new SVG I can download with different behavior:
+
+Here is what I want to happen:
+In the SVG file is a group with the ID 'ISS", which contains a red circle
+
+I want to rotate in place the "elevator-shape" element of the svg.
+instrumentValue is the input variable, and it goes from -100 to 100
+
+When instrumentValue is 0, "elevator-shape" should be at the initial orientation
+When instrumentValue is -100, "elevator-shape" should rotate -30 degrees from the initial orientation
+When instrumentValue is 100, "elevator-shape" should rotate +30 degrees from the initial orientation
+
+As output, I want you to create a svg file so I can download it and put it in the game as a 'drop in' replacement for elevator.svg
+
+
+Don't make the file until I have pasted all files! Does this make sense?  Ask any questions you need to.
+```
 
 <!-- https://commons.wikimedia.org/wiki/File:International_Space_Station_top_view.svg -->
 
@@ -243,3 +279,8 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 - [weather on Mt Everest](https://api.open-meteo.com/v1/forecast?latitude=27.9882&longitude=86.9254&current_weather=true)
 - [USD to GBP Exchange Rate](https://api.coinbase.com/v2/prices/GBP-USD/spot)
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)
+
+<div class="toc" markdown="1">
+* TOC
+{:toc}
+</div>
