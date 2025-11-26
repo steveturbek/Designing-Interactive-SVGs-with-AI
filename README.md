@@ -7,12 +7,15 @@ A short course for designers on making interactive SVGs with AI help. It will be
 <figcaption>
 <b>> for the best experience, go to the [actual article web page](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/) (this is a Github Readme preview)</b>></figcaption>
 
-## Table of Contents
+<div class="toc-wrapper" markdown="1">
 
+## Table of Contents
 {: .no_toc}
 
 - TOC
-  {:toc}
+{:toc}
+
+</div>
 
 ## TLDR
 

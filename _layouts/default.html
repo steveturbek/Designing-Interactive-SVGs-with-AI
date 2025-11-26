@@ -35,6 +35,55 @@
         margin-bottom: 2em;
       }
 
+      /* TOC Styling */
+      .toc-wrapper {
+        position: sticky;
+        top: 1em;
+        float: right;
+        width: 250px;
+        margin-left: 2em;
+        margin-bottom: 2em;
+        padding: 1em;
+        background: #f5f5f5;
+        border-radius: 8px;
+        font-size: 90%;
+      }
+
+      .toc-wrapper h2 {
+        margin-top: 0;
+        font-size: 120%;
+        font-weight: 500;
+        margin-bottom: 0.5em;
+      }
+
+      .toc-wrapper ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .toc-wrapper ul ul {
+        padding-left: 1em;
+        margin-top: 0.25em;
+      }
+
+      .toc-wrapper ul ul ul {
+        display: none; /* Hide depth 3+ */
+      }
+
+      .toc-wrapper li {
+        margin: 0.5em 0;
+        line-height: 1.4;
+      }
+
+      .toc-wrapper a {
+        color: #333;
+      }
+
+      .toc-wrapper a:hover {
+        color: #2e4d9c;
+      }
+
       a:link,
       a:visited {
         text-decoration: none;
@@ -64,6 +113,12 @@ h1,h2,h3,h4 {
 /* hack to show SVG instructions in github readme preview, but hide in github pages, processed with Jekyll */
       figcaption{
         display: none;
+      }
+
+      @media screen and (max-width: 1100px) {
+        .toc-wrapper {
+          display: none; /* Hide TOC on smaller screens */
+        }
       }
 
       @media screen and (max-width: 510px) {
