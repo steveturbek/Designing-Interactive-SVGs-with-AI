@@ -1,6 +1,3 @@
-- TOC
-  {:toc}
-
 # Designing Interactive SVGs with AI
 
 A short course for designers on making interactive SVGs with AI help. It will be presented as a [CreativeMornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.
@@ -282,3 +279,6 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 - [weather on Mt Everest](https://api.open-meteo.com/v1/forecast?latitude=27.9882&longitude=86.9254&current_weather=true)
 - [USD to GBP Exchange Rate](https://api.coinbase.com/v2/prices/GBP-USD/spot)
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)
+
+- TOC
+  {:toc}
