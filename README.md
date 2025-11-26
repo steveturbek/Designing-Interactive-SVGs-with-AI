@@ -9,11 +9,10 @@ A short course for designers on making interactive SVGs with AI help. It will be
 
 <div class="toc-wrapper" markdown="1">
 
-## Table of Contents
 {: .no_toc}
 
 - TOC
-{:toc}
+  {:toc}
 
 </div>
 
