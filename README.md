@@ -5,16 +5,6 @@ A short course for designers on making interactive SVGs with AI help. It will be
 <figcaption>
 <b> for the best experience, go to the <a href="https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/">actual article web page</a></b></figcaption>
 
-<div class="toc-wrapper" markdown="1">
-
-## Table of Contents
-
-{: .no_toc}
-
-- TOC
-{:toc}
-</div>
-
 ## TLDR
 
 - Designers know design tools, but coding and interaction is often a challenge

@@ -34,21 +34,25 @@
         margin-bottom: 2em;
       }
 
+      #content-container {
+        display: flex;
+        gap: 2em;
+        align-items: flex-start;
+      }
+
       #content {
-        width: 100%;
+        flex: 1;
         text-align: left;
         margin-bottom: 2em;
         max-width: 800px;
-        margin-right: 280px; /* Make space for floating TOC */
       }
 
       /* TOC Styling */
       .toc-wrapper {
         position: sticky;
         top: 1em;
-        float: right;
         width: 250px;
-        margin-left: 2em;
+        flex-shrink: 0;
         margin-bottom: 2em;
         padding: 1em;
         font-size: 90%;
@@ -130,8 +134,8 @@ h1,h2,h3,h4 {
       }
 
       @media screen and (max-width: 1100px) {
-        #content {
-          margin-right: 0; /* Remove margin when TOC is hidden */
+        #content-container {
+          flex-direction: column;
         }
 
         .toc-wrapper {
@@ -166,7 +170,16 @@ h1,h2,h3,h4 {
 </svg><h1 style="display: inline; font-size: 150%; font-weight: 200;"><a href="/{{ site.github.repository_name }}/">{{ site.github.repository_name | replace: "-", " " }}</a> by <a href="https://turbek.com">Steve&nbsp;Turbek</a></h1></a
         >
       </div>
-      <div id="content">{{ content }}</div>  
+      <div id="content-container">
+        <div id="content">{{ content }}</div>
+        <aside class="toc-wrapper" markdown="1">
+## Table of Contents
+{: .no_toc}
+
+- TOC
+{:toc}
+        </aside>
+      </div>
       <footer>
         <p>© steve turbek</p>
       </footer>
