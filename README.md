@@ -7,16 +7,12 @@ A short course for designers on making interactive SVGs with AI help. It will be
 
 <div class="toc-wrapper" markdown="1">
 
-<!-- prettier-ignore-start -->
-
 ## Table of Contents
 
 {: .no_toc}
 
 - TOC
 {:toc}
-<!-- prettier-ignore-end -->
-
 </div>
 
 ## TLDR

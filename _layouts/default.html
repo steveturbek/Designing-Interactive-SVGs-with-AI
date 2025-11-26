@@ -76,7 +76,12 @@
         display: none; /* Hide depth 3+ */
       }
 
+      /* hide title in TOC */
       .toc-wrapper > ul > li > a {
+        display: none; 
+      }
+      /* hide TOC in TOC */
+      .toc-wrapper > ul > li > ul > li:first-of-type {
         display: none; 
       }
 
