@@ -1,3 +1,10 @@
+---
+title: Designing Interactive SVGs with AI
+---
+
+- TOC
+  {:toc}
+
 # Designing-Interactive-SVGs-with-AI
 
 A short course for designers on making interactive SVGs with AI help. It will be presented as a [CreativeMornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.
