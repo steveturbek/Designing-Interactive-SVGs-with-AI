@@ -8,10 +8,11 @@ A short course for designers on making interactive SVGs with AI help. It will be
 <div class="toc-wrapper" markdown="1">
 
 ## Table of Contents
+
 {: .no_toc}
 
-* TOC
-{:toc}
+- TOC
+  {:toc}
 
 </div>
 
@@ -89,12 +90,6 @@ What if I told you that this animation was only a couple of lines of code - the 
 ### Interactivity
 
 Basically, everything you can do with a webpage: rollovers, buttons, etc can be done in a SVG. It uses the browser Javascript, almost the same as the web page.
-
-#### Security Note
-
-Like all code, javascript can be used to harm people. Some websites have strict rules against SVG or disable javascript in SVG to prevent people from stealing other people's data. Don't be evil.
-
-![Meme of The Simpson's, with caption "Gentlemen, To Evil"](images/simpsons-gentlemen-to-evil.gif "Gentlemen, To Evil")
 
 ### Interactive Color Wheel
 
@@ -177,13 +172,17 @@ As output, I want you to create a svg file so I can download it and put it in th
 Don't make the file until I have pasted all files! Does this make sense?  Ask any questions you need to.
 ```
 
-<!-- https://commons.wikimedia.org/wiki/File:International_Space_Station_top_view.svg -->
-
 ### Workshop 4: Submarine Instruments and working with apps
 
 Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9600-128b0e82be92) to show the back and forth redesigning a dashboard instrument.
 
 ## Tips and Notes
+
+### Security Note
+
+Like all code, javascript can be used to harm people. Some websites have strict rules against SVG or disable javascript in SVG to prevent people from stealing other people's data. Don't be evil.
+
+![Meme of The Simpson's, with caption "Gentlemen, To Evil"](images/simpsons-gentlemen-to-evil.gif "Gentlemen, To Evil")
 
 ### SVG History (I swear this matters)
 
@@ -286,3 +285,5 @@ One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my
 - [weather on Mt Everest](https://api.open-meteo.com/v1/forecast?latitude=27.9882&longitude=86.9254&current_weather=true)
 - [USD to GBP Exchange Rate](https://api.coinbase.com/v2/prices/GBP-USD/spot)
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)
+
+<!-- https://commons.wikimedia.org/wiki/File:International_Space_Station_top_view.svg -->
