@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG AI Collaboration Workflow</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        min-height: 100vh;
+        padding: 20px;
+        color: #333;
+        background: #f5f5f5;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        margin-bottom: 10px;
+        font-size: 2em;
+        
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        font-size: 1.2em;
+        
+        font-weight: normal;
+      }
+
+      .workflow-step {
+        margin-bottom: 30px;
+        padding: 25px;
+        background: #fafafa;
+      }
+
+      .workflow-step.completed {
+        background: #f0fff4;
+      }
+
+      .workflow-step h3 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+        
+      }
+
+      /* .workflow-step.completed h3 {
+        color: #28a745;
+      } */
+
+      .workflow-step p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      .drop-zone {
+        border: 3px dashed #ccc;
+        border-radius: 8px;
+        padding: 40px 20px;
+        text-align: center;
+        background: white;
+        transition: all 0.3s ease;
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .drop-zone:hover {
+        border-color: #667eea;
+        background: #f0f4ff;
+      }
+
+      .drop-zone.drag-over {
+        border-color: #667eea;
+        background: #e8f0ff;
+        border-style: solid;
+        transform: scale(1.02);
+      }
+
+      .drop-zone.loaded {
+        /* border-color: #28a745; */
+        background: #f0fff4;
+      }
+
+      .drop-zone h4 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #667eea;
+      }
+
+      .file-info {
+        margin-top: 15px;
+        padding: 10px;
+        background: white;
+        border-radius: 4px;
+        font-size: 0.9em;
+        color: #28a745;
+        font-weight: bold;
+      }
+
+      .split-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 20px;
+      }
+
+      .split-container textarea {
+        width: 100%;
+        min-height: 400px;
+        padding: 15px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-size: 1em;
+        resize: vertical;
+        line-height: 1.5;
+      }
+
+      .split-container textarea:focus {
+        outline: none;
+        /* border-color: #667eea; */
+      }
+
+      .tips-panel {
+        background: white;
+        /* border: 2px solid #667eea; */
+        border-radius: 6px;
+        padding: 20px;
+        height: fit-content;
+      }
+
+      .tips-panel h4 {
+        /* color: #667eea; */
+        margin-bottom: 10px;
+        font-size: 1.1em;
+      }
+
+      .tips-panel ul {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      .tips-panel li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+
+      .tips-panel code {
+        background: #f0f0f0;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.9em;
+      }
+
+      .example-box {
+        /* background: #fff3cd; */
+        /* border: 1px solid #ffc107; */
+        border-radius: 6px;
+        padding: 15px;
+        margin-top: 15px;
+        font-size: 0.9em;
+        line-height: 1.5;
+      }
+
+      button {
+        padding: 12px 30px;
+        font-size: 1em;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background: #667eea;
+        color: white;
+      }
+
+      button:hover:not(:disabled) {
+        background: #5568d3;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      }
+
+      button:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      button.success {
+        background: #28a745;
+      }
+
+      button.success:hover:not(:disabled) {
+        background: #218838;
+        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+      }
+
+      button.reset {
+        background: #6c757d;
+      }
+
+      button.reset:hover {
+        background: #5a6268;
+        box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+      }
+
+      .button-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .ai-services {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        margin: 30px 0;
+      }
+
+      .ai-service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+        transition: transform 0.2s;
+      }
+
+      .ai-service:hover {
+        transform: translateY(-5px);
+      }
+
+      .ai-service-icon {
+        width: 100px;
+        height: 100px;
+        border: 3px solid #667eea;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        margin-bottom: 10px;
+        font-size: 2em;
+      }
+
+      .ai-service-name {
+        font-weight: 600;
+        font-size: 1.1em;
+      }
+
+      textarea.code-input {
+        width: 100%;
+        min-height: 300px;
+        padding: 15px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.9em;
+        resize: vertical;
+        margin-bottom: 15px;
+      }
+
+      textarea.code-input:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      .status-message {
+        padding: 15px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        display: none;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .status-message.success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        display: block;
+      }
+
+      .status-message.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        display: block;
+        white-space: pre-wrap;
+        font-family: "Courier New", Courier, monospace;
+        text-align: left;
+      }
+
+      .status-message.warning {
+        background: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffc107;
+        display: block;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .instructions {
+        background: #e8f0ff;
+        border: 2px solid #667eea;
+        border-radius: 6px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .instructions h4 {
+        margin-bottom: 10px;
+        color: #667eea;
+        font-size: 1.2em;
+      }
+
+      .instructions ol {
+        margin-left: 20px;
+      }
+
+      .instructions li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 1024px) {
+        .split-container {
+          grid-template-columns: 1fr;
+        }
+
+        .button-group {
+          flex-direction: column;
+        }
+
+        .ai-services {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SVG AI Collaboration Workflow</h1>
+      <h2>Transform your SVG into an interactive, data-driven visualization using AI</h2>
+
+      <!-- STEP 1: Upload SVG -->
+      <div class="workflow-step" id="step1">
+        <h3>Step 1: Upload Your SVG</h3>
+        <p>Upload your SVG file exported from Figma, Illustrator, or any design tool. No code template needed!</p>
+
+        <div class="drop-zone" id="svgDropZone">
+          <h4>Drop your SVG file here</h4>
+          <input type="file" id="svgInput" accept=".svg" style="display: none" />
+          <button onclick="document.getElementById('svgInput').click()">Or Click to Browse</button>
+          <div id="svgInfo" class="file-info" style="display: none"></div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Describe & Tips -->
+      <div class="workflow-step hidden" id="step2">
+        <h3>Step 2: Describe What You Want</h3>
+        <p>Tell the AI what you want to happen. Be specific! Use the tips on the right to help structure your description.</p>
+
+        <div class="split-container">
+          <div>
+            <textarea id="descriptionInput" placeholder="Example:
+
+There's an API for the International Space Station at http://api.open-notify.org/iss-now.json
+
+It returns: {&quot;timestamp&quot;: 1764169128, &quot;iss_position&quot;: {&quot;longitude&quot;: &quot;12.3732&quot;, &quot;latitude&quot;: &quot;51.2351&quot;}, &quot;message&quot;: &quot;success&quot;}
+
+In my SVG is an element with ID `ISS` (a red circle).
+
+I want to position it on my equirectangular map based on lat/long from the API. It doesn't need to be pixel-perfect."></textarea>
+          </div>
+
+          <div class="tips-panel">
+            <h4>How to Describe Your Goal</h4>
+            <ul>
+              <li><strong>What data source?</strong> API, localStorage, hardcoded values</li>
+              <li><strong>Which element(s) to animate?</strong> Provide the element ID from your SVG</li>
+              <li><strong>What should happen?</strong> Rotate, move, change color, etc.</li>
+              <li><strong>Range of values?</strong> 0-100, -180 to +180, etc.</li>
+            </ul>
+
+            <h4>Finding Element IDs</h4>
+            <ul>
+              <li>Name layers in Figma/Illustrator before export!</li>
+              <li>The layer name will become the <code>ID</code> you want to manipulate</li>              
+              <li>Open your SVG in a text editor</li>
+              <li>Search for the layer name</li>
+              
+            </ul>
+
+            <h4>Common Animation Patterns</h4>
+            <ul>
+              <li><strong>Rotation:</strong> Needles, dials, gauges<br><code>rotate(angle x y)</code></li>
+              <li><strong>Translation:</strong> Sliders, bars, indicators<br><code>translate(x y)</code></li>
+              <li><strong>Color:</strong> Heat maps, status indicators<br><code>fill="rgb(r, g, b)"</code></li>
+            </ul>
+
+            <h4>Tips</h4>
+            <ul>
+              <li>Really big files can confuse an AI.</li>
+              <li><ul>
+                <li>You can export a version of the SVG after deleting (not just hiding) the background, then merge back together.</li>
+                <li>Save images as "link" not include</li>
+              </ul></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button onclick="generateAndShowPrompt()">Generate Prompt for AI</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Generated Prompt -->
+      <div class="workflow-step hidden" id="step3">
+        <h3>Step 3: Copy Prompt to AI</h3>
+        <p>Your complete prompt is ready! Copy it and paste into your AI assistant.</p>
+
+        <textarea id="generatedPrompt" class="code-input" readonly></textarea>
+
+        <div class="button-group">
+          <button class="success" onclick="copyPromptToClipboard()">Copy to Clipboard</button>
+        </div>
+
+        <div id="step3Status" class="status-message"></div>
+      </div>
+
+      <!-- STEP 4: Choose AI -->
+      <div class="workflow-step hidden" id="step4">
+        <h3>Step 4: Choose Your AI Assistant</h3>
+
+        <div class="instructions">
+          <h4>What to do:</h4>
+          <ol>
+            <li>Click one of the AI services below to open in a new tab</li>
+            <li>Paste your copied prompt into the AI chat</li>
+            <li>The AI will generate JavaScript code for you</li>
+            <li>Copy the code the AI gives you</li>
+            <li>Come back here and click "I Got Code from AI" below</li>
+          </ol>
+        </div>
+
+        <div class="ai-services">
+          <a href="https://claude.ai" target="_blank" class="ai-service">
+            <div class="ai-service-icon">
+              <!-- Placeholder - replace with actual logo -->
+<svg
+   id="katman_1"
+   data-name="katman 1"
+   version="1.1"
+   viewBox="0 0 689.97997 148.17999"
+   sodipodi:docname="Claude_Ai.svg"
+   width="689.97998"
+   height="148.17999"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview152"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.3086279"
+     inkscape:cx="345.39995"
+     inkscape:cy="73.741361"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="katman_1" />
+  <defs
+     id="defs145">
+    <style
+       id="style143">
+      .cls-1 {
+        fill: #0f0f0d;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #d97757;
+      }
+    </style>
+  </defs>
+  <g
+     id="g314"
+     transform="translate(-75.96,-223.53)">
+    <path
+       class="cls-2"
+       d="m 105.01,322.07 29.14,-16.35 0.49,-1.42 -0.49,-0.79 h -1.42 l -4.87,-0.3 -16.65,-0.45 -14.44,-0.6 -13.99,-0.75 -3.52,-0.75 -3.3,-4.35 0.34,-2.17 2.96,-1.99 4.24,0.37 9.37,0.64 14.06,0.97 10.2,0.6 15.11,1.57 h 2.4 l 0.34,-0.97 -0.82,-0.6 -0.64,-0.6 -14.55,-9.86 -15.75,-10.42 -8.25,-6 -4.46,-3.04 -2.25,-2.85 -0.97,-6.22 4.05,-4.46 5.44,0.37 1.39,0.37 5.51,4.24 11.77,9.11 15.37,11.32 2.25,1.87 0.9,-0.64 0.11,-0.45 -1.01,-1.69 -8.36,-15.11 -8.92,-15.37 -3.97,-6.37 -1.05,-3.82 c -0.37,-1.57 -0.64,-2.89 -0.64,-4.5 l 4.61,-6.26 2.55,-0.82 6.15,0.82 2.59,2.25 3.82,8.74 6.19,13.76 9.6,18.71 2.81,5.55 1.5,5.14 0.56,1.57 h 0.97 v -0.9 l 0.79,-10.54 1.46,-12.94 1.42,-16.65 0.49,-4.69 2.32,-5.62 4.61,-3.04 3.6,1.72 2.96,4.24 -0.41,2.74 -1.76,11.44 -3.45,17.92 -2.25,12 h 1.31 l 1.5,-1.5 6.07,-8.06 10.2,-12.75 4.5,-5.06 5.25,-5.59 3.37,-2.66 h 6.37 l 4.69,6.97 -2.1,7.2 -6.56,8.32 -5.44,7.05 -7.8,10.5 -4.87,8.4 0.45,0.67 1.16,-0.11 17.62,-3.75 9.52,-1.72 11.36,-1.95 5.14,2.4 0.56,2.44 -2.02,4.99 -12.15,3 -14.25,2.85 -21.22,5.02 -0.26,0.19 0.3,0.37 9.56,0.9 4.09,0.22 h 10.01 l 18.64,1.39 4.87,3.22 2.92,3.94 -0.49,3 -7.5,3.82 -10.12,-2.4 -23.62,-5.62 -8.1,-2.02 h -1.12 v 0.67 l 6.75,6.6 12.37,11.17 15.49,14.4 0.79,3.56 -1.99,2.81 -2.1,-0.3 -13.61,-10.24 -5.25,-4.61 -11.89,-10.01 h -0.79 v 1.05 l 2.74,4.01 14.47,21.75 0.75,6.67 -1.05,2.17 -3.75,1.31 -4.12,-0.75 -8.47,-11.89 -8.74,-13.39 -7.05,-12 -0.86,0.49 -4.16,44.81 -1.95,2.29 -4.5,1.72 -3.75,-2.85 -1.99,-4.61 1.99,-9.11 2.4,-11.89 1.95,-9.45 1.76,-11.74 1.05,-3.9 -0.07,-0.26 -0.86,0.11 -8.85,12.15 -13.46,18.19 -10.65,11.4 -2.55,1.01 -4.42,-2.29 0.41,-4.09 2.47,-3.64 14.74,-18.75 8.89,-11.62 5.74,-6.71 -0.04,-0.97 h -0.34 l -39.15,25.42 -6.97,0.9 -3,-2.81 0.37,-4.61 1.42,-1.5 11.77,-8.1 -0.04,0.04 z"
+       shape-rendering="optimizeQuality"
+       id="path147" />
+    <path
+       class="cls-1"
+       d="m 317.73,349.33 c -18.82,0 -31.69,-10.5 -37.76,-26.66 -3.17,-8.42 -4.74,-17.36 -4.61,-26.36 0,-27.11 12.15,-45.94 39,-45.94 18.04,0 29.17,7.87 35.51,26.66 h 7.72 l -1.05,-25.91 c -10.8,-6.97 -24.3,-10.5 -40.72,-10.5 -23.14,0 -42.82,10.35 -53.77,29.02 -5.66,9.86 -8.53,21.07 -8.32,32.44 0,20.74 9.79,39.11 28.16,49.31 10.06,5.37 21.34,8.04 32.74,7.72 17.92,0 32.14,-3.41 44.74,-9.37 l 3.26,-28.57 h -7.87 c -4.72,13.05 -10.35,20.89 -19.69,25.05 -4.57,2.06 -10.35,3.11 -17.32,3.11 z m 81.18,-98.96 0.75,-12.75 h -5.32 l -23.7,7.12 v 3.86 l 10.5,4.87 v 89.17 c 0,6.07 -3.11,7.42 -11.25,8.44 v 6.52 h 40.31 v -6.52 c -8.17,-1.01 -11.25,-2.36 -11.25,-8.44 V 250.4 l -0.04,-0.04 z m 160.31,108.75 h 3.11 l 27.26,-5.17 v -6.67 l -3.82,-0.3 c -6.37,-0.6 -8.02,-1.91 -8.02,-7.12 v -47.55 l 0.75,-15.26 h -4.31 l -25.76,3.71 v 6.52 l 2.51,0.45 c 6.97,1.01 9.04,2.96 9.04,7.84 v 42.37 c -6.67,5.17 -13.05,8.44 -20.62,8.44 -8.4,0 -13.61,-4.27 -13.61,-14.25 v -39.79 l 0.75,-15.26 h -4.42 l -25.8,3.71 v 6.52 l 2.66,0.45 c 6.97,1.01 9.04,2.96 9.04,7.84 v 39.11 c 0,16.57 9.37,24.45 24.3,24.45 11.4,0 20.74,-6.07 27.75,-14.51 l -0.75,14.51 -0.04,-0.04 z M 484.3,306.36 c 0,-21.19 -11.25,-29.32 -31.57,-29.32 -17.92,0 -30.94,7.42 -30.94,19.72 0,3.67 1.31,6.49 3.97,8.44 l 13.65,-1.8 c -0.6,-4.12 -0.9,-6.64 -0.9,-7.69 0,-6.97 3.71,-10.5 11.25,-10.5 11.14,0 16.76,7.84 16.76,20.44 v 4.12 l -28.12,8.44 c -9.37,2.55 -14.7,4.76 -18.26,9.94 -1.89,3.17 -2.8,6.82 -2.62,10.5 0,12 8.25,20.47 22.35,20.47 10.2,0 19.24,-4.61 27.11,-13.35 2.81,8.74 7.12,13.35 14.81,13.35 6.22,0 11.85,-2.51 16.87,-7.42 l -1.5,-5.17 c -2.17,0.6 -4.27,0.9 -6.49,0.9 -4.31,0 -6.37,-3.41 -6.37,-10.09 v -30.97 z m -36,40.76 c -7.69,0 -12.45,-4.46 -12.45,-12.3 0,-5.32 2.51,-8.44 7.87,-10.24 l 22.8,-7.24 v 21.9 c -7.27,5.51 -11.55,7.87 -18.22,7.87 z m 237.36,6.82 v -6.67 l -3.86,-0.3 c -6.37,-0.6 -7.99,-1.91 -7.99,-7.12 v -89.47 l 0.75,-12.75 h -5.36 l -23.7,7.12 v 3.86 l 10.5,4.87 v 29.32 c -5.91,-4.05 -12.98,-6.08 -20.14,-5.77 -23.55,0 -41.92,17.92 -41.92,44.74 0,22.09 13.2,37.35 34.95,37.35 11.25,0 21.04,-5.47 27.11,-13.95 l -0.75,13.95 h 3.15 l 27.26,-5.17 v 0 z m -49.35,-68.02 c 11.25,0 19.69,6.52 19.69,18.52 v 33.75 c -5.18,5.16 -12.23,8 -19.54,7.87 -16.12,0 -24.3,-12.75 -24.3,-29.77 0,-19.12 9.34,-30.37 24.15,-30.37 z M 743.3,302.8 c -2.1,-9.9 -8.17,-15.52 -16.61,-15.52 -12.6,0 -21.34,9.49 -21.34,23.1 0,20.14 10.65,33.19 27.86,33.19 11.48,-0.12 22.04,-6.33 27.71,-16.31 l 5.02,1.35 c -2.25,17.47 -18.07,30.52 -37.5,30.52 -22.8,0 -38.51,-16.87 -38.51,-40.87 0,-24 17.06,-41.21 39.86,-41.21 17.02,0 29.02,10.24 32.89,28.01 l -59.4,18.22 v -8.02 l 40.01,-12.41 v -0.04 z"
+       shape-rendering="optimizeQuality"
+       id="path149" />
+  </g>
+</svg>
+
+            </div>
+            <span class="ai-service-name">Claude</span>
+          </a>
+
+          <a href="https://chat.openai.com" target="_blank" class="ai-service">
+            <div class="ai-service-icon">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+<g>
+	<g>
+		<path d="M284.1445,547.7969c-8.5532-9.5586-12.9136-22.3047-12.9136-38.0693v-16.7715c0-15.7646,4.3604-28.5107,12.9136-38.2373
+			c8.5532-9.5596,21.4668-14.4238,38.4058-14.4238c19.2866,0,34.2124,8.5537,42.4302,21.9707
+			c4.0254,6.708,6.2056,14.0879,6.7085,22.1377h-21.8022c-1.5093-14.2549-10.7334-24.8213-27.3364-24.8213
+			c-18.7837,0-28.0078,12.5781-28.0078,32.2002v19.1191c0,19.6221,9.2241,32.2002,28.0078,32.2002
+			c16.603,0,25.8271-10.5654,27.3364-24.8213h21.8022c-0.8384,16.1006-9.2241,30.1875-23.8149,38.0703
+			c-7.2114,4.0244-15.7646,6.0371-25.3237,6.0371C305.6113,562.3877,292.6978,557.5244,284.1445,547.7969z"/>
+		<path d="M391.4736,437.6123h22.8086v45.6162c4.6958-7.5469,13.7524-12.4102,24.6533-12.4102
+			c18.9512,0,30.8584,12.7461,30.8584,33.374V560.04h-22.8081v-52.1572c0-10.5664-5.1992-17.2744-15.9326-17.2744
+			c-10.5659,0-16.771,6.2051-16.771,17.7773V560.04h-22.8086V437.6123z"/>
+		<path d="M487.7344,534.8838c0-18.2803,13.5845-27.6719,35.2188-27.6719c9.3916,0,17.2744,3.3535,22.1377,7.3789v-11.9072
+			c0-8.2178-5.8701-14.0879-15.0938-14.0879c-7.5469,0-12.5781,3.3545-15.0938,8.2178H493.772
+			c4.8638-16.7705,18.4478-25.9951,37.3989-25.9951c21.8027,0,36.7285,13.417,36.7285,33.542V560.04h-21.9697v-8.0498
+			c-2.0127,2.8506-5.3672,5.3662-10.2305,7.2109s-9.7275,2.8516-14.9258,2.8516
+			C500.8159,562.0527,487.7344,551.6543,487.7344,534.8838z M545.0908,534.0449c0-7.5469-7.2109-12.2422-17.7773-12.2422
+			c-10.9004,0-17.4414,4.3604-17.4414,12.4102c0,7.8818,6.876,12.7461,16.7705,12.7461
+			C536.873,546.959,545.0908,541.4238,545.0908,534.0449z"/>
+		<path d="M617.873,560.04c-16.2676,0-24.6533-8.8887-24.6533-24.8213v-43.9395h-12.4102v-18.4482h12.4102v-23.8145h22.9766v23.8145
+			h18.6152v18.4482h-18.6152v42.2627c0,5.8701,2.1797,8.0498,8.2178,8.0498h9.2236V560.04H617.873z"/>
+		<path d="M650.0684,509.7275v-17.1064c0-31.6973,19.1191-52.3262,50.8164-52.3262c29.8516,0,48.4678,17.7773,49.1387,42.2637
+			h-22.3057c-0.5029-12.9141-10.0625-22.9766-26.1621-22.9766c-18.6162,0-28.1758,12.0752-28.1758,32.2002v18.4482
+			c0,20.7959,8.8887,33.374,28.3428,33.374c16.6035,0,26.498-10.0625,26.498-23.4795v-1.6768h-26.3301v-19.1191h49.3066v15.2617
+			c0,28.0078-19.957,47.7969-49.8096,47.7969C667.3428,562.3877,650.0684,539.4121,650.0684,509.7275z"/>
+		<path d="M773.499,442.6436h48.8027c26.666,0,43.6045,15.9326,43.6045,39.4111c0,23.4795-17.6094,40.083-43.6045,40.083h-25.3242
+			V560.04H773.499V442.6436z M820.793,502.8516c14.2549,0,21.6338-8.5537,21.6338-20.7969c0-12.0742-7.3789-20.125-21.6338-20.125
+			h-23.8154v40.9219H820.793z"/>
+		<path d="M907.1582,462.0977h-33.207v-19.4541h89.8926v19.4541h-33.207V560.04h-23.4785V462.0977z"/>
+	</g>
+	<path d="M239.5442,480.8042c4.79-14.3701,3.1457-30.0985-4.5041-43.1817c-11.5104-20.018-34.6741-30.313-57.2658-25.523
+		c-10.0805-11.2959-24.5221-17.7302-39.6786-17.6587c-23.0922,0-43.6107,14.8705-50.76,36.8188
+		c-14.8705,3.0742-27.6678,12.3683-35.1745,25.5229c-11.5819,20.018-8.9366,45.1835,6.5773,62.3418
+		c-4.79,14.3701-3.1457,30.0986,4.5041,43.1102c11.5104,20.0895,34.6741,30.3845,57.3373,25.5945
+		c10.009,11.2959,24.4506,17.8018,39.6071,17.7302c23.0922,0,43.6107-14.8705,50.76-36.8188
+		c14.8705-3.0742,27.6678-12.3682,35.103-25.5229c11.6533-20.018,9.0081-45.1835-6.5058-62.3418L239.5442,480.8042z
+		 M223.1009,444.5573c4.5755,8.0072,6.2914,17.3728,4.7185,26.4524c-0.286-0.2145-0.8579-0.5004-1.2154-0.7149l-42.0378-24.3076
+		c-2.1448-1.2154-4.79-1.2154-6.9348,0l-49.2586,28.4542v-20.8759l40.6795-23.5211
+		C187.9979,419.1058,212.1625,425.6116,223.1009,444.5573z M128.3728,487.9534l20.7329-12.0108l20.7329,12.0108v23.9501
+		l-20.7329,12.0108l-20.7329-12.0108V487.9534z M138.0243,408.2389c9.2941,0,18.2307,3.2172,25.38,9.1511
+		c-0.286,0.143-0.8579,0.5004-1.2869,0.7149l-42.0378,24.2361c-2.1448,1.2154-3.4317,3.5031-3.4317,6.0054v56.9084l-18.0877-10.438
+		v-47.0423c0-21.8768,17.6588-39.5356,39.5356-39.6071L138.0243,408.2389z M64.1721,463.7173L64.1721,463.7173
+		c4.647-8.0072,11.8678-14.1556,20.59-17.3728v49.9735c0,2.5023,1.2869,4.7185,3.4317,6.0054l49.1871,28.3827l-18.1592,10.5095
+		l-40.608-23.4496C59.7396,506.8276,53.2337,482.663,64.1721,463.7173z M75.2535,555.4427L75.2535,555.4427
+		c-4.647-7.9357-6.2914-17.3728-4.7185-26.4524c0.286,0.2145,0.8579,0.5005,1.2154,0.715l42.0378,24.3076
+		c2.1448,1.2154,4.79,1.2154,6.9348,0l49.1871-28.4542v20.8759l-40.6795,23.4497c-18.9456,10.8669-43.1102,4.4326-54.0486-14.4416
+		H75.2535z M160.2586,591.7612c-9.2226,0-18.2307-3.2172-25.3085-9.1511c0.286-0.143,0.9294-0.5004,1.2869-0.7149l42.0378-24.2361
+		c2.1448-1.2154,3.5031-3.5032,3.4317-6.0054v-56.8369l18.0877,10.438v46.9709c0,21.8768-17.7302,39.6071-39.5356,39.6071V591.7612z
+		 M234.1823,536.2827c-4.647,8.0072-11.9393,14.1556-20.59,17.3013v-49.9735c0-2.5022-1.2869-4.79-3.4317-6.0054l0,0
+		l-49.2586-28.4542l18.0877-10.438l40.6795,23.4497c18.9456,10.9384,25.38,35.103,14.4416,54.0486L234.1823,536.2827z"/>
+</g>
+</svg>
+
+            </div>
+            <span class="ai-service-name">ChatGPT</span>
+          </a>
+
+          <a href="https://gemini.google.com" target="_blank" class="ai-service">
+            <div class="ai-service-icon">
+<svg width="344" height="127" viewBox="0 0 344 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_958_15881" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="344" height="127">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M234.123 41.2204C235.489 44.3354 236.172 47.6638 236.172 51.2055C236.172 47.6638 236.833 44.3354 238.156 41.2204C239.521 38.1054 241.356 35.3958 243.66 33.0916C245.965 30.7873 248.674 28.9738 251.789 27.651C254.904 26.2855 258.233 25.6028 261.774 25.6028C258.233 25.6028 254.904 24.9414 251.789 23.6185C248.674 22.2531 245.965 20.4182 243.66 18.114C241.356 15.8097 239.521 13.1001 238.156 9.98507C236.833 6.87007 236.172 3.54171 236.172 0C236.172 3.54171 235.489 6.87007 234.123 9.98507C232.801 13.1001 230.987 15.8097 228.683 18.114C226.379 20.4182 223.669 22.2531 220.554 23.6185C217.439 24.9414 214.111 25.6028 210.569 25.6028C214.111 25.6028 217.439 26.2855 220.554 27.651C223.669 28.9738 226.379 30.7873 228.683 33.0916C230.987 35.3958 232.801 38.1054 234.123 41.2204ZM26.1532 123.14C31.3762 125.291 36.9448 126.366 42.859 126.366C48.8501 126.366 54.3035 125.406 59.2192 123.486C64.1349 121.566 68.3978 118.839 72.0078 115.306C75.6178 111.773 78.4213 107.587 80.4183 102.748C82.4153 97.8321 83.4138 92.4555 83.4138 86.6181V86.5029C83.4138 85.4276 83.337 84.429 83.1834 83.5073C83.1066 82.5856 82.9914 81.6255 82.8377 80.627H43.0895V90.1897H73.0447C72.7374 94.7982 71.6621 98.7922 69.8187 102.172C68.0521 105.475 65.7863 108.201 63.0212 110.352C60.3329 112.502 57.2222 114.115 53.689 115.191C50.2326 116.189 46.6226 116.689 42.859 116.689C38.7114 116.689 34.6789 115.92 30.7617 114.384C26.8445 112.848 23.3497 110.621 20.2774 107.702C17.2819 104.783 14.9008 101.288 13.1342 97.2176C11.3676 93.07 10.4843 88.4231 10.4843 83.2769C10.4843 78.1308 11.3292 73.5223 13.019 69.4514C14.7856 65.3038 17.1667 61.809 20.1622 58.9671C23.1577 56.0484 26.6141 53.8209 30.5313 52.2848C34.5253 50.7486 38.6346 49.9805 42.859 49.9805C46.0082 49.9805 49.0037 50.403 51.8456 51.2479C54.6875 52.0159 57.299 53.1297 59.68 54.589C62.1379 56.0484 64.2501 57.815 66.0167 59.8888L73.1599 52.5152C69.7035 48.598 65.287 45.564 59.9105 43.4134C54.6107 41.2628 48.9269 40.1875 42.859 40.1875C37.0216 40.1875 31.4914 41.2628 26.2684 43.4134C21.1223 45.564 16.5522 48.598 12.5582 52.5152C8.64093 56.4324 5.5686 61.0025 3.34116 66.2255C1.11372 71.4484 0 77.1323 0 83.2769C0 89.4216 1.11372 95.1054 3.34116 100.328C5.5686 105.551 8.64093 110.121 12.5582 114.039C16.4754 117.956 21.0071 120.99 26.1532 123.14ZM104.058 122.334C108.512 125.022 113.582 126.366 119.266 126.366C125.717 126.366 131.132 124.907 135.511 121.988C139.889 119.07 143.23 115.383 145.534 110.928L136.778 106.78C135.165 109.699 132.937 112.157 130.096 114.154C127.33 116.151 123.874 117.149 119.726 117.149C116.5 117.149 113.39 116.343 110.394 114.73C107.399 113.117 104.941 110.697 103.021 107.472C101.362 104.684 100.419 101.266 100.194 97.2176H146.456C146.533 96.8336 146.571 96.3343 146.571 95.7199C146.648 95.1054 146.686 94.5293 146.686 93.9917C146.686 88.1542 145.534 82.9697 143.23 78.438C141.002 73.9063 137.776 70.3731 133.552 67.8385C129.327 65.227 124.297 63.9212 118.459 63.9212C112.698 63.9212 107.668 65.3806 103.366 68.2993C99.065 71.1412 95.7238 74.9432 93.3428 79.7053C91.0385 84.4674 89.8864 89.652 89.8864 95.259C89.8864 101.25 91.1153 106.588 93.5732 111.274C96.1079 115.959 99.6027 119.646 104.058 122.334ZM100.781 88.8071C101.143 87.0971 101.66 85.4841 102.329 83.9682C103.789 80.6654 105.901 78.054 108.666 76.1338C111.508 74.1367 114.811 73.1382 118.574 73.1382C121.723 73.1382 124.373 73.6759 126.524 74.7512C128.675 75.7497 130.441 77.0554 131.824 78.6684C133.206 80.2814 134.205 82.0096 134.819 83.853C135.434 85.6196 135.779 87.271 135.856 88.8071H100.781ZM155.497 65.7646V124.523H165.866V91.8026C165.866 88.5767 166.519 85.5428 167.825 82.7009C169.131 79.859 170.936 77.5931 173.24 75.9033C175.544 74.1367 178.156 73.2534 181.074 73.2534C185.145 73.2534 188.294 74.444 190.522 76.825C192.826 79.1293 193.978 83.0849 193.978 88.6919V124.523H204.232V91.5722C204.232 88.3463 204.885 85.3507 206.191 82.5856C207.496 79.7437 209.301 77.4779 211.606 75.7881C213.91 74.0983 216.521 73.2534 219.44 73.2534C223.588 73.2534 226.775 74.4056 229.003 76.7098C231.307 79.0141 232.459 82.9697 232.459 88.5767V124.523H242.713V86.8485C242.713 80.0126 241.023 74.4824 237.644 70.2579C234.341 66.0335 229.156 63.9212 222.09 63.9212C217.405 63.9212 213.372 64.9965 209.993 67.1472C206.613 69.2978 203.925 72.0245 201.928 75.3273C200.545 71.9477 198.279 69.221 195.13 67.1472C192.058 64.9965 188.333 63.9212 183.955 63.9212C181.497 63.9212 179.039 64.4205 176.581 65.419C174.2 66.3407 172.088 67.608 170.244 69.221C168.401 70.7572 166.942 72.4854 165.866 74.4056H165.405V65.7646H155.497ZM252.045 65.7646V124.523H262.299V65.7646H252.045ZM251.93 53.3217C253.389 54.7042 255.118 55.3955 257.115 55.3955C259.188 55.3955 260.917 54.7042 262.299 53.3217C263.682 51.8623 264.373 50.1341 264.373 48.1371C264.373 46.0633 263.682 44.3351 262.299 42.9526C260.917 41.4932 259.188 40.7635 257.115 40.7635C255.118 40.7635 253.389 41.4932 251.93 42.9526C250.547 44.3351 249.856 46.0633 249.856 48.1371C249.856 50.1341 250.547 51.8623 251.93 53.3217ZM271.929 65.7646V124.523H282.298V91.8026C282.298 88.6535 282.951 85.6964 284.257 82.9313C285.64 80.0894 287.521 77.7851 289.902 76.0185C292.283 74.1751 295.087 73.2534 298.313 73.2534C302.614 73.2534 306.071 74.444 308.682 76.825C311.293 79.1293 312.599 83.0849 312.599 88.6919V124.523H322.968V86.8485C322.968 79.9358 321.125 74.4056 317.438 70.2579C313.751 66.0335 308.336 63.9212 301.193 63.9212C296.969 63.9212 293.128 64.9581 289.672 67.032C286.216 69.1058 283.719 71.5637 282.183 74.4056H281.722V65.7646H271.929ZM331.672 65.7646V124.523H341.926V65.7646H331.672ZM331.557 53.3217C333.016 54.7042 334.745 55.3955 336.742 55.3955C338.815 55.3955 340.544 54.7042 341.926 53.3217C343.309 51.8623 344 50.1341 344 48.1371C344 46.0633 343.309 44.3351 341.926 42.9526C340.544 41.4932 338.815 40.7635 336.742 40.7635C334.745 40.7635 333.016 41.4932 331.557 42.9526C330.175 44.3351 329.483 46.0633 329.483 48.1371C329.483 50.1341 330.175 51.8623 331.557 53.3217Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_958_15881)">
+<rect x="-158.25" y="-455.443" width="832.09" height="685.324" fill="url(#paint0_linear_958_15881)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_958_15881" x1="-57.4049" y1="130.441" x2="354.97" y2="30.369" gradientUnits="userSpaceOnUse">
+<stop stop-color="#439DDF"/>
+<stop offset="0.524208" stop-color="#4F87ED"/>
+<stop offset="0.781452" stop-color="#9476C5"/>
+<stop offset="0.888252" stop-color="#BC688E"/>
+<stop offset="1" stop-color="#D6645D"/>
+</linearGradient>
+</defs>
+</svg>
+
+            </div>
+            <span class="ai-service-name">Gemini</span>
+          </a>
+        </div>
+
+        <div class="button-group">
+          <button onclick="showStep5()">I Got Code from AI</button>
+        </div>
+      </div>
+
+      <!-- STEP 5: Paste AI Code -->
+      <div class="workflow-step hidden" id="step5">
+        <h3>Step 5: Paste the Code from AI</h3>
+        <p>Paste the JavaScript code that the AI generated. We'll validate it before adding to your SVG.</p>
+
+        <textarea id="aiCodeInput" class="code-input" placeholder="Paste the JavaScript code here..."></textarea>
+
+        <div id="codeErrorDisplay" class="status-message"></div>
+
+        <div class="button-group">
+          <button onclick="validateAndPrepareSvg()">Validate & Create Interactive SVG</button>
+        </div>
+
+        <div id="step5Status" class="status-message"></div>
+      </div>
+
+      <!-- STEP 6: Download -->
+      <div class="workflow-step hidden" id="step6">
+        <h3>Step 6: Download Your Interactive SVG!</h3>
+        <p>Success! Your interactive SVG is ready. Download it and open in any browser to see it in action.</p>
+
+        <div class="button-group">
+          <button class="success" onclick="downloadInteractiveSvg()">Download Interactive SVG</button>
+          <button class="reset" onclick="resetAll()">Start Over</button>
+        </div>
+
+        <div id="step6Status" class="status-message"></div>
+      </div>
+    </div>
+
+    <!-- Embedded SKILL.md content -->
+    <script type="text/plain" id="skillMdContent">
+# SVG Animation Helper Skill
+
+## Purpose
+
+Help beginner UX design students create interactive SVG files using embedded JavaScript. Students export SVGs from Figma/Illustrator and add animations/interactivity that work as standalone files.
+
+## Target Users
+
+- Beginner UX design students
+- Limited or no coding experience
+- Need clear, working examples
+- Will iterate multiple times
+- Primary skill: visual design, not coding
+
+## Technical Standards
+
+- Use modern JavaScript (ES6+)
+- No CORS issues - don't ask student, they will not understand
+- Don't ask about file details like size or viewbox - they are already provided in the SVG below
+- Self-contained - works by opening SVG directly in any browser
+- Must include console.log with timestamp for debugging
+
+## Required Script Structure
+
+You MUST provide a complete `<script>` block that includes:
+
+1. **Console logging with timestamp** - For debugging (e.g., `console.log("ISS updated", new Date().toLocaleTimeString())`)
+2. **setInterval for timed updates** - If the animation updates periodically
+3. **Event listeners** - If the animation responds to user interaction
+4. **Error handling** - Graceful failures for missing elements or API errors
+5. **Clear comments** - Explain what each section does in plain English
+
+## Common Animation Patterns
+
+### Rotation (Gauges, Needles)
+
+```javascript
+// Map 0-100 to -45° to +45°
+const value = parseFloat(localStorage.getItem("speed")) || 0;
+const angle = -45 + value * 0.9; // 0.9 = 90°/100
+document.getElementById("needle").setAttribute("transform", `rotate(${angle} 256 256)`);
+// Note: 256 256 is rotation origin (SVG center), adjust per design
+```
+
+### Translation (Sliders, Bars)
+
+```javascript
+// Map 0-100 to y position 150→50
+const value = parseFloat(localStorage.getItem("fuel")) || 50;
+const y = 150 - value * 1.0; // 1.0 = 100px range
+document.getElementById("indicator").setAttribute("transform", `translate(0 ${y})`);
+```
+
+### Color Interpolation
+
+```javascript
+// Blue (0) to red (100)
+const value = parseFloat(localStorage.getItem("temp")) || 0;
+const r = Math.round(value * 2.55);
+const b = Math.round(255 - value * 2.55);
+document.getElementById("bar").setAttribute("fill", `rgb(${r}, 0, ${b})`);
+```
+
+### Fetching from API
+
+```javascript
+async function updateFromAPI() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    // Use the data to update SVG elements
+    console.log("Data updated", new Date().toLocaleTimeString());
+  } catch (error) {
+    console.error("API fetch failed:", error);
+  }
+}
+
+// Update every 5 seconds
+setInterval(updateFromAPI, 5000);
+```
+
+## Comment Style
+
+Write comments that explain both WHAT and WHY in student-friendly language:
+
+```javascript
+/**
+ * Battery gauge animation
+ * - Needle rotates to show battery level
+ * - 0% = -180° (pointing left/empty)
+ * - 100% = 0° (pointing right/full)
+ */
+
+// Get battery value from localStorage, use 50 as default if not found
+const batteryLevel = parseFloat(localStorage.getItem("battery")) || 50;
+
+// Calculate rotation angle
+// Formula: -180° + (percentage × 1.8)
+// This maps 0-100 to a -180° to 0° range
+const angle = -180 + batteryLevel * 1.8;
+
+// Apply rotation to the needle element
+// The numbers (256 256) are the rotation point (center of gauge)
+document.getElementById("needle").setAttribute("transform", `rotate(${angle} 256 256)`);
+
+console.log("Battery gauge updated:", batteryLevel + "%", new Date().toLocaleTimeString());
+```
+
+## Output Format
+
+Provide a COMPLETE script block wrapped in CDATA for SVG compatibility:
+
+```xml
+<script type="text/javascript"><![CDATA[
+
+// Your complete JavaScript code here
+// Including any functions, event listeners, and setInterval
+
+]]><` + `/script>
+```
+
+## Student-Friendly Practices
+
+1. **Single responsibility** - One animation concept per SVG
+2. **Explain all numbers** - Comment why specific angles/ranges/formulas chosen
+3. **Graceful defaults** - Always provide fallback values if data missing (using `|| defaultValue`)
+4. **Descriptive names** - `batteryLevel` not `val`, `needleAngle` not `a`
+5. **Element ID guidance** - Remind students to name layers in design tools before export
+6. **Step-by-step comments** - Each line or small block gets an explanation
+7. **Formula breakdown** - Show the math and what it does (e.g., "0.9 = 90°/100")
+8. **Console logging** - Always include console.log with timestamps for debugging
+9. **Error handling** - Check if elements exist before manipulating them
+
+## Remember
+
+- Students are visual designers, not programmers
+- Code should be self-explanatory with clear comments
+- Each SVG is self-contained and testable standalone
+- Over-comment rather than under-comment
+- Use plain English in comments, avoid jargon
+- Always include console.log with timestamp for debugging
+- Handle errors gracefully (missing elements, failed API calls, etc.)
+    </script>
+
+    <!-- Boilerplate template -->
+    <script type="text/plain" id="boilerplateTemplate">
+ <script type="text/javascript" id="SVGJS"><![CDATA[
+
+function update_SVG(){
+  // ========================================
+  // STUDENT EDIT ZONE
+  // ========================================
+
+  console.log("Update_SVG",new Date().toLocaleTimeString());
+
+  // ========================================
+  // END STUDENT EDIT ZONE
+  // ========================================
+}
+
+const update_SVG_times_per_second = 1;
+setInterval(() => {
+  update_SVG();
+}, Math.round(1000/update_SVG_times_per_second));
+]]></script>
+    </script>
+
+    <script>
+      let originalSvgContent = null;
+      let svgFileName = "";
+      let finalSvgContent = null;
+      let generatedPrompt = "";
+
+      // Set up file input and drop zone
+      setupDropZone("svgDropZone", handleSvgFile);
+      document.getElementById("svgInput").addEventListener("change", function (e) {
+        if (e.target.files.length > 0) {
+          handleSvgFile(e.target.files[0]);
+        }
+      });
+
+      function setupDropZone(zoneId, handler) {
+        const zone = document.getElementById(zoneId);
+
+        zone.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          zone.classList.add("drag-over");
+        });
+
+        zone.addEventListener("dragleave", () => {
+          zone.classList.remove("drag-over");
+        });
+
+        zone.addEventListener("drop", (e) => {
+          e.preventDefault();
+          zone.classList.remove("drag-over");
+
+          const files = e.dataTransfer.files;
+          if (files.length > 0 && files[0].name.toLowerCase().endsWith(".svg")) {
+            handler(files[0]);
+          } else {
+            alert("Please drop a valid SVG file");
+          }
+        });
+      }
+
+      function handleSvgFile(file) {
+        svgFileName = file.name;
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          originalSvgContent = e.target.result;
+
+          document.getElementById("svgInfo").textContent = `✓ Loaded: ${file.name}`;
+          document.getElementById("svgInfo").style.display = "block";
+          document.getElementById("svgDropZone").classList.add("loaded");
+
+          // Mark step 1 complete and show step 2
+          document.getElementById("step1").classList.add("completed");
+          document.getElementById("step2").classList.remove("hidden");
+
+          // Scroll to step 2
+          document.getElementById("step2").scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+        reader.readAsText(file);
+      }
+
+      function generateAndShowPrompt() {
+        const description = document.getElementById("descriptionInput").value.trim();
+
+        if (!description) {
+          alert("Please describe what you want to happen in your SVG");
+          return;
+        }
+
+        // Get SKILL.md content
+        const skillMd = document.getElementById("skillMdContent").textContent;
+
+        // Assemble the complete prompt
+        generatedPrompt = `I want to add animation to my SVG file using JavaScript.
+I'm a design student with no programming experience.
+
+This project uses: https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI
+
+${skillMd}
+
+## What I want to happen:
+${description}
+
+## My SVG file (ALREADY UPLOADED BELOW - DO NOT ASK FOR DETAILS):
+\`\`\`svg
+${originalSvgContent}
+\`\`\`
+
+## What I need from you:
+You have EVERYTHING you need above. The SVG file is already provided with all its element IDs, viewBox, and structure.
+
+DO NOT ask me questions about:
+- viewBox dimensions (you can see them in the SVG)
+- element IDs (search the SVG code above)
+- file structure (it's all there)
+
+You MAY ask ONLY if:
+- My description of what I want is unclear
+- You need clarification on the animation behavior
+
+Now write a COMPLETE script block for embedding in the SVG.
+
+CRITICAL REQUIREMENTS:
+1. Wrap JavaScript in CDATA tags for SVG compatibility
+2. Include console.log with timestamp for debugging
+3. Use setInterval if the animation updates periodically
+4. Handle errors gracefully (check if elements exist, handle API failures)
+5. Comment your code clearly for beginner students
+6. Provide the COMPLETE script block - do not leave anything out
+
+Example format (provide exactly this structure):
+${'<'}script type="text/javascript">${'<'}![CDATA[
+// Your complete code here, including functions, setInterval, etc.
+console.log("Updated", new Date().toLocaleTimeString());
+]]>${'<'}/script>`;
+
+        // Display the prompt
+        document.getElementById("generatedPrompt").value = generatedPrompt;
+
+        // Mark step 2 complete and show step 3
+        document.getElementById("step2").classList.add("completed");
+        document.getElementById("step3").classList.remove("hidden");
+        document.getElementById("step3").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function copyPromptToClipboard() {
+        const textarea = document.getElementById("generatedPrompt");
+        textarea.select();
+        document.execCommand("copy");
+
+        showStatus("step3Status", "Prompt copied to clipboard! Now choose an AI service below.", "success");
+
+        // Show step 4
+        document.getElementById("step3").classList.add("completed");
+        document.getElementById("step4").classList.remove("hidden");
+        document.getElementById("step4").scrollIntoView({ behavior: "smooth", block: "start" });
+
+        setTimeout(() => {
+          document.getElementById("step3Status").style.display = "none";
+        }, 5000);
+      }
+
+      function showStep5() {
+        document.getElementById("step4").classList.add("completed");
+        document.getElementById("step5").classList.remove("hidden");
+        document.getElementById("step5").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function validateAndPrepareSvg() {
+        let aiCode = document.getElementById("aiCodeInput").value.trim();
+
+        if (!aiCode) {
+          showStatus("step5Status", "Please paste the code from AI first", "error");
+          return;
+        }
+
+        // Extract JavaScript code for validation
+        let jsCodeToValidate = aiCode;
+
+        // If they pasted the complete script block, extract just the JavaScript
+        if (aiCode.includes('<script')) {
+          // Extract content between CDATA tags or script tags
+          const cdataMatch = aiCode.match(/<!\[CDATA\[([\s\S]*?)\]\]>/);
+          if (cdataMatch) {
+            jsCodeToValidate = cdataMatch[1].trim();
+          } else {
+            // Try to extract from script tags
+            const scriptMatch = aiCode.match(/<script[^>]*>([\s\S]*?)<\/script>/i);
+            if (scriptMatch) {
+              jsCodeToValidate = scriptMatch[1].trim();
+            }
+          }
+        }
+
+        // Validate JavaScript syntax
+        try {
+          new Function(jsCodeToValidate);
+
+          // Check for dangerous patterns
+          const dangerousPatterns = [
+            { pattern: /document\.write/i, message: "Contains document.write which could break the page" },
+            { pattern: /eval\s*\(/i, message: "Contains eval() which is potentially dangerous" }
+          ];
+
+          for (const check of dangerousPatterns) {
+            if (check.pattern.test(jsCodeToValidate)) {
+              showStatus("step5Status", `Warning: ${check.message}`, "warning");
+            }
+          }
+
+          // Create the final SVG with code (use original aiCode with script tags)
+          finalSvgContent = createFinalSvg(aiCode);
+
+          // Mark step 5 complete and show step 6
+          document.getElementById("step5").classList.add("completed");
+          showStatus("step5Status", "Code validated successfully! ✓", "success");
+          document.getElementById("step6").classList.remove("hidden");
+          document.getElementById("step6").scrollIntoView({ behavior: "smooth", block: "start" });
+
+        } catch (error) {
+          // Display the JavaScript error
+          const errorMessage = `JavaScript Error Found:
+
+${error.message}
+
+Please copy this error message and go back to your AI assistant to fix it.
+Then paste the corrected code and try again.`;
+
+          showStatus("codeErrorDisplay", errorMessage, "error");
+          showStatus("step5Status", "Code validation failed - see error above", "error");
+        }
+      }
+
+      function createFinalSvg(aiCode) {
+        // AI should provide complete script block, but clean up if needed
+        let scriptBlock = aiCode.trim();
+
+        // Ensure the script has proper tags if AI didn't include them
+        if (!scriptBlock.includes('<script')) {
+          scriptBlock = `<script type="text/javascript"><![CDATA[\n${scriptBlock}\n]]><` + `/script>`;
+        }
+
+        // Add the script to the SVG before the closing </svg> tag
+        const svgWithCode = originalSvgContent.replace(
+          /<\/svg>/i,
+          `${scriptBlock}\n</svg>`
+        );
+
+        return svgWithCode;
+      }
+
+      function downloadInteractiveSvg() {
+        if (!finalSvgContent) {
+          showStatus("step6Status", "No SVG to download", "error");
+          return;
+        }
+
+        // Create filename
+        const baseName = svgFileName.replace(".svg", "");
+        const fileName = `${baseName}-interactive.svg`;
+
+        // Create download
+        const blob = new Blob([finalSvgContent], { type: "image/svg+xml" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        showStatus("step6Status", `Downloaded: ${fileName}\n\nOpen it in any browser to see your interactive SVG in action!`, "success");
+      }
+
+      function resetAll() {
+        // Reset all variables
+        originalSvgContent = null;
+        svgFileName = "";
+        finalSvgContent = null;
+        generatedPrompt = "";
+
+        // Reset UI
+        document.getElementById("svgInfo").style.display = "none";
+        document.getElementById("svgDropZone").classList.remove("loaded");
+        document.getElementById("svgInput").value = "";
+        document.getElementById("descriptionInput").value = "";
+        document.getElementById("generatedPrompt").value = "";
+        document.getElementById("aiCodeInput").value = "";
+
+        // Hide all steps except step 1
+        document.getElementById("step1").classList.remove("completed");
+        document.getElementById("step2").classList.add("hidden");
+        document.getElementById("step2").classList.remove("completed");
+        document.getElementById("step3").classList.add("hidden");
+        document.getElementById("step3").classList.remove("completed");
+        document.getElementById("step4").classList.add("hidden");
+        document.getElementById("step4").classList.remove("completed");
+        document.getElementById("step5").classList.add("hidden");
+        document.getElementById("step5").classList.remove("completed");
+        document.getElementById("step6").classList.add("hidden");
+
+        // Clear all status messages
+        ["step3Status", "step5Status", "step6Status", "codeErrorDisplay"].forEach((id) => {
+          document.getElementById(id).style.display = "none";
+          document.getElementById(id).textContent = "";
+          document.getElementById(id).className = "status-message";
+        });
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function showStatus(elementId, message, type) {
+        const statusEl = document.getElementById(elementId);
+        statusEl.textContent = message;
+        statusEl.className = `status-message ${type}`;
+      }
+    </script>
+  </body>
+</html>

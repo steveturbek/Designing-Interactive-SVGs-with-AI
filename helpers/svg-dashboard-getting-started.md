@@ -104,11 +104,11 @@ If something isn't working:
 ### Background on how this works
 
 The SVGs we make here have javascript code in it. It looks for a variable stored in the Chrome browser's [localStorage](https://en.wikipedia.org/wiki/Web_storage#localStorage).
-The SVG code looks for a variable with the same filename, so `compass.svg` uses `copmpass`, `compass_new.svg` uses `compass_new`
+The SVG code looks for a variable with the same filename, so `compass.svg` uses `compass`, `compass_new.svg` uses `compass_new`
 
 If the SVG does not find the variable, it goes into test mode. In Chrome, open up the Javascript console (Menu bar > View > Developer > Javascript Console). it should say something like `no local storage "compass", using test value: 316`
 
-You can acccess this and set the value directly in the Chrome DevTools console
+You can access this and set the value directly in the Chrome DevTools console
 
 - To set a localStorage value: `localStorage.setItem('keyName', 'value');`
 - To delete a localStorage value: `localStorage.removeItem('keyName');`

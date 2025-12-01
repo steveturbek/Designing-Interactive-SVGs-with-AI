@@ -227,23 +227,26 @@
     </div>
 
     <script type="text/plain" id="defaultCodeTemplate">
-            <script type='text/javascript' id='SVGJS'>
-      //<![CDATA[ // this is to make javascript work in the SVG, leave it alone
+ <script type="text/javascript" id="SVGJS"><![CDATA[ // this is to make javascript work in the SVG, leave it alone
 
-          setInterval(() => { // This is like a timer, the code runs repeatedly
-          // ========================================
-          // STUDENT EDIT ZONE
-          // ========================================
-
+function update_SVG(){
+  // ========================================
+  // STUDENT EDIT ZONE
+  // ========================================
 
 
+console.log("Update_SVG",new Date().toLocaleTimeString()); // add some kind of message with important information.  This will be visible in the browser console.  Menu View > Developer > Javascript Console
+  // ========================================
+  // END STUDENT EDIT ZONE
+  // ========================================
+}
 
-          // ========================================
-          // END STUDENT EDIT ZONE
-          // ========================================
-          }, 100);  //end of setInterval code.  100 milliseconds or 10 times per second.
-
-        //]]> // this is to make javascript work in the SVG, leave it alone
+const update_SVG_times_per_second = 1; // how many times per second you want it to update
+// Do not change the code below
+setInterval(() => { // This is like a timer, the code runs repeatedly
+  update_SVG();
+}, Math.round( 1000/update_SVG_times_per_second)); // 1000 milliseconds divided by updates per second
+]]></script>
     </script>
 
     <script>
@@ -344,21 +347,8 @@
           newScript.setAttribute("type", "text/javascript");
           newScript.setAttribute("id", "SVGJS");
 
-          // Extract just the code content from the template (without CDATA markers in comments)
-          const codeContent = `
-          setInterval(() => { // This is like a timer, the code runs repeatedly
-          // ========================================
-          // STUDENT EDIT ZONE
-          // ========================================
-
-
-
-
-          // ========================================
-          // END STUDENT EDIT ZONE
-          // ========================================
-          }, 100);  //end of setInterval code.  100 milliseconds or 10 times per second.
-    `;
+          // Extract the code content from the template
+          const codeContent = defaultSVGCodeTemplate.replace(/<script[^>]*>|<\/script>/gi, '').replace(/<!\[CDATA\[|\]\]>/g, '').trim();
 
           // Create a CDATA section
           const cdataSection = svgDoc.createCDATASection(codeContent);
@@ -377,8 +367,11 @@
 
           // Show success message
           if (existingScripts.length === 0) {
-            showStatus(`Success! JavaScript template added to ${newSvgFileName}. Click "Download SVG with Code" above to save it.`, "success");
+            showStatus(`Success! JavaScript template added to ${newSvgFileName}. Downloading now...`, "success");
           }
+
+          // Automatically download the file
+          downloadMergedSvg();
         } catch (error) {
           showStatus(`Error: ${error.message}`, "error");
           console.error("Processing error:", error);

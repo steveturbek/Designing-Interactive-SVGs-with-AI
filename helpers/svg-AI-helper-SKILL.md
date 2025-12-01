@@ -1,270 +1,149 @@
-# SVG Dashboard Animation Skill
+# SVG Animation Helper Skill
 
 ## Purpose
 
-Help beginner UX design students animate SVG dashboard elements using JavaScript. Students export SVGs from Figma/Illustrator and need self-contained, portable animations that work in dashboard projects.
+Help beginner UX design students animate SVG elements using embedded JavaScript. Students export SVGs from Figma/Illustrator and add animations that work as standalone files.
 
 ## Target Users
 
 - Beginner UX design students
-- Limited coding experience
+- Limited or no coding experience
 - Need clear, working examples
 - Will iterate multiple times
+- Primary skill: cut and paste, not coding
 
-## Technical Requirements
+## Technical Standards
 
-### Core Standards
+- We are coding for modern JavaScript, not older ES6 code
+- No CORS issues, don't ask student, they will not understand
+- Don't ask about the file detaile like size or viewbox until after it is uploaded
+- You will receive SVG files with boilerplate already embedded
 
-1. **Self-contained SVGs** - All code embedded within the SVG file
-2. **localStorage for data** - Read dashboard values from localStorage
-3. **setInterval timing** - Update at 100ms intervals (10 updates/sec for smooth animation)
-4. **CDATA wrapper** - Wrap all JavaScript in `<![CDATA[...]]>`
-5. **Student Edit Zone** - Clear section where students modify animation logic
+**Key principles:**
 
-### Code Structure Template
-
-**CRITICAL: The boundary comment markers below MUST be preserved exactly as shown. They are visual landmarks for students.**
-
-```xml
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256">
-        <script type='text/javascript' id='SVGJS'>
-      //<![CDATA[ // this is to make javascript work in the SVG, leave it alone
-
-          setInterval(() => { // This is like a timer, the code runs repeatedly
-          // ========================================
-          // STUDENT EDIT ZONE
-          // ========================================
-
-
-
-
-          // ========================================
-          // END STUDENT EDIT ZONE
-          // ========================================
-          }, 100);  //end of setInterval code.  100 milliseconds or 10 times per second.
-
-        //]]> // this is to make javascript work in the SVG, leave it alone
-    </script>
-  <!-- SVG visual elements -->
-</svg>
-```
+- All animation logic goes in **STUDENT EDIT ZONE** only
+- Students can adjust `update_SVG_times_per_second` (typically 1-10)
+- Never modify code outside the zone
+- Self-contained - works by opening SVG in any browser
 
 ## Questions to Ask Students
 
-### Initial Setup
+### For New Animations
 
-1. **What is the data range?**
+1. **Data source:** Where does the value come from?
 
-   - 0-100 (percentage, like speed, temperature)
-   - -100 to +100 (bidirectional, like thrust, balance)
-   - Custom range (ask for min/max)
+   - localStorage key name
+   - Hardcoded for testing
+   - Calculated from other values
 
-2. **What should animate?**
+2. **Data range:** What are min/max values?
 
-   - Rotation (needles, instruments)
-   - Translation (sliders, indicators)
-   - Color (fill changes based on value)
-   - Scale (growing/shrinking elements)
-   - Opacity (fading elements)
+   - 0-100 (percentage)
+   - -100 to +100 (bidirectional)
+   - Custom range
+
+3. **What animates:**
+
+   - Rotation (needles, dials)
+   - Translation (sliders, bars)
+   - Color/opacity
+   - Scale (size changes)
    - Multiple elements
 
-3. **Which elements animate?**
+4. **Element IDs:** Which elements move/change?
 
-   - Ask student to identify element IDs from their SVG
-   - If no IDs exist, explain they need to name layers in Figma/Illustrator
+   - Students must name layers in Figma/Illustrator first
    - Common names: needle, indicator, bar, dial, pointer
 
-4. **Edge cases:**
-   - What happens at minimum value?
-   - What happens at maximum value?
-   - Default value if localStorage empty? (usually midpoint)
+5. **Edge cases:** Behavior at min/max values? Default if no data?
 
-### During Iterations
+### For Iterations
 
-1. **What needs to change?**
+**Always ask:** "Are you updating the design, the animation behavior, or both?"
 
-   - Visual (color, size) vs behavioral (direction, speed)
-   - New design upload vs code revision only
-
-2. **Did design elements change?**
-   - If student re-exported from Figma, element IDs may have changed
-   - Need to map old code to new structure
+- **Design only:** Need new SVG export + existing code transplant
+- **Behavior only:** Edit code in current SVG
+- **Both:** Merge new design with modified code logic
 
 ## Common Animation Patterns
 
-### Rotation (instruments, Needles)
+### Rotation (Gauges, Needles)
 
 ```javascript
-// Map value to angle range
-// Example: 0-100 maps to -45° to +45°
-const angle = -45 + numValue * 0.9; // 0.9 = 90°/100
-element.setAttribute("transform", `rotate(${angle} 100 100)`);
-// Note: 100 100 is rotation origin, adjust to SVG center point
+// Map 0-100 to -45° to +45°
+const value = parseFloat(localStorage.getItem("speed")) || 0;
+const angle = -45 + value * 0.9; // 0.9 = 90°/100
+document.getElementById("needle").setAttribute("transform", `rotate(${angle} 256 256)`);
+// Note: 256 256 is rotation origin (SVG center), adjust per design
 ```
 
 ### Translation (Sliders, Bars)
 
 ```javascript
-// Map value to position
-// Example: 0-100 maps to y=150 to y=50
-const y = 150 - numValue * 1; // 1 = 100px range
-element.setAttribute("transform", `translate(0 ${y})`);
+// Map 0-100 to y position 150→50
+const value = parseFloat(localStorage.getItem("fuel")) || 50;
+const y = 150 - value * 1.0; // 1.0 = 100px range
+document.getElementById("indicator").setAttribute("transform", `translate(0 ${y})`);
 ```
 
 ### Color Interpolation
 
 ```javascript
-// Example: blue at 0, red at 100
-const r = Math.round(numValue * 2.55);
-const b = Math.round(255 - numValue * 2.55);
-element.setAttribute("fill", `rgb(${r}, 0, ${b})`);
+// Blue (0) to red (100)
+const value = parseFloat(localStorage.getItem("temp")) || 0;
+const r = Math.round(value * 2.55);
+const b = Math.round(255 - value * 2.55);
+document.getElementById("bar").setAttribute("fill", `rgb(${r}, 0, ${b})`);
 ```
 
-### Bidirectional (Thrust Example)
+### Bidirectional (-100 to +100)
 
 ```javascript
-// -100 to +100 maps to different positions/angles
-// Normalize to 0-1 range
-const normalized = (numValue + 100) / 200;
+const value = parseFloat(localStorage.getItem("thrust")) || 0;
+const normalized = (value + 100) / 200; // Convert to 0-1
 const angle = -90 + normalized * 180; // -90° to +90°
 ```
 
 ## Workflow
 
-### Replacing a Stock instruments (MOST COMMON for this project)
+### Initial Animation Setup
 
-**Preferred workflow: Fetch from GitHub (cleaner, always up-to-date)**
+1. Student uploads SVG with boilerplate
+2. Ask clarifying questions (data source, range, elements)
+3. Write animation logic in STUDENT EDIT ZONE with clear comments
+4. Student tests by opening SVG in browser
 
-1. **Student provides GitHub URL and uploads files:**
+### Code-Only Iteration
 
-   - Pastes this SKILL.md
-   - You can reference the project repository: https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI
-   - Uploads their new design SVG
+1. Student uploads SVG with existing code
+2. Student describes what to change
+3. Read existing comments to understand intent
+4. Make targeted edits in STUDENT EDIT ZONE
+5. Update comments if behavior changed
+6. **Preserve boundary markers exactly**
 
-2. **Fetch and analyze the stock instruments from GitHub:**
+### Design Update (Re-export from Figma)
 
-3. **Analyze the new design:**
+1. Student uploads BOTH files:
+   - Old SVG (working code)
+   - New SVG (updated design, no code)
+2. Ask if element IDs stayed the same
+3. Extract STUDENT EDIT ZONE from old file
+4. Transplant into new file's boilerplate
+5. Update element IDs if changed
+6. Adjust rotation origins/positions if geometry changed
 
-   - Find the element(s) to animate (student should have named them)
-   - Determine rotation/transformation origins (center points, pivot points)
-   - Check if the visual layout requires formula adjustments
+## CRITICAL: Boundary Markers
 
-4. **Apply the behavior:**
-
-   - **CRITICAL: Include the STUDENT EDIT ZONE boundary markers exactly** - they must be present
-   - Recreate the animation logic from stock instruments STUDENT EDIT ZONE
-   - Adapt element IDs to match new design
-   - Adjust rotation origins or positions if needed based on new design geometry
-   - Keep the same localStorage key (filename-based detection will handle this)
-   - Include all the boilerplate (interval, clamp logic, etc.)
-   - **Ensure both opening and closing boundary markers are present**
-   - Update the comments to describe the new design
-
-5. Generate complete merged SVG with embedded script
-6. Student tests by opening in browser
-
-### First Time Animation
-
-1. Student uploads SKILL.md and SVG file
-2. Ask clarifying questions (see Questions to Ask Students section)
-3. Generate complete merged SVG with embedded script and clear comments
-4. Student tests by opening in browser
-5. Student iterates and requests changes
-
-### When SVG Contains Existing Code
-
-**Always ask:** "Are you iterating on this animation, or starting fresh?"
-
-**If iterating:**
-
-- Ask what needs to change specifically
-- Analyze existing code in STUDENT EDIT ZONE and comments
-- Make surgical edits to specific parts
-- **CRITICAL: Preserve the STUDENT EDIT ZONE boundary markers exactly**
-- Preserve: localStorage detection, element IDs, timing, working logic,
-- Update comments if intent changed
-
-**If starting fresh:**
-
-- Treat as new animation
-- Can reference old code for patterns but don't preserve logic
-
-### Iteration - Code Changes Only
-
-1. Student uploads SVG with embedded script
-2. Student describes what's wrong or what to change
-3. Read self-prompting comments to understand original intent
-4. Make surgical edits
-5. Update comments if behavior intent changed
-6. Output updated SVG
-
-### Iteration - Design Changes from Figma
-
-1. Student uploads TWO files:
-   - Old SVG with working code
-   - New SVG with updated design (no code)
-2. Extract script and self-prompting comments from old file
-3. Ask student if element names stayed the same
-4. Map code to new element structure
-5. Test and adjust rotation origins or positions if needed
-6. Output merged SVG with updated comments
-
-## Testing During Development
-
-**No external tools needed** - just open the SVG in any browser to test!
-
-## Common Issues & Solutions
-
-### Element not found
-
-- Check element ID exists in SVG
-- Figma/Illustrator may generate random IDs
-- Student needs to name layers properly
-- Open SVG in text editor to verify IDs
-
-### Animation backwards
-
-- Reverse calculation: `angle = maxAngle - (value * range)`
-- Or flip sign: `angle = -45 - (value * 0.9)`
-- Use universal test page to verify across full range
-
-### localStorage not found
-
-- Filename became storage key with sanitization
-- Console warning shows actual key being used
-- Student needs to set value in their dashboard
-- Universal test page should work immediately with auto-cycle
-
-### Script doesn't run
-
-- Check CDATA wrapper is correct
-- Check for syntax errors (missing brackets, quotes)
-- SVG must be loaded as `<object>` or standalone file, not innerHTML
-- Universal test page uses `<object>` tag correctly
-
-### Animation only works in test page
-
-- Check that dashboard/project uses `<object>` tag, not `<img>`
-- Check that dashboard sets localStorage with correct key
-- Verify dashboard's setInterval or update mechanism running
-
-### Wrong range selected on test page
-
-- Student needs to toggle between [0-100] and [-100 to +100]
-- Check self-prompting comments in SVG to confirm intended range
-
-## CRITICAL: Preserving Boundary Markers
-
-**YOU MUST ALWAYS include these exact boundary comment markers in EVERY SVG you generate:**
+**ALWAYS preserve these exact markers:**
 
 ```javascript
 // ========================================
 // STUDENT EDIT ZONE
-// This section controls how the instruments displays
 // ========================================
 ```
 
-And the closing marker:
+And the closing:
 
 ```javascript
 // ========================================
@@ -272,78 +151,82 @@ And the closing marker:
 // ========================================
 ```
 
-**Why these markers are critical:**
+**Why these markers are essential:**
 
-- Students are visual designers with limited coding experience
-- These boundary markers are **visual landmarks** that show where it's safe to edit
-- Without them, students don't know which code to modify vs. which infrastructure code to leave alone
-- The equals signs (========) create a clear visual separator in text editors
-- The phrase "STUDENT EDIT ZONE" is instantly recognizable
+Students are visual designers with limited coding experience. They don't understand function scope or code structure. The boundary markers provide:
 
-**Rules for boundary markers:**
+- **Visual landmarks** they can search for (Ctrl+F "STUDENT EDIT ZONE")
+- **Plain English** showing where it's safe to edit
+- **Clear boundaries** - opening and closing create an obvious box
+- **Safety** - harder to accidentally delete infrastructure code
 
-1. **NEVER remove or modify these comment markers** when editing existing code
-2. **ALWAYS include them** when generating new code
-3. **Keep the exact formatting** - 40 equals signs, all caps, exact wording
-4. Everything between these markers is student-editable
-5. Everything outside these markers is infrastructure (don't touch)
+For this audience, the markers are **critical scaffolding** that compensates for not understanding code structure.
 
-## Output Format
+**Rules:**
 
-Always provide a complete, production-ready SVG file
+- Never remove or modify the markers
+- Keep exact formatting (40 equals signs, all caps, exact wording)
+- Include in every generated SVG
+- Everything between markers is student-editable
+- Everything outside markers is infrastructure (don't touch)
 
-### Production SVG
+## Comment Style
 
-Complete, downloadable SVG file with:
-
-- All original SVG elements preserved
-- Script embedded in CDATA with proper wrappers
-- **STUDENT EDIT ZONE** clearly marked
-- Auto-detects localStorage key from filename
-- Descriptive comments explaining the animation
-- Console logging for debugging
-- 50ms update interval for smooth animation
-
-**Testing:**
-Students open the SVG directly in any web browser to see it animate automatically.
-
-### Comment Style in STUDENT EDIT ZONE
-
-Include clear, student-friendly comments that explain the animation intent:
+Write comments that explain both WHAT and WHY in student-friendly language:
 
 ```javascript
 /**
- * Updates the battery instruments display
- * - The instruments needle (line) rotates to show battery level
- * - 0% = -180 degrees (pointing left, empty)
- * - 50% = -90 degrees (pointing up, half)
- * - 100% = 0 degrees (pointing right, full)
+ * Battery gauge animation
+ * - Needle rotates to show battery level
+ * - 0% = -180° (pointing left/empty)
+ * - 100% = 0° (pointing right/full)
  */
 
+// Get battery value from localStorage, use 50 as default if not found
+const batteryLevel = parseFloat(localStorage.getItem("battery")) || 50;
+
 // Calculate rotation angle
-// Formula: -180 degrees + (percentage * 1.8)
-const angle = -180 + instrumentValue * 1.8;
+// Formula: -180° + (percentage × 1.8)
+// This maps 0-100 to a -180° to 0° range
+const angle = -180 + batteryLevel * 1.8;
+
+// Apply rotation to the needle element
+// The numbers (256 256) are the rotation point (center of gauge)
+document.getElementById("needle").setAttribute("transform", `rotate(${angle} 256 256)`);
 ```
 
-These comments help students understand what's happening AND help the AI understand intent for future iterations.
+## Output Format
+
+For SVG files, Claude provides **only the code for the STUDENT EDIT ZONE**, not the entire SVG file.
+
+Students then:
+
+1. Open their SVG in a text editor
+2. Find the STUDENT EDIT ZONE markers (Ctrl+F "STUDENT EDIT ZONE")
+3. Replace the content between markers with Claude's code
+4. Save and test
+
+This prevents corruption of visual elements and gives students control over the merge process.
+
+**Testing:** Student opens SVG file directly in any browser to see animation.
 
 ## Student-Friendly Practices
 
-1. **Use descriptive comments** - explain what each section does
-2. **Single responsibility** - one animation per SVG file
-3. **Magic numbers explained** - comment why `0.9` or specific angles chosen
-4. **Default values** - graceful fallback if localStorage empty
-5. **Element ID guidance** - explain how to set IDs in design tools
-
-**Testing:**
-Student opens the svg file directly in Chrome/Firefox/Safari and watches it auto-animate.
+1. **Single responsibility** - One animation concept per SVG
+2. **Explain all numbers** - Comment why specific angles/ranges/formulas chosen
+3. **Graceful defaults** - Always provide fallback values if data missing (using `|| defaultValue`)
+4. **Descriptive names** - `batteryLevel` not `val`, `needleAngle` not `a`
+5. **Element ID guidance** - Remind students to name layers in design tools before export
+6. **Step-by-step comments** - Each line or small block gets an explanation
+7. **Formula breakdown** - Show the math and what it does (e.g., "0.9 = 90°/100")
 
 ## Remember
 
 - Students are visual designers, not programmers
-- Iterations are expected and normal
-- Code should be readable and self-explanatory with clear STUDENT EDIT ZONE
-- Each SVG is a self-contained component with built-in test mode
-- Filename → localStorage key is the namespace strategy (auto-detected)
-- STUDENT EDIT ZONE makes it clear what students can safely modify
-- SVG Code Merger tool ([helpers/svg-code-merger.html](helpers/svg-code-merger.html)) helps merge designs and code
+- They work by cut-and-paste, not by understanding code
+- Iterations are normal and expected
+- Code should be self-explanatory with clear boundaries
+- Each SVG is self-contained and testable standalone
+- STUDENT EDIT ZONE boundary markers are essential scaffolding
+- Over-comment rather than under-comment
+- Use plain English in comments, avoid jargon
