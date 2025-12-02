@@ -27,7 +27,9 @@ A short course for designers on making interactive SVGs with AI help. It will be
 - The SVG is now portable, contains its code.
 - One can 'round trip' between design programs and AI, made easier with the tools included here
 
-![Oxygen Gauge SVG](images/instrument1.svg)
+<object data="images/instrument1.svg" type="image/svg+xml" width="300" >
+  <img src="images/instrument1.svg" alt="Oxygen Gauge SVG" />
+</object>
 
 ## The Tools
 
@@ -69,14 +71,14 @@ I was never a Flash designer/developer. Like many 90's kid designers, I learned 
 
 **_We should mourn the loss of a tool that empowered designers to think in their own visual language and create the item rather than write specification documents to instruct others what to do._**
 
-## "OK, Old timer, why does SVG matter to-day"?
+## Why does SVG matter today?
 
 SVG is widely used on the web for icons and illustrations. BUT its origin story gives it secret powers from those ancient times.
 
 - CSS can style SVG elements: Animations
 - JavaScript can manipulate the file: Interactivity
 - JavaScript can load data: Data Visualization
-  **_Inside the SVG file_**
+  **_These styles and code are carried inside the SVG file._**
 
 SVGs matter because:
 
