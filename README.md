@@ -27,7 +27,7 @@ A short course for designers on making interactive SVGs with AI help. It will be
 - The SVG is now portable, contains its code.
 - One can 'round trip' between design programs and AI, made easier with the tools included here
 
-<object data="images/instrument1.svg" type="image/svg+xml" width="300" >
+<object data="images/instrument1.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/instrument1.svg" alt="Oxygen Gauge SVG" />
 </object>
 
@@ -113,8 +113,8 @@ I made this handy color wheel for our Goldman Sachs Design System (which was pub
 
 _Hover over any color segment to view its name, RGB values, and hex code. Click to lock the color information to copy values._
 
-<object data="images/GSDS-color-wheel-v2.svg" type="image/svg+xml" width="700" height="800">
-  <img src="images/GSDS-color-wheel-v2.svg" alt="Goldman Sachs Design System Color Wheel" />
+<object data="images/GSDS-color-wheel-v2.svg" type="image/svg+xml" width="700" height="800" class="interstitial_svg">
+  <img src="images/GSDS-color-wheel-v2.svg" alt="GS Design System Color Wheel" />
 </object>
 
 ## The workshop: Coding an interactive, data-driven, illustration
