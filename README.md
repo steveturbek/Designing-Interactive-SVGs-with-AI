@@ -14,6 +14,8 @@ A short course for designers on making interactive SVGs with AI help. It will be
 {:toc}
 </div>
 
+![Animation of a letter Z](images/z-animation.svg)
+
 ## TLDR
 
 - Designers know design tools, but coding and interaction is often a challenge
@@ -25,7 +27,14 @@ A short course for designers on making interactive SVGs with AI help. It will be
 - The SVG is now portable, contains its code.
 - One can 'round trip' between design programs and AI, made easier with the tools included here
 
-![Animation of a letter Z](images/z-animation.svg)
+![Oxygen Gauge SVG](images/instrument1.svg)
+
+## The Tools
+
+- **<a href="svg-ai-helper.html" target="new">SVG AI Helper</a>** used in this workshop to add interactivity to a SVG.
+- <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant</a> Helper page to copy SVG code from one SVG file to another
+
+_Note: All code on this site works solely in the browser, no data is retained._ You can download these open source web pages, they are designed to also work locally on your computer in chrome.
 
 ## Background
 
