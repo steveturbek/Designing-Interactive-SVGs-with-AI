@@ -14,7 +14,9 @@ A short course for designers on making interactive SVGs with AI help. It will be
 {:toc}
 </div>
 
-![Animation of a letter Z](images/z-animation.svg)
+<object data="images/z-animation.svg" type="image/svg+xml" width="300" class="interstitial_svg">
+  <img src="images/z-animation.svg" alt="Animation of a letter Z" />
+</object>
 
 ## TLDR
 
