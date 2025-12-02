@@ -2,7 +2,7 @@
 
 A short course for designers on making interactive SVGs with AI help. It will be presented as a [CreativeMornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026. [View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)
 
-<b class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/">actual article web page</a></b>
+<b class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></b>
 
 <div class="toc-wrapper" markdown="1">
 
@@ -36,7 +36,7 @@ A short course for designers on making interactive SVGs with AI help. It will be
 - **<a href="svg-ai-helper.html" target="new">SVG AI Helper</a>** used in this workshop to add interactivity to a SVG.
 - <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant</a> Helper page to copy SVG code from one SVG file to another
 
-_Note: All code on this site works solely in the browser, no data is retained._ You can download these open source web pages, they are designed to also work locally on your computer in chrome.
+_Note: All code on this site works solely in the browser, no data is retained._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome.
 
 ## Background
 
@@ -117,7 +117,7 @@ _Hover over any color segment to view its name, RGB values, and hex code. Click 
   <img src="images/GSDS-color-wheel-v2.svg" alt="Goldman Sachs Design System Color Wheel" />
 </object>
 
-## The workshop: Coding an interactive, data driven, illustration
+## The workshop: Coding an interactive, data-driven, illustration
 
 We are not going to recreate Flash in this workshop. If you want to get deep into data visualization, you should learn the real tools like [D3js](https://d3js.org/what-is-d3)
 The [gallery](https://observablehq.com/@d3/gallery) is awesome!
@@ -140,9 +140,9 @@ You need:
 
 1. Let's start with a [Equirectangular World Map](https://commons.wikimedia.org/wiki/File:Longitude-latitude.svg) _Thanks Sven nestle2 at Wikipedia_
 
-Equirectangular means they stretched a globe into a rectangle, which makes for easier math for this project.
+Equirectangular means they stretched a globe into a rectangle, which makes for easier math for this project. _I Just learned this also!_
 
-![World Map](images/ISS-Map-1-cropped.svg)
+![World Map](images/ISS-Map-1-simplfied-styles.svg)
 
 1. Let's add a red circle in the middle, to represent the ISS. Do it in your design program OR just open the file in TextEdit and simply pasting this right before the `</svg>`
 
@@ -153,10 +153,6 @@ Equirectangular means they stretched a globe into a rectangle, which makes for e
 ```
 
 (It makes a circle, in a group named ISS.). This is in a group, so when you open it in Illustrator it shows the group. Also, you could add more to the group layer later.
-
-![ISS Map](images/ISS-Map-2-add-circle.svg)
-
-1. Let's open the file and reduce the number of colors.
 
 ![ISS Map](images/ISS-Map-3-simplfied-styles.svg)
 
@@ -185,7 +181,7 @@ Here is an [example chat using workflow tool](https://chatgpt.com/share/692c3001
 
 ### Workshop 4: Submarine Instruments and working with apps
 
-Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9600-128b0e82be92) to show the back and forth redesigning a dashboard instrument.
+Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9600-128b0e82be92){:target="\_blank"} to show the back and forth redesigning a dashboard instrument.
 
 ## Tips and Notes
 
