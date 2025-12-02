@@ -29,8 +29,8 @@ A short course for designers on making interactive SVGs with AI help. It will be
 - The SVG is now portable, contains its code.
 - One can 'round trip' between design programs and AI, made easier with the tools included here
 
-<object data="images/instrument1.svg" type="image/svg+xml" width="300" class="interstitial_svg">
-  <img src="images/instrument1.svg" alt="Oxygen Gauge SVG" />
+<object data="images/oxygen.svg" type="image/svg+xml" width="300" class="interstitial_svg">
+  <img src="images/oxygen.svg" alt="Oxygen Gauge SVG" />
 </object>
 
 ## The Tools
@@ -40,6 +40,10 @@ A short course for designers on making interactive SVGs with AI help. It will be
 
 _Note: All code on this site works solely in the browser, no data is retained._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome.
 
+<object data="images/pitch.svg" type="image/svg+xml" width="300" class="interstitial_svg">
+  <img src="images/pitch.svg" alt="Pitch Gauge SVG" />
+</object>
+
 ## Background
 
 I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interfaces/)" Senior Design Studio in the Industrial Design program at Pratt Institute.
@@ -48,6 +52,10 @@ In my workshop, the students designed a dashboard of instruments as part of a pe
 I wrote a “Skill” to prep the AI to focus on the right thing, and use the right context. They had no coding experience, It was pretty magical….
 
 The workshop is not specifically about dashboard elements. It is more conceptual reframing about design tools and AI, and rediscovering tools we designers always had.
+
+<object data="images/battery.svg" type="image/svg+xml" width="300" class="interstitial_svg">
+  <img src="images/battery.svg" alt="Battery Gauge SVG" />
+</object>
 
 ## What is SVG and can it be cured?
 
@@ -61,6 +69,10 @@ SGML had many descendants, including Hyper Text Markup Language and XML. XML bir
 
 SVGs are an **graphic** format, like JPEG, GIF, PNG. But they store the information not as pixels, but math. It has lines, rectangles, circles, and any complex curved shape. (If you think of the drawing tools in Adobe Illustrator or Figma, these are **vector** shapes.). This means that the file size is tiny, but they are **scalable** up to a billboard size without becoming blurry. Fonts are a kind of vector file as well. They are used everywhere, especially on the web.
 
+<object data="images/depth.svg" type="image/svg+xml" width="200" class="interstitial_svg">
+  <img src="images/depth.svg" alt="Depth Gauge SVG" />
+</object>
+
 ## What was Flash and why did it matter?
 
 Flash was a program that made animations that ran in the web browsers of the 90's and early 2000's. By working quickly and consistently across browsers (a huge problem of the time), it enabled designers to deliver a beautiful experience. It was the only way to deliver video and music streams, and became wildly popular, to the point that entire websites would simply be a flash file.
@@ -72,6 +84,10 @@ For all its flaws, Flash was a designer's program, and there has not been a repl
 I was never a Flash designer/developer. Like many 90's kid designers, I learned programming in a program called Macromedia Director, most famous for making interactive CD-ROMs, which, I swear, were a big deal. I used its "Shockwave" web framework to make interactive games and experiences. Sadly, none are visible on today's technology.
 
 **_We should mourn the loss of a tool that empowered designers to think in their own visual language and create the item rather than write specification documents to instruct others what to do._**
+
+<object data="images/compass.svg" type="image/svg+xml" width="200" class="interstitial_svg">
+  <img src="images/compass.svg" alt="Compass Gauge SVG" />
+</object>
 
 ## Why does SVG matter today?
 
@@ -93,6 +109,11 @@ SVGs matter because:
 
 _One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details.
 _
+
+<object data="images/speed.svg" type="image/svg+xml" width="200" class="interstitial_svg">
+  <img src="images/speed.svg" alt="Speed Gauge SVG" />
+</object>
+_[Thanks, Anthony Robinson for this cool font!](https://www.1001fonts.com/14-segment-led-font.html) _
 
 ### Animation
 
@@ -121,7 +142,7 @@ _Hover over any color segment to view its name, RGB values, and hex code. Click 
 
 ## The workshop: Coding an interactive, data-driven, illustration
 
-We are not going to recreate Flash in this workshop. If you want to get deep into data visualization, you should learn the real tools like [D3js](https://d3js.org/what-is-d3)
+We are not going to recreate Flash in this workshop! If you want to get deep into data visualization, you should learn the tools like [D3js](https://d3js.org/what-is-d3)
 The [gallery](https://observablehq.com/@d3/gallery) is awesome!
 
 What we will do:
