@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      .title { font-family: Georgia, 'Times New Roman', Times, serif, serif; font-size: 40px; font-weight: bold; fill: green; }
+      .score { font-family: Arial, sans-serif; font-size: 48px; font-weight: bold; fill: #333; }
+      .rate-text { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .emoji { font-size: 100px; }
+
+      .btn-rect { fill: #4CAF50; stroke: #45a049; stroke-width: 2; cursor: pointer; transition: fill 0.3s; }
+      .btn-rect:hover { fill: #45a049; }
+      .btn-rect:active { fill: #3d8b40; }
+      .btn-text { fill: white; font-family: Arial, sans-serif; font-size: 36px; font-weight: bold; pointer-events: none; user-select: none; }
+
+
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="#fbf6d3" stroke="green" stroke-width="4px"/>
+
+  <text x="50%" y="40" text-anchor="middle" class="title">Trading Currency</text>
+  <text x="50%" y="90" text-anchor="middle" class="title">📈 The Game! 📉</text>
+  
+  
+
+  
+  <text x="50%" y="40%" class="rate-text" text-anchor="middle">€1 = $
+  <tspan class="rate-text" text-anchor="left" id="rate">Loading...</tspan>
+  <tspan class="rate-text" text-anchor="left" id="rateDirection"></tspan>
+  </text>
+
+
+
+  <g class="button" onclick="handleClick()">
+    <rect class="btn-rect" x="30%" y="82%" width="40%" height="10%" rx="8" />
+    <text class="btn-text" x="50%" y="90%" text-anchor="middle" id="btnText">Buy 💶</text>
+  </g>
+  
+
+
+<text x="50%" y="57%" text-anchor="middle" class="score">You Have</text>
+<text x="50%" y="70%" text-anchor="middle" class="score" id="balance">$1,000,000,000</text>
+<!-- <text x="50%" y="80%" text-anchor="middle" id="percentage">+5%</text> -->
+
+
+  <script type="text/javascript">
+    <![CDATA[
+
+    var balance = 1000000000;
+    var currency = "USD";
+    var lastUSD_EUR = 1;
+
+    async function fetchRate() {
+      try {
+      const response = await fetch('https://api.coinbase.com/v2/prices/EUR-USD/spot');
+      const data = await response.json();
+      
+      if (parseFloat(data.data.amount).toFixed(9) > lastUSD_EUR){
+          document.getElementById('rateDirection').textContent = "🔼";
+      } else if (parseFloat(data.data.amount).toFixed(9) < lastUSD_EUR){
+          document.getElementById('rateDirection').textContent = "🔽";
+      } else {
+          document.getElementById('rateDirection').textContent = "  ";
+      }
+
+      lastUSD_EUR  = parseFloat(data.data.amount).toFixed(9);
+      document.getElementById('rate').textContent = lastUSD_EUR;
+      } catch (error) {
+      document.getElementById('rate').textContent = 'Error';
+      }
+    }
+    setInterval(fetchRate, 500);  // update twice a second
+
+
+
+    function handleClick() {
+      if (currency=="USD"){      
+      //document.getElementById('percentage').textContent = (parseFloat( 1 - balance/1000000000).toFixed(4)) + "%";
+
+      balance = Math.round(balance / lastUSD_EUR);
+      document.getElementById('balance').textContent = 
+      balance.toLocaleString('en-US', {style: 'currency', currency: 'EUR',
+      minimumFractionDigits: 0});
+      
+      document.getElementById('btnText').textContent = "Buy 💵"
+      currency="EUR";
+
+    } else {
+
+      balance = Math.round(balance * lastUSD_EUR);
+      document.getElementById('balance').textContent = 
+      balance.toLocaleString('en-US', {style: 'currency', currency: 'USD',
+      minimumFractionDigits: 0});
+
+      //document.getElementById('percentage').textContent = (parseFloat( 1 - balance/1000000000).toFixed(4)) + "%";
+      currency="USD";
+      document.getElementById('btnText').textContent = "Buy 💶"
+    }
+  
+    console.log('trade',balance, currency, lastUSD_EUR );
+    }
+
+    ]]>
+  </script>
+</svg>

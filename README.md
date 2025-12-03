@@ -14,8 +14,8 @@ A short course for designers on making interactive SVGs with AI help. It will be
 {:toc}
 </div>
 
-<object data="images/z-animation.svg" type="image/svg+xml" width="300" class="interstitial_svg">
-  <img src="images/z-animation.svg" alt="Animation of a letter Z" />
+<object data="images/oxygen.svg" type="image/svg+xml" width="300" class="interstitial_svg">
+  <img src="images/oxygen.svg" alt="Oxygen Gauge SVG" />
 </object>
 
 ## TLDR
@@ -29,11 +29,7 @@ A short course for designers on making interactive SVGs with AI help. It will be
 - The SVG is now portable, contains its code.
 - One can 'round trip' between design programs and AI, made easier with the tools included here
 
-<object data="images/oxygen.svg" type="image/svg+xml" width="300" class="interstitial_svg">
-  <img src="images/oxygen.svg" alt="Oxygen Gauge SVG" />
-</object>
-
-## The Tools
+### The Tools
 
 - **<a href="svg-ai-helper.html" target="new">SVG AI Helper</a>** used in this workshop to add interactivity to a SVG.
 - <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant</a> Helper page to copy SVG code from one SVG file to another
@@ -46,12 +42,9 @@ _Note: All code on this site works solely in the browser, no data is retained._ 
 
 ## Background
 
-I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interfaces/)" Senior Design Studio in the Industrial Design program at Pratt Institute.
+I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interfaces/)" Senior Design Studio in the Industrial Design program at Pratt Institute. In my workshop, the students designed a dashboard of instruments as part of a personal submarine design.
 
-In my workshop, the students designed a dashboard of instruments as part of a personal submarine design.
-I wrote a “Skill” to prep the AI to focus on the right thing, and use the right context. They had no coding experience, It was pretty magical….
-
-The workshop is not specifically about dashboard elements. It is more conceptual reframing about design tools and AI, and rediscovering tools we designers always had.
+I wrote a “Skill” to prep the AI to focus on the right thing, and use the right context. They had no coding experience, It was pretty magical. This workshop extends this idea. It is not solely about dashboard design, but demonstrating a new way for designers to use AI, and rediscovering the power in the tools we designers always had.
 
 <object data="images/battery.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/battery.svg" alt="Battery Gauge SVG" />
@@ -85,7 +78,7 @@ I was never a Flash designer/developer. Like many 90's kid designers, I learned 
 
 **_We should mourn the loss of a tool that empowered designers to think in their own visual language and create the item rather than write specification documents to instruct others what to do._**
 
-<object data="images/compass.svg" type="image/svg+xml" width="200" class="interstitial_svg">
+<object data="images/compass.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/compass.svg" alt="Compass Gauge SVG" />
 </object>
 
@@ -96,7 +89,8 @@ SVG is widely used on the web for icons and illustrations. BUT its origin story 
 - CSS can style SVG elements: Animations
 - JavaScript can manipulate the file: Interactivity
 - JavaScript can load data: Data Visualization
-  **_These styles and code are carried inside the SVG file._**
+
+**_These styles and code are carried inside the SVG file._**
 
 SVGs matter because:
 
@@ -107,22 +101,22 @@ SVGs matter because:
 1. SVGs are written as a language and AIs are excellent at interpreting language.
 1. As you, a designer, always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
 
-_One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details.
-_
+_One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details._
 
-<object data="images/speed.svg" type="image/svg+xml" width="200" class="interstitial_svg">
+<object data="images/speed.svg" type="image/svg+xml" width="400" class="interstitial_svg">
   <img src="images/speed.svg" alt="Speed Gauge SVG" />
 </object>
-_[Thanks, Anthony Robinson for this cool font!](https://www.1001fonts.com/14-segment-led-font.html) _
+[_Thanks, Anthony Robinson for this cool font!_](https://www.1001fonts.com/14-segment-led-font.html)
 
-### Animation
+## Animation in SVGs
 
-I'm not going to go deep into animation as there are so many more competent people (see references). But I want to highlight one because it is so conceptually cool. I'm sure you have seen the animation of someone drawing an item, like this.  
-![Animation of a letter Z](images/z-animation.svg)
+The animation capabilities in a SVG are quite powerful. I'm not going to go deep into animation as there are so many more competent people (see references). But I want to highlight one because it is so conceptually cool. I'm sure you have seen the animation of someone "drawing" a shape. This "drawing" animation is only a couple of lines of code - the conceptual idea was to make this outline have a dashed line style, but the dashes are really huge. The animation slides that dash along the line, making it look like a drawing.
 
-What if I told you that this animation was only a couple of lines of code - the conceptual idea was to make this shape have a dashed line, only with really huge dashes, and slide that dash along the line. The designer never drew anything.
+<object data="images/z-animation.svg" type="image/svg+xml" width="400" class="interstitial_svg">
+  <img src="images/z-animation.svg" alt="Animation of a letter Z" />
+</object>
 
-### Interactivity
+## Interactivity in SVGs
 
 Basically, everything you can do with a webpage: rollovers, buttons, etc can be done in a SVG. It uses the browser Javascript, almost the same as the web page.
 
@@ -192,17 +186,27 @@ It doesn't need to be pixel-perfect.
 I want it to update once a second
 ```
 
-**It may not get it right at first!**
-Here is an [example chat using workflow tool](https://chatgpt.com/share/692c3001-01e0-800d-96a4-fa3aa7d92fd5).
+1. Working ISS Tracker!
+
+<object data="images/ISS-Map-4-simplfied-styles-interactive-claude.svg" type="image/svg+xml" width="800" class="interstitial_svg">
+  <img src="images/ISS-Map-4-simplfied-styles-interactive-claude.svg" alt="Current Position of ISS" />
+</object>
+
+1. It may not get it right at first!
+
+Here is an [example chatGPT session using workflow tool](https://chatgpt.com/share/692c3001-01e0-800d-96a4-fa3aa7d92fd5).
 
 - It made a version [ISS Map - broken ](images/ISS-Map-4-simplfied-styles-interactive-chatGPT-not-working.svg)
 - I explained it wasn't working and it diagnosed the problem.
 - It made a fixed version. [ISS Map - fixed](images/ISS-Map-5-simplfied-styles-interactive-chatGPT-fixed.svg)
 
-1. Working ISS Tracker!
-   ![World Map](images/ISS-Map-4-simplfied-styles-interactive-claude.svg)
+## Workshop 2: Interactive Currency Game
 
-### Workshop 4: Submarine Instruments and working with apps
+<object data="images/currency-game.svg" type="image/svg+xml" width="400" class="interstitial_svg">
+  <img src="images/currency-game.svg" alt="currency trading game SVG" />
+</object>
+
+## Workshop 3: Submarine Instruments and working with apps
 
 Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9600-128b0e82be92){:target="\_blank"} to show the back and forth redesigning a dashboard instrument.
 
