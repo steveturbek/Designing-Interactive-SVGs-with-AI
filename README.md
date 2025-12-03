@@ -213,15 +213,15 @@ Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9
 
 ## Tips and Notes
 
+### Fonts
+
+One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section).
+
 ### Security Note
 
 Like all code, javascript can be used to harm people. Some websites have strict rules against SVG or disable javascript in SVG to prevent people from stealing other people's data. Don't be evil.
 
 ![Meme of The Simpson's, with caption "Gentlemen, To Evil"](images/simpsons-gentlemen-to-evil.gif "Gentlemen, To Evil")
-
-### Fonts
-
-One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section).
 
 ### SVG Animation Troubleshooting Guide
 

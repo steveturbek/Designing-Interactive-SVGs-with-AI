@@ -97,7 +97,7 @@
       document.getElementById('btnText').textContent = "Buy 💶"
     }
   
-    console.log('trade',balance, currency, lastUSD_EUR );
+    //console.log('trade',balance, currency, lastUSD_EUR );
     }
 
     ]]>

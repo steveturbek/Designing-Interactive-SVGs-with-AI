@@ -137,7 +137,7 @@
     }
 
     instrumentValue = window.testValue;
-    console.log('no local storage \"'+localStorageName+'\", using test value:', instrumentValue);
+    //console.log('no local storage \"'+localStorageName+'\", using test value:', instrumentValue);
 
      }
 

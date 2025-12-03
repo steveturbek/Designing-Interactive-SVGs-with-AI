@@ -30,7 +30,7 @@
     </style>
   </defs>
   <rect class="st2" width="512" height="256"/>
-  <text class="st1" transform="translate(10 156.2)"><tspan id="speedNum" x="0" y="0">125%</tspan></text>
+  <text class="st1" transform="translate(10 156.2)" text-anchor="right" ><tspan id="speedNum" x="0" y="0">125%</tspan></text>
   <text class="st0" transform="translate(10 251.7)"><tspan x="0" y="0">_SPEED_</tspan></text>
 
   <script type="text/javascript">
@@ -79,7 +79,7 @@
         }
 
         instrumentValue = window.testValue;
-        console.log('no local storage "'+localStorageName+'", using test value:', instrumentValue);
+        //console.log('no local storage "'+localStorageName+'", using test value:', instrumentValue);
       }
 
       updateSVG(instrumentValue);
