@@ -32,7 +32,7 @@ A short course for designers on making interactive SVGs with AI help. It will be
 ### The Tools
 
 - **<a href="svg-ai-helper.html" target="new">SVG AI Helper</a>** used in this workshop to add interactivity to a SVG.
-- <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant</a> Helper page to copy SVG code from one SVG file to another
+- <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant</a> helper page to copy SVG code from one SVG file to another
 
 _Note: All code on this site works solely in the browser, no data is retained._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome.
 
@@ -42,9 +42,9 @@ _Note: All code on this site works solely in the browser, no data is retained._ 
 
 ## Background
 
-I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interfaces/)" Senior Design Studio in the Industrial Design program at Pratt Institute. In my workshop, the students designed a dashboard of instruments as part of a personal submarine design.
+I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interfaces/)" Senior Design Studio in the Industrial Design program at Pratt Institute. In my class, the students designed a 'working' dashboard of instruments as part of a personal submarine design.
 
-I wrote a “Skill” to prep the AI to focus on the right thing, and use the right context. They had no coding experience, It was pretty magical. This workshop extends this idea. It is not solely about dashboard design, but demonstrating a new way for designers to use AI, and rediscovering the power in the tools we designers always had.
+These students had no coding experience, so I wrote a “Skill” to prep the AI to focus on the right things. It was pretty magical. This workshop extends this idea. It is not solely about dashboard design, but demonstrating a new way for designers to use AI, and rediscovering the power in the tools we designers always had.
 
 <object data="images/battery.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/battery.svg" alt="Battery Gauge SVG" />
@@ -52,15 +52,15 @@ I wrote a “Skill” to prep the AI to focus on the right thing, and use the ri
 
 ## What is SVG and can it be cured?
 
-As we all know, markup languages were given to humans by ancient aliens. We have be able to reconstruct it as "SGML" or Standard Generalized Markup Language. No one speaks SGML today, but archeological evidence suggests SGML was used in "newspapers" and "magazines", which appeared to made by primitive people from trees or bark.
+As we all know, markup languages were given to humans by ancient aliens. We have be able to reconstruct their language as "SGML" or Standard Generalized Markup Language. No one speaks SGML today, but archeological evidence suggests SGML was used in "newspapers" and "magazines", which appeared to made by primitive people from trees or bark.
 
 The basic idea is to wrap data in tags so BOTH computers and people could understand it.
 
 `<person><name>Alice</name><age>30</age></person>`
 
-SGML had many descendants, including Hyper Text Markup Language and XML. XML birthed hundreds of niche markup formats. The main one that survives today is _SVG (Scalable Vector Graphics)_.
+SGML had many descendants, including Hyper Text Markup Language and XML. XML birthed hundreds of niche markup formats. The main one that survives today is _SVG (Scalable Vector Graphic)_.
 
-SVGs are an **graphic** format, like JPEG, GIF, PNG. But they store the information not as pixels, but math. It has lines, rectangles, circles, and any complex curved shape. (If you think of the drawing tools in Adobe Illustrator or Figma, these are **vector** shapes.). This means that the file size is tiny, but they are **scalable** up to a billboard size without becoming blurry. Fonts are a kind of vector file as well. They are used everywhere, especially on the web.
+SVGs are an **Graphic** file format, like JPEG, GIF, PNG. But SVGs store the information as math, not pixels. The drawing tools in Adobe Illustrator or Figma make **Vector** shapes like lines, rectangles, circles, and any complex curved shape. This means that the file size is tiny, but they are **Scalable** up to a billboard size without becoming blurry. Fonts are a kind of vector file as well. SVGs are used everywhere, especially on the web.
 
 <object data="images/depth.svg" type="image/svg+xml" width="200" class="interstitial_svg">
   <img src="images/depth.svg" alt="Depth Gauge SVG" />
@@ -82,9 +82,9 @@ I was never a Flash designer/developer. Like many 90's kid designers, I learned 
   <img src="images/compass.svg" alt="Compass Gauge SVG" />
 </object>
 
-## Why does SVG matter today?
+## Why do SVG matter today?
 
-SVG is widely used on the web for icons and illustrations. BUT its origin story gives it secret powers from those ancient times.
+SVG is widely used on the web for icons and illustrations. BUT the SVG origin story gives it secret powers from those ancient times.
 
 - CSS can style SVG elements: Animations
 - JavaScript can manipulate the file: Interactivity
@@ -148,7 +148,7 @@ What we will do:
 
 You need:
 
-- A design software Adobe Illustrator is the best for this demo.
+- Design software. Adobe Illustrator is the best for this demo.
 - Chrome browser and the internet
 - AI access. They all can work, ChatGPT allows SVG upload without paying.
 - 60 minutes, more if you use social media
@@ -283,6 +283,19 @@ Ultimately design is the communication of ideas, whether it is the idea about a 
 - - **Check:** If a layer is named yourElementName, Open your SVG in a text editor and search for `id="yourElementName"`
 - Some AIs have restrictions against uploading SVGs, at least on free plans. But pasting the SVG text is apparently fine.
 - One can use custom fonts in SVG. [Google fonts](https://fonts.google.com/), [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section), or just many free font stores. You need to tell the SVG where to find the file. See the Speed gauge code for more.
+
+### Exporting SVGs
+
+**Adobe Illustrator Export**
+![Exporting from Adobe Illustrator](images/Illustrator_SVG_export.png)
+![Exporting from Adobe Illustrator](images/Illustrator_SVG_export_Advanced_Options.png)
+![Exporting from Adobe Illustrator](images/Illustrator_SVG_export_textedit.png)
+
+**Figma Export**
+![Exporting from Figma](images/Figma-export1.png)
+![Exporting from Figma](images/Figma-export-details.png)
+
+Figma
 
 ### Troubleshooting
 
