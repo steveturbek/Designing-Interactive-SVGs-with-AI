@@ -32,7 +32,6 @@ A short course for designers on making interactive SVGs with AI help. It will be
 ### The Tools
 
 - **<a href="svg-ai-helper.html" target="new">SVG AI Helper</a>** used in this workshop to add interactivity to a SVG.
-- <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant</a> helper page to copy SVG code from one SVG file to another
 
 _Note: All code on this site works solely in the browser, no data is retained._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome.
 
@@ -120,7 +119,7 @@ The animation capabilities in a SVG are quite powerful. I'm not going to go deep
 
 Basically, everything you can do with a webpage: rollovers, buttons, etc can be done in a SVG. It uses the browser Javascript, almost the same as the web page.
 
-### Interactive Color Wheel
+## Example 1: Color Wheel : Basic Interactivity
 
 Interactive SVGs can be a game changer for designers working with Devs.
 
@@ -134,82 +133,15 @@ _Hover over any color segment to view its name, RGB values, and hex code. Click 
   <img src="images/GSDS-color-wheel-v2.svg" alt="GS Design System Color Wheel" />
 </object>
 
-## Workshop 1: Coding an interactive, data-driven, illustration
+## Example 2: Currency Game : Data API & Game Logic
 
-We are not going to recreate Flash in this workshop! If you want to get deep into data visualization, you should learn the tools like [D3js](https://d3js.org/what-is-d3)
-The [gallery](https://observablehq.com/@d3/gallery) is awesome!
-
-What we will do:
-
-- Design an image of a data visualization
-- Save as SVG
-- Add some code using my helpers
-- Work with AI to get it right
-
-You need:
-
-- Design software. Adobe Illustrator is the best for this demo.
-- Chrome browser and the internet
-- AI access. They all can work, ChatGPT allows SVG upload without paying.
-- 60 minutes, more if you use social media
-
-### Workshop 1: Chart the International Space Station's location on a map
-
-1. Let's start with a [Equirectangular World Map](https://commons.wikimedia.org/wiki/File:Longitude-latitude.svg) _Thanks Sven nestle2 at Wikipedia_
-
-Equirectangular means they stretched a globe into a rectangle, which makes for easier math for this project. _I Just learned this also!_
-
-![World Map](images/ISS-Map-1-simplified-styles.svg)
-
-Let's add a red circle in the middle, to represent the ISS. Do it in your design program OR better yet just open the file in TextEdit and simply pasting this right before the `</svg>`
-
-```
-<g id="ISS">
-    <circle id="circle" class="st6" cx="0" cy="0" r="5"/>
-</g>
-```
-
-(It makes a circle, in a group named ISS.). This is in a group, so when you open it in Illustrator it shows the group. Also, you could add more to the group layer later.
-
-![ISS Map](images/ISS-Map-3-simplified-styles.svg)
-
-Let's use my [SVG AI Helper](svg-ai-helper.html). This workflow enables you to drop a SVG and describe what you want to happen. It combines it with special code instructions that can be pasted into a AI chat window. The AI is instructed to produce
-
-Here's the description for this ISS SVG
-
-```
-There's an API for the International Space Station at http://api.open-notify.org/iss-now.json
-It returns: `{"timestamp": 1764169128, "iss_position":
-   {"longitude": "12.3732", "latitude": "51.2351"}, "message": "success"}`
-In my SVG is an element with ID `ISS`
-I want to position it on my equirectangular map based on lat/long from the API.
-It doesn't need to be pixel-perfect.
-I want it to update once a second
-```
-
-**It may not get it right at first!**
-
-Here is an [example chatGPT session using workflow tool](https://chatgpt.com/share/692c3001-01e0-800d-96a4-fa3aa7d92fd5).
-
-- It made a version [ISS Map - broken ](images/ISS-Map-4-simplified-styles-interactive-chatGPT-not-working.svg)
-- I explained it wasn't working and it diagnosed the problem.
-- It made a fixed version. [ISS Map - fixed](images/ISS-Map-5-simplified-styles-interactive-chatGPT-fixed.svg)
-
-### Working ISS Tracker!
-
-<object data="images/ISS-Map-4-simplified-styles-interactive-claude.svg" type="image/svg+xml" width="800" class="interstitial_svg">
-  <img src="images/ISS-Map-4-simplified-styles-interactive-claude.svg" alt="Current Position of ISS" />
-</object>
-
-## Workshop 2: Interactive Currency Game
-
-This SVG demonstrates a simple "game" that tests a user's ability to trade the US Dollar against the Euro. In the real world, this skill could make you millions, but this toy just demonstrates using interactive button clicks and real time financial market currency prices to keep a running score.
+This SVG demonstrates a simple "game" that tests a user's ability to trade the US Dollar against the Euro. In the real world, this skill could make you millions, but this toy just demonstrates using interactive button clicks and real time financial market currency prices to keep a running score. The filesize is under 4k!
 
 <object data="images/currency-game.svg" type="image/svg+xml" width="400" class="interstitial_svg">
   <img src="images/currency-game.svg" alt="currency trading game SVG" />
 </object>
 
-## Workshop 3: Submarine Instruments and working with web pages
+## Example 3: Submarine Instruments : Webpage / SVG Communication
 
 This project started out with a desire to empower my design students to connect physical controls to a computer game. We studied car dashboard design, and the interesting pros and cons of the screen-based driver experience.
 
@@ -224,8 +156,6 @@ The basic strategy is to create an SVG, which has a built-in timer that looks fo
 To make the game be able to communicate with the SVG, the game saves localStorage with names like "oxygen", or "battery". The SVG's were programmed to look for the information for each of the dashboard instrument.
 
 The full submarine dashboard is outside the scope of this workshop, but [here's the link if you're interested](https://github.com/steveturbek/Tangible-Interfaces-Submarine-Design-Project/tree/main). I'm particularly proud of the drag and drop layout editor, which downloads a new CSS file the student uses to save the layout.
-
-### Example Web Page - SVG communication
 
 (Click buttons to adjust the Oxygen level.) These could just as easily be 2 SVGs communicating with each other.
 
@@ -256,6 +186,92 @@ The full submarine dashboard is outside the scope of this workshop, but [here's 
       });
    </script>
 </div>
+
+## Pre-Workshop: What is the SVG AI Helper tool?
+
+We are not going to recreate Flash in this workshop! If you want to get deep into data visualization, you should learn the tools like [D3js](https://d3js.org/what-is-d3)
+The [gallery](https://observablehq.com/@d3/gallery) is awesome!
+
+What we will do:
+
+- Design an image of a data visualization
+- Save as SVG
+- Add some code using my helpers
+- Work with AI to get it right
+
+You will need:
+
+- Design software. Adobe Illustrator is the best for this demo.
+- Chrome browser and the internet
+- AI access. They all can work, ChatGPT allows SVG upload without paying.
+- 15-60 minutes, more if you use social media
+
+### SVG AI Helper
+
+**_The [SVG AI Helper](svg-ai-helper.html)_** is a webpage with JavaScript that helps prep your SVG to add interactivity using AI. It combines your files and my "AI SKill" instructions to guide the AI to understand the problem holistically.
+
+1. You enter:
+   1. Your SVG file
+   1. Your text description of what you want to happen
+1. You then paste the text into the chat window of the AI of your choice.
+1. It may ask follow up questions if you were not explicit enough.
+1. It should return some javascript code, which you can copy
+1. You paste this code back into the SVG AI Helper window
+1. You may get a working interactive SVG!
+   1. If not: note what is wrong and you want to happen and try again. See troubleshooting section below
+1. Iterate!
+
+_Note: All code on this site works solely in the browser, no data is retained or is visible to anyone except yourself._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome. All the AI Skill instructions text is freely accessible in the web page code.
+
+The <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant</a> tool is a webpage that copies SVG code from one SVG file to another. A typical use is if you make a working SVG, then edit in Illustrator (which deletes the code). This tool will copy it from the older working version to the new version. Assuming nothing important got changed, like layer names, it should work again.
+
+## Workshop: Chart the International Space Station's location on a map
+
+Let's start with a [Equirectangular World Map](https://commons.wikimedia.org/wiki/File:Longitude-latitude.svg) _Thanks Sven nestle2 at Wikipedia_
+
+Equirectangular means they stretched a globe into a rectangle, which makes for easier math for this project. _I Just learned this also!_
+
+![World Map](images/ISS-Map-1-simplified-styles.svg)
+
+Let's add a red circle in the middle, to represent the International Space Station. Do it in your design program OR better yet just open the file in TextEdit and simply pasting this right before the `</svg>`
+
+```
+<g id="ISS">
+    <circle id="circle" class="st6" cx="0" cy="0" r="5"/>
+</g>
+```
+
+(It makes a circle, in a group named ISS.). This is in a group, so when you open it in Illustrator it shows the group. Also, you could add more to the group layer later.
+
+![ISS Map](images/ISS-Map-3-simplified-styles.svg)
+
+Let's use my [SVG AI Helper](svg-ai-helper.html). This workflow enables you to drop a SVG and describe what you want to happen. It combines it with special code instructions that can be pasted into a AI chat window. The AI is instructed to produce
+
+Here's the prompt I used to animate this SVG
+
+```
+There's an API for the International Space Station at http://api.open-notify.org/iss-now.json
+It returns: `{"timestamp": 1764169128, "iss_position":
+   {"longitude": "12.3732", "latitude": "51.2351"}, "message": "success"}`
+In my SVG there is an element with ID `ISS`
+I want to position it on my equirectangular map based on lat/long from the API.
+It doesn't need to be pixel-perfect.
+I want it to update once a second
+```
+
+**It may not get it right at first!**
+
+Claude got it right on the first try. Here is an [example chatGPT session using workflow tool](https://chatgpt.com/share/692c3001-01e0-800d-96a4-fa3aa7d92fd5).
+
+- It made a version [ISS Map - broken ](images/ISS-Map-4-simplified-styles-interactive-chatGPT-not-working.svg)
+- I explained it wasn't working and it diagnosed the problem.
+- It made a fixed version. [ISS Map - fixed](images/ISS-Map-5-simplified-styles-interactive-chatGPT-fixed.svg)
+
+### Working ISS Tracker!
+
+<object data="images/ISS-Map-4-simplified-styles-interactive-claude.svg" type="image/svg+xml" width="800" class="interstitial_svg">
+  <img src="images/ISS-Map-4-simplified-styles-interactive-claude.svg" alt="Current Position of ISS" />
+</object>
 
 ## Wrap up
 
@@ -314,7 +330,7 @@ Figma exports SVGs very well, but it is not a native SVG editor. You can import 
 
 ### Troubleshooting
 
-You WILL break the SVG at times. Dont panic. Usually it is some extra character or a missing ". Upload to an AI and give it the error message. They are VERY good at this.
+You WILL break the SVG at times. Don't panic! Usually it is some extra character or a missing ". Upload to an AI and give it the error message. They are VERY good at this.
 
 - Test by opening SVG directly in browser. File > Open
 - Sometimes you will see pinkish area with an error text. Usually it will say where the error is. Share the file and error with the AI.
