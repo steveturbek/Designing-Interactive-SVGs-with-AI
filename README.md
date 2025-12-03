@@ -187,12 +187,6 @@ It doesn't need to be pixel-perfect.
 I want it to update once a second
 ```
 
-### Working ISS Tracker!
-
-<object data="images/ISS-Map-4-simplified-styles-interactive-claude.svg" type="image/svg+xml" width="800" class="interstitial_svg">
-  <img src="images/ISS-Map-4-simplified-styles-interactive-claude.svg" alt="Current Position of ISS" />
-</object>
-
 **It may not get it right at first!**
 
 Here is an [example chatGPT session using workflow tool](https://chatgpt.com/share/692c3001-01e0-800d-96a4-fa3aa7d92fd5).
@@ -201,49 +195,57 @@ Here is an [example chatGPT session using workflow tool](https://chatgpt.com/sha
 - I explained it wasn't working and it diagnosed the problem.
 - It made a fixed version. [ISS Map - fixed](images/ISS-Map-5-simplified-styles-interactive-chatGPT-fixed.svg)
 
-<object data="images/currency-game.svg" type="image/svg+xml" width="400" class="interstitial_svg">
-  <img src="images/currency-game.svg" alt="currency trading game SVG" />
+### Working ISS Tracker!
+
+<object data="images/ISS-Map-4-simplified-styles-interactive-claude.svg" type="image/svg+xml" width="800" class="interstitial_svg">
+  <img src="images/ISS-Map-4-simplified-styles-interactive-claude.svg" alt="Current Position of ISS" />
 </object>
 
 ## Workshop 2: Interactive Currency Game
 
 This SVG demonstrates a simple "game" that tests a user's ability to trade the US Dollar against the Euro. In the real world, this skill could make you millions, but this toy just demonstrates using interactive button clicks and real time financial market currency prices to keep a running score.
 
-<div style="display: inline-block; text-align: center;">
-  <object data="images/oxygen2.svg" type="image/svg+xml" width="300" class="interstitial_svg">
-    <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
-  </object>
-  <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
-    <button class="oxygen2" type="button" id="oxygen2-decrease">-10</button>
-    <button class="oxygen2" type="button" id="oxygen2-increase">+10</button>
-  </div>
-</div>
-
-<script type="text/javascript">
-   localStorage.setItem("oxygen2", "50");
-
-   document.getElementById("oxygen2-decrease").addEventListener("click", function() {
-      let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
-      localStorage.setItem("oxygen2", currentValue - 10);
-      window.dispatchEvent(new Event('storage'));
-   });
-
-   document.getElementById("oxygen2-increase").addEventListener("click", function() {
-      let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
-      localStorage.setItem("oxygen2", currentValue + 10);
-      window.dispatchEvent(new Event('storage'));
-   });
-</script>
+<object data="images/currency-game.svg" type="image/svg+xml" width="400" class="interstitial_svg">
+  <img src="images/currency-game.svg" alt="currency trading game SVG" />
+</object>
 
 ## Workshop 3: Submarine Instruments and working with apps
 
 Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9600-128b0e82be92){:target="\_blank"} to show the back and forth redesigning a dashboard instrument.
 
+<div id="oxygen-interactive">
+   <div style="display: inline-block; text-align: center;">
+     <object data="images/oxygen2.svg" type="image/svg+xml" width="300" class="interstitial_svg">
+       <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
+     </object>
+     <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
+       <button class="oxygen2" type="button" id="oxygen2-decrease">-10</button>
+       <button class="oxygen2" type="button" id="oxygen2-increase">+10</button>
+     </div>
+   </div>
+   
+   <script type="text/javascript">
+      localStorage.setItem("oxygen2", "50");
+   
+      document.getElementById("oxygen2-decrease").addEventListener("click", function() {
+         let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
+         localStorage.setItem("oxygen2", currentValue - 10);
+         window.dispatchEvent(new Event('storage'));
+      });
+   
+      document.getElementById("oxygen2-increase").addEventListener("click", function() {
+         let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
+         localStorage.setItem("oxygen2", currentValue + 10);
+         window.dispatchEvent(new Event('storage'));
+      });
+   </script>
+</div>
+
+## Wrap up
+
 ## Tips and Notes
 
-### Fonts
-
-One can use custom fonts in SVG. [Google fonts](https://fonts.google.com/), [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section), or just font files located on
+One can use custom fonts in SVG. [Google fonts](https://fonts.google.com/), [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section), or just font files the SVG can find. See the Speed gauge code for more.
 
 ### Security Note
 
