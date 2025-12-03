@@ -287,17 +287,30 @@ Ultimately design is the communication of ideas, whether it is the idea about a 
 ### Exporting SVGs
 
 **Adobe Illustrator Export**
-Illustrator is a superior program for this specific workflow. It can import and edit SVGs, but it will delete the code from it. It does have an annoying habit of renaming element IDs and the CSS styles in CSS, so be careful!
+Illustrator is the superior program for this specific workflow. It can import and edit SVGs directly.
 
-![Exporting from Adobe Illustrator](images/Illustrator_SVG_export.png)
-![Exporting from Adobe Illustrator](images/Illustrator_SVG_export_Advanced_Options.png)
-![Exporting from Adobe Illustrator](images/Illustrator_SVG_export_textedit.png)
+Tips:
+
+- It does have an annoying habit of renaming element IDs and the CSS styles in CSS, so be careful!
+- It will delete the javascript code from the file, so use my [Code Transfer Tool](helpers/svg-code-transplant.html) to copy it back.
+
+<style>
+   .detail_images{
+max-width:400px;
+   }
+   </style>
+
+<img src="images/Illustrator_SVG_export.png" class="detail_images">
+<img src="images/Illustrator_SVG_export_Advanced_Options.png"  class="detail_images">
 
 **Figma Export**
+
 Figma exports SVGs very well, but it is not a native SVG editor. You can import and export the files, but it is harder. There are plugins that help.
 
-![Exporting from Figma](images/Figma-export1.png)
-![Exporting from Figma](images/Figma-export-details.png)
+- Make sure to enable 'include "ID" attribute' in the details pop up
+
+<img src="images/Figma-export1.png"  class="detail_images"  class="detail_images">
+<img src="images/Figma-export-details.png"  class="detail_images"  class="detail_images">
 
 ### Troubleshooting
 
