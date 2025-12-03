@@ -287,15 +287,17 @@ Ultimately design is the communication of ideas, whether it is the idea about a 
 ### Exporting SVGs
 
 **Adobe Illustrator Export**
+Illustrator is a superior program for this specific workflow. It can import and edit SVGs, but it will delete the code from it. It does have an annoying habit of renaming element IDs and the CSS styles in CSS, so be careful!
+
 ![Exporting from Adobe Illustrator](images/Illustrator_SVG_export.png)
 ![Exporting from Adobe Illustrator](images/Illustrator_SVG_export_Advanced_Options.png)
 ![Exporting from Adobe Illustrator](images/Illustrator_SVG_export_textedit.png)
 
 **Figma Export**
+Figma exports SVGs very well, but it is not a native SVG editor. You can import and export the files, but it is harder. There are plugins that help.
+
 ![Exporting from Figma](images/Figma-export1.png)
 ![Exporting from Figma](images/Figma-export-details.png)
-
-Figma
 
 ### Troubleshooting
 
