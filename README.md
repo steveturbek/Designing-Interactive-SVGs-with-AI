@@ -159,7 +159,7 @@ You need:
 
 Equirectangular means they stretched a globe into a rectangle, which makes for easier math for this project. _I Just learned this also!_
 
-![World Map](images/ISS-Map-1-simplfied-styles.svg)
+![World Map](images/ISS-Map-1-simplified-styles.svg)
 
 1. Let's add a red circle in the middle, to represent the ISS. Do it in your design program OR just open the file in TextEdit and simply pasting this right before the `</svg>`
 
@@ -171,7 +171,7 @@ Equirectangular means they stretched a globe into a rectangle, which makes for e
 
 (It makes a circle, in a group named ISS.). This is in a group, so when you open it in Illustrator it shows the group. Also, you could add more to the group layer later.
 
-![ISS Map](images/ISS-Map-3-simplfied-styles.svg)
+![ISS Map](images/ISS-Map-3-simplified-styles.svg)
 
 1. Let's use my [SVG AI Helper](svg-ai-helper.html). This workflow enables you to drop a SVG and describe what you want to happen. It combines it with special code instructions that can be pasted into a AI chat window. The AI is instructed to produce
 
@@ -179,26 +179,27 @@ Here's the description for this ISS SVG
 
 ```
 There's an API for the International Space Station at http://api.open-notify.org/iss-now.json
-It returns: `{"timestamp": 1764169128, "iss_position": {"longitude": "12.3732", "latitude": "51.2351"}, "message": "success"}`
+It returns: `{"timestamp": 1764169128, "iss_position":
+   {"longitude": "12.3732", "latitude": "51.2351"}, "message": "success"}`
 In my SVG is an element with ID `ISS`
 I want to position it on my equirectangular map based on lat/long from the API.
 It doesn't need to be pixel-perfect.
 I want it to update once a second
 ```
 
-1. Working ISS Tracker!
+### Working ISS Tracker!
 
-<object data="images/ISS-Map-4-simplfied-styles-interactive-claude.svg" type="image/svg+xml" width="800" class="interstitial_svg">
-  <img src="images/ISS-Map-4-simplfied-styles-interactive-claude.svg" alt="Current Position of ISS" />
+<object data="images/ISS-Map-4-simplified-styles-interactive-claude.svg" type="image/svg+xml" width="800" class="interstitial_svg">
+  <img src="images/ISS-Map-4-simplified-styles-interactive-claude.svg" alt="Current Position of ISS" />
 </object>
 
-1. It may not get it right at first!
+**It may not get it right at first!**
 
 Here is an [example chatGPT session using workflow tool](https://chatgpt.com/share/692c3001-01e0-800d-96a4-fa3aa7d92fd5).
 
-- It made a version [ISS Map - broken ](images/ISS-Map-4-simplfied-styles-interactive-chatGPT-not-working.svg)
+- It made a version [ISS Map - broken ](images/ISS-Map-4-simplified-styles-interactive-chatGPT-not-working.svg)
 - I explained it wasn't working and it diagnosed the problem.
-- It made a fixed version. [ISS Map - fixed](images/ISS-Map-5-simplfied-styles-interactive-chatGPT-fixed.svg)
+- It made a fixed version. [ISS Map - fixed](images/ISS-Map-5-simplified-styles-interactive-chatGPT-fixed.svg)
 
 ## Workshop 2: Interactive Currency Game
 

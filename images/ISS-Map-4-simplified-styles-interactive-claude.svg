@@ -444,77 +444,94 @@
 <script type="text/javascript"><![CDATA[
 
 /**
- * ISS Position Animation Script
- * -----------------------------------------
- * This script fetches the current ISS location from the API
- * and places the red circle with ID="ISS" on the equirectangular map.
- * 
- * Your map viewBox is 1000x500:
- *  - X maps longitude -180 → +180   to   0 → 1000
- *  - Y maps latitude  +90 → -90     to   0 → 500  (Y is inverted in SVG)
- * 
- * Updates every 5 seconds.
- * Includes timestamped console logging for debugging.
+ * ISS Position Tracker
+ * - Fetches real-time ISS position from API every second
+ * - Converts latitude/longitude to x/y coordinates on equirectangular map
+ * - Updates the ISS element position smoothly
  */
 
-// Convenience helper for timestamp logging
-function logMsg(msg) {
-  console.log(msg, new Date().toLocaleTimeString());
+// Get the ISS circle element - this is what we'll move around the map
+const issElement = document.getElementById("ISS");
+
+// Check if the element exists before we try to animate it
+if (!issElement) {
+  console.error("ISS element not found! Make sure the SVG has an element with id='ISS'");
 }
 
 /**
  * Convert latitude/longitude to x/y pixel coordinates
- * on a 1000x500 equirectangular projection.
+ * 
+ * For an equirectangular map:
+ * - Longitude -180° to +180° maps to x: 0 to 1000 (full width)
+ * - Latitude +90° to -90° maps to y: 0 to 500 (full height)
+ * 
+ * The math:
+ * - x = (longitude + 180) / 360 * mapWidth
+ * - y = (90 - latitude) / 180 * mapHeight
  */
-function latLongToXY(lat, lon) {
-  // Longitude: -180° (left) → +180° (right)
-  const x = ((lon + 180) / 360) * 1000;
-
-  // Latitude: +90° (top) → -90° (bottom)
-  // SVG Y grows downward, so we flip latitude by subtracting from 90
-  const y = ((90 - lat) / 180) * 500;
-
+function latLongToXY(latitude, longitude) {
+  const mapWidth = 1000;  // viewBox width from the SVG
+  const mapHeight = 500;  // viewBox height from the SVG
+  
+  // Convert longitude (-180 to +180) to x position (0 to 1000)
+  // Adding 180 shifts the range to 0-360, then we scale to map width
+  const x = ((parseFloat(longitude) + 180) / 360) * mapWidth;
+  
+  // Convert latitude (+90 to -90) to y position (0 to 500)
+  // Subtracting from 90 flips it (since y increases downward in SVG)
+  const y = ((90 - parseFloat(latitude)) / 180) * mapHeight;
+  
   return { x, y };
 }
 
 /**
- * Fetch ISS position and move the ISS circle.
+ * Fetch ISS position from the API and update the map
  */
-async function updateISS() {
+async function updateISSPosition() {
   try {
-    const response = await fetch("http://api.open-notify.org/iss-now.json");
-    const data = await response.json();
-
-    // Extract lat/lon from API (strings → numbers)
-    const lat = parseFloat(data.iss_position.latitude);
-    const lon = parseFloat(data.iss_position.longitude);
-
-    const pos = latLongToXY(lat, lon);
-
-    const issEl = document.getElementById("ISS");
-
-    // Check if the element exists to avoid errors
-    if (!issEl) {
-      console.error("ISS element not found in SVG!", new Date().toLocaleTimeString());
-      return;
+    // Fetch data from the ISS API
+    const response = await fetch('https://api.open-notify.org/iss-now.json');
+    
+    // Check if the request was successful
+    if (!response.ok) {
+      throw new Error(`API returned status ${response.status}`);
     }
-
-    // Move the dot by updating its center coordinates
-    issEl.setAttribute("cx", pos.x);
-    issEl.setAttribute("cy", pos.y);
-
-    logMsg(`ISS updated → lat:${lat}, lon:${lon}  → x:${pos.x.toFixed(1)}, y:${pos.y.toFixed(1)}`);
-
+    
+    // Parse the JSON response
+    const data = await response.json();
+    
+    // Extract latitude and longitude from the response
+    const latitude = data.iss_position.latitude;
+    const longitude = data.iss_position.longitude;
+    
+    // Convert lat/long to x/y coordinates on our map
+    const position = latLongToXY(latitude, longitude);
+    
+    // Move the ISS element to the new position
+    // We use a transform to move it, keeping the circle centered on the coordinates
+    if (issElement) {
+      issElement.setAttribute("transform", `translate(${position.x}, ${position.y})`);
+    }
+    
+    // Log the update with timestamp for debugging
+    console.log(
+      "ISS updated:", 
+      new Date().toLocaleTimeString(),
+      `Lat: ${latitude}°, Long: ${longitude}°`,
+      `→ x: ${position.x.toFixed(1)}, y: ${position.y.toFixed(1)}`
+    );
+    
   } catch (error) {
-    console.error("Failed to fetch ISS data:", error);
+    // If something goes wrong (network error, API down, etc.), log it
+    console.error("Failed to update ISS position:", error);
   }
 }
 
-// Update immediately on load
-updateISS();
+// Update immediately when the page loads
+updateISSPosition();
 
-// Update every 5 seconds
-setInterval(updateISS, 5000);
+// Then update every 1 second (1000 milliseconds)
+setInterval(updateISSPosition, 1000);
 
 ]]></script>
 </svg>
