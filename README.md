@@ -161,7 +161,7 @@ Equirectangular means they stretched a globe into a rectangle, which makes for e
 
 ![World Map](images/ISS-Map-1-simplified-styles.svg)
 
-1. Let's add a red circle in the middle, to represent the ISS. Do it in your design program OR just open the file in TextEdit and simply pasting this right before the `</svg>`
+Let's add a red circle in the middle, to represent the ISS. Do it in your design program OR better yet just open the file in TextEdit and simply pasting this right before the `</svg>`
 
 ```
 <g id="ISS">
@@ -173,7 +173,7 @@ Equirectangular means they stretched a globe into a rectangle, which makes for e
 
 ![ISS Map](images/ISS-Map-3-simplified-styles.svg)
 
-1. Let's use my [SVG AI Helper](svg-ai-helper.html). This workflow enables you to drop a SVG and describe what you want to happen. It combines it with special code instructions that can be pasted into a AI chat window. The AI is instructed to produce
+Let's use my [SVG AI Helper](svg-ai-helper.html). This workflow enables you to drop a SVG and describe what you want to happen. It combines it with special code instructions that can be pasted into a AI chat window. The AI is instructed to produce
 
 Here's the description for this ISS SVG
 
@@ -201,11 +201,39 @@ Here is an [example chatGPT session using workflow tool](https://chatgpt.com/sha
 - I explained it wasn't working and it diagnosed the problem.
 - It made a fixed version. [ISS Map - fixed](images/ISS-Map-5-simplified-styles-interactive-chatGPT-fixed.svg)
 
-## Workshop 2: Interactive Currency Game
-
 <object data="images/currency-game.svg" type="image/svg+xml" width="400" class="interstitial_svg">
   <img src="images/currency-game.svg" alt="currency trading game SVG" />
 </object>
+
+## Workshop 2: Interactive Currency Game
+
+This SVG demonstrates a simple "game" that tests a user's ability to trade the US Dollar against the Euro. In the real world, this skill could make you millions, but this toy just demonstrates using interactive button clicks and real time financial market currency prices to keep a running score.
+
+<div style="display: inline-block; text-align: center;">
+  <object data="images/oxygen2.svg" type="image/svg+xml" width="300" class="interstitial_svg">
+    <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
+  </object>
+  <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
+    <button class="oxygen2" type="button" id="oxygen2-decrease">-10</button>
+    <button class="oxygen2" type="button" id="oxygen2-increase">+10</button>
+  </div>
+</div>
+
+<script type="text/javascript">
+   localStorage.setItem("oxygen2", "50");
+
+   document.getElementById("oxygen2-decrease").addEventListener("click", function() {
+      let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
+      localStorage.setItem("oxygen2", currentValue - 10);
+      window.dispatchEvent(new Event('storage'));
+   });
+
+   document.getElementById("oxygen2-increase").addEventListener("click", function() {
+      let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
+      localStorage.setItem("oxygen2", currentValue + 10);
+      window.dispatchEvent(new Event('storage'));
+   });
+</script>
 
 ## Workshop 3: Submarine Instruments and working with apps
 
@@ -215,7 +243,7 @@ Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9
 
 ### Fonts
 
-One can use Web Fonts. Google fonts and [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section).
+One can use custom fonts in SVG. [Google fonts](https://fonts.google.com/), [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section), or just font files located on
 
 ### Security Note
 

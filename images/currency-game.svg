@@ -1,48 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
   <defs>
     <style>
-      .title { font-family: Georgia, 'Times New Roman', Times, serif, serif; font-size: 40px; font-weight: bold; fill: green; }
-      .score { font-family: Arial, sans-serif; font-size: 48px; font-weight: bold; fill: #333; }
-      .rate-text { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
-      .emoji { font-size: 100px; }
-
-      .btn-rect { fill: #4CAF50; stroke: #45a049; stroke-width: 2; cursor: pointer; transition: fill 0.3s; }
-      .btn-rect:hover { fill: #45a049; }
-      .btn-rect:active { fill: #3d8b40; }
-      .btn-text { fill: white; font-family: Arial, sans-serif; font-size: 36px; font-weight: bold; pointer-events: none; user-select: none; }
-
-
+      .title { font-family: Georgia, 'Times New Roman', Times, serif, serif; font-size: 40px; font-weight: bold; fill: darkgreen; stroke:darkolivegreen; user-select: none;}
+      .score { font-family: Arial, sans-serif; font-size: 48px; font-weight: bold; fill: #333; user-select: none;}
+      .rate-text { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; user-select: none;}
+      .rate-flash { animation: flash 0.5s ease-out; }
+      @keyframes flash {
+        0% { fill: #ffcc00; font-size: 26px; }
+        50% { fill: #ff6600; font-size: 28px; }
+        100% { fill: #333; font-size: 24px; }
+      }
+      .btn-rect { fill: #2a3e95; stroke: white; stroke-width: 2; cursor: pointer; transition: filter 0.3s, transform 0.1s; filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.4)); }
+      .btn-rect:hover { filter: brightness(1.2) drop-shadow(4px 4px 6px rgba(0,0,0,0.5)); stroke: black;}
+      .btn-text { fill: white; font-family: Arial, sans-serif; font-size: 50px; font-weight: bold; pointer-events: none; user-select: none; transition: transform 0.1s; }
+      .button:active .btn-rect { filter: brightness(0.8) drop-shadow(1px 1px 2px rgba(0,0,0,0.3)); transform: translate(2px, 2px); }
+      .button:active .btn-text { transform: translate(2px, 2px); }
+      #background{fill:url(#currencyBg)}
     </style>
+  
+  <radialGradient id="currencyBg">
+  <stop offset="0%" style="stop-color:#fffef0;stop-opacity:1" />
+  <stop offset="70%" style="stop-color:#fbf6d3;stop-opacity:1" />
+  <stop offset="100%" style="stop-color:#e8ddb0;stop-opacity:1" />
+</radialGradient>
   </defs>
   
-  <!-- Background -->
-  <rect width="400" height="400" fill="#fbf6d3" stroke="green" stroke-width="4px"/>
+  <rect id="background" width="100%" height="100%"  stroke="green" stroke-width="4px"/>
 
   <text x="50%" y="40" text-anchor="middle" class="title">Trading Currency</text>
   <text x="50%" y="90" text-anchor="middle" class="title">📈 The Game! 📉</text>
   
-  
 
-  
   <text x="50%" y="40%" class="rate-text" text-anchor="middle">€1 = $
   <tspan class="rate-text" text-anchor="left" id="rate">Loading...</tspan>
   <tspan class="rate-text" text-anchor="left" id="rateDirection"></tspan>
   </text>
 
-
-
-  <g class="button" onclick="handleClick()">
-    <rect class="btn-rect" x="30%" y="82%" width="40%" height="10%" rx="8" />
-    <text class="btn-text" x="50%" y="90%" text-anchor="middle" id="btnText">Buy 💶</text>
-  </g>
-  
-
-
 <text x="50%" y="57%" text-anchor="middle" class="score">You Have</text>
 <text x="50%" y="70%" text-anchor="middle" class="score" id="balance">$1,000,000,000</text>
-<!-- <text x="50%" y="80%" text-anchor="middle" id="percentage">+5%</text> -->
 
-
+  <g class="button" onclick="handleClick()">
+    <rect class="btn-rect" id="btn-rect" x="25%" y="79%" width="50%" height="15%" rx="8" />
+    <text class="btn-text" x="50%" y="90%" text-anchor="middle" id="btnText">Buy 💶</text>
+  </g>
   <script type="text/javascript">
     <![CDATA[
 
@@ -54,52 +54,60 @@
       try {
       const response = await fetch('https://api.coinbase.com/v2/prices/EUR-USD/spot');
       const data = await response.json();
-      
-      if (parseFloat(data.data.amount).toFixed(9) > lastUSD_EUR){
+
+      const newRate = parseFloat(data.data.amount).toFixed(9);
+      const rateElement = document.getElementById('rate');
+
+      if (newRate > lastUSD_EUR){
           document.getElementById('rateDirection').textContent = "🔼";
-      } else if (parseFloat(data.data.amount).toFixed(9) < lastUSD_EUR){
+      } else if (newRate < lastUSD_EUR){
           document.getElementById('rateDirection').textContent = "🔽";
       } else {
           document.getElementById('rateDirection').textContent = "  ";
       }
 
-      lastUSD_EUR  = parseFloat(data.data.amount).toFixed(9);
-      document.getElementById('rate').textContent = lastUSD_EUR;
+      // Trigger flash animation on rate change
+      if (newRate !== lastUSD_EUR) {
+        // Remove class, force reflow, then add it back
+        rateElement.classList.remove('rate-flash');
+        setTimeout(() => {
+          rateElement.classList.add('rate-flash');
+        }, 10);
+      }
+
+      lastUSD_EUR = newRate;
+      rateElement.textContent = lastUSD_EUR;
       } catch (error) {
       document.getElementById('rate').textContent = 'Error';
       }
     }
+
+    // Initial fetch
+    fetchRate();
     setInterval(fetchRate, 500);  // update twice a second
 
-
-
     function handleClick() {
-      if (currency=="USD"){      
-      //document.getElementById('percentage').textContent = (parseFloat( 1 - balance/1000000000).toFixed(4)) + "%";
-
+    if (currency=="USD"){      
       balance = Math.round(balance / lastUSD_EUR);
       document.getElementById('balance').textContent = 
       balance.toLocaleString('en-US', {style: 'currency', currency: 'EUR',
       minimumFractionDigits: 0});
       
+      document.getElementById('btn-rect').style.fill = "#4CAF50"
       document.getElementById('btnText').textContent = "Buy 💵"
       currency="EUR";
 
     } else {
-
       balance = Math.round(balance * lastUSD_EUR);
       document.getElementById('balance').textContent = 
       balance.toLocaleString('en-US', {style: 'currency', currency: 'USD',
       minimumFractionDigits: 0});
 
-      //document.getElementById('percentage').textContent = (parseFloat( 1 - balance/1000000000).toFixed(4)) + "%";
       currency="USD";
       document.getElementById('btnText').textContent = "Buy 💶"
+      document.getElementById('btn-rect').style.fill = "#2a3e95"
     }
-  
-    //console.log('trade',balance, currency, lastUSD_EUR );
     }
-
     ]]>
   </script>
 </svg>
