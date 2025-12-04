@@ -18,7 +18,15 @@ A short course for designers on making interactive SVGs with AI help. It will be
   <img src="images/oxygen.svg" alt="Oxygen Gauge SVG" />
 </object>
 
+In years past, designers had tools like Macromedia Director and Flash, which blended the line between sketching and making, designing and programming. When Steve Jobs killed Flash in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash), complex JavaScript-driven websites took over. The web effectively became the domain of programmers rather than visual designers.
+
+**_Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others._**
+
+This workshop is about reclaiming some of that power.
+
 ## TLDR
+
+Design is all about precise communication, yet designers have struggled to communicate with computers. What if there was another way?
 
 - Designers know design tools, but coding and interaction is often a challenge
 - The SVG file format, known for icons, is unexpectedly, a powerful format similar to HTML. One can have style sheets and javascript in the file.
@@ -28,8 +36,6 @@ A short course for designers on making interactive SVGs with AI help. It will be
 - With proper set up, a designer can upload an image and collaborate the interaction into life.
 - The SVG is now portable, contains its code.
 - One can 'round trip' between design programs and AI, made easier with the tools included here
-
-### The Tools
 
 - **<a href="svg-ai-helper.html" target="new">SVG AI Helper</a>** used in this workshop to add interactivity to a SVG.
 
@@ -51,31 +57,22 @@ These students had no coding experience, so I wrote a “Skill” to prep the AI
 
 ## What is SVG and can it be cured?
 
-As we all know, markup languages were given to humans by ancient aliens. We have be able to reconstruct their language as "SGML" or Standard Generalized Markup Language. No one speaks SGML today, but archeological evidence suggests SGML was used in "newspapers" and "magazines", which appeared to made by primitive people from trees or bark.
+Human language is an incredibly flexible communication tool, but that flexibility comes at the cost of precision.
 
-The basic idea is to wrap data in tags so BOTH computers and people could understand it.
+Markup Languages were created with the idea to wrap data in tags so BOTH computers and people could understand it.
 
-`<person><name>Alice</name><age>30</age></person>`
+```
+<person>
+   <name>Alice</name>
+   <age>30</age>
+</person>
+```
 
-SGML had many descendants, including Hyper Text Markup Language and XML. XML birthed hundreds of niche markup formats. The main one that survives today is _SVG (Scalable Vector Graphic)_.
+SGML or Standard Generalized Markup Language was created in the 70's and used in newspapers and magazines. It inspired HTML Hyper Text Markup Language, XML, and _SVG (Scalable Vector Graphic)_.
 
-SVGs are an **Graphic** file format, like JPEG, GIF, PNG. But SVGs store the information as math, not pixels. The drawing tools in Adobe Illustrator or Figma make **Vector** shapes like lines, rectangles, circles, and any complex curved shape. This means that the file size is tiny, but they are **Scalable** up to a billboard size without becoming blurry. Fonts are a kind of vector file as well. SVGs are used everywhere, especially on the web.
+SVGs are an **Graphic** file format, like JPEG, GIF, PNG. But SVGs store the information as math, not pixels. The drawing tools in Adobe Illustrator or Figma make **Vector** shapes like lines, rectangles, circles, and any complex curved shape. This means that the file size is tiny, but they are **Scalable** up to a billboard size without becoming blurry like a bitmap.
 
-<object data="images/depth.svg" type="image/svg+xml" width="200" class="interstitial_svg">
-  <img src="images/depth.svg" alt="Depth Gauge SVG" />
-</object>
-
-## What was Flash and why did it matter?
-
-Flash was a program that made animations that ran in the web browsers of the 90's and early 2000's. By working quickly and consistently across browsers (a huge problem of the time), it enabled designers to deliver a beautiful experience. It was the only way to deliver video and music streams, and became wildly popular, to the point that entire websites would simply be a flash file.
-
-Flash had a visual style that defined 1990s websites, for better and worse. Like any tool that empowers many people, it became associated with cheaply written web games and cartoons. When Steve Jobs killed Flash for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash) LOL, (not for competing with the App store).
-
-For all its flaws, Flash was a designer's program, and there has not been a replacement. Flash empowered designers to lay out scenes and animations with drawing tools and interactivity, without requiring programming knowledge. When Flash was killed, complex JavaScript-driven websites took over, which effectively meant the web became the domain of programmers rather than visual designers. The web changed from wacky personal experiences to a more professional, some would say banal, standard.
-
-I was never a Flash designer/developer. Like many 90's kid designers, I learned programming in a program called Macromedia Director, most famous for making interactive CD-ROMs, which, I swear, were a big deal. I used its "Shockwave" web framework to make interactive games and experiences. Sadly, none are visible on today's technology.
-
-**_We should mourn the loss of a tool that empowered designers to think in their own visual language and create the item rather than write specification documents to instruct others what to do._**
+SVGs are used everywhere today, especially on the web.
 
 <object data="images/compass.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/compass.svg" alt="Compass Gauge SVG" />
@@ -85,9 +82,9 @@ I was never a Flash designer/developer. Like many 90's kid designers, I learned 
 
 SVG is widely used on the web for icons and illustrations. BUT the SVG origin story gives it secret powers from those ancient times.
 
-- CSS can style SVG elements: Animations
-- JavaScript can manipulate the file: Interactivity
-- JavaScript can load data: Data Visualization
+- Style visual elements and animate them with CSS (Cascading Style Sheets)
+- JavaScript code can manipulate the file: Interactivity
+- JavaScript code can load data: Data Visualization
 
 **_These styles and code are carried inside the SVG file._**
 
@@ -155,7 +152,7 @@ The basic strategy is to create an SVG, which has a built-in timer that looks fo
 
 To make the game be able to communicate with the SVG, the game saves localStorage with names like "oxygen", or "battery". The SVG's were programmed to look for the information for each of the dashboard instrument.
 
-The full submarine dashboard is outside the scope of this workshop, but [here's the link if you're interested](https://github.com/steveturbek/Tangible-Interfaces-Submarine-Design-Project/tree/main). I'm particularly proud of the drag and drop layout editor, which downloads a new CSS file the student uses to save the layout.
+The full submarine dashboard is outside the scope of this workshop, but [here's the link if you're interested](https://github.com/steveturbek/Tangible-Interfaces-Submarine-Design-Project/tree/main). I'm particularly proud of the drag and drop layout editor, which downloads a new instruments.css file the student uses to save the layout.
 
 (Click buttons to adjust the Oxygen level.) These could just as easily be 2 SVGs communicating with each other.
 
@@ -307,7 +304,7 @@ Illustrator is the superior program for this specific workflow. It can import an
 
 Tips:
 
-- It does have an annoying habit of renaming element IDs and the CSS styles in CSS, so be careful!
+- It does have an annoying habit of renaming element IDs and the CSS styles, so be careful!
 - It will delete the javascript code from the file, so use my [Code Transfer Tool](helpers/svg-code-transplant.html) to copy it back.
 
 <style>
@@ -427,6 +424,10 @@ Then check Console in browser to see the values.
 Like all code, javascript can be used to harm people. Some websites have strict rules against SVG or disable javascript in SVG to prevent people from stealing other people's data. Don't be evil.
 
 ![Meme of The Simpson's, with caption "Gentlemen, To Evil"](images/simpsons-gentlemen-to-evil.gif "Gentlemen, To Evil")
+
+<object data="images/depth.svg" type="image/svg+xml" width="200" class="interstitial_svg">
+  <img src="images/depth.svg" alt="Depth Gauge SVG" />
+</object>
 
 ## References
 
