@@ -120,7 +120,7 @@ Basically, everything you can do with a webpage: rollovers, buttons, etc can be 
 
 Interactive SVGs can be a game changer for designers working with Devs.
 
-A designer can ‘sneak’ interactivity into old codebases where they couldn’t touch the code, by uploading an image to a Content Management System.
+A designer can add interactivity without developer help by uploading a SVG image, for example in Content Management Systems.
 
 I made this handy color wheel for our Goldman Sachs Design System (which was public when I lead the team). It is still [available on Archive.org](https://web.archive.org/web/20220819072910/https://design.gs.com/home)
 
@@ -256,9 +256,9 @@ It doesn't need to be pixel-perfect.
 I want it to update once a second
 ```
 
-**It may not get it right at first!**
+**It may not get it right at first, but iterate!**
 
-Claude got it right on the first try. Here is an [example chatGPT session using workflow tool](https://chatgpt.com/share/692c3001-01e0-800d-96a4-fa3aa7d92fd5).
+Claude got it right on the first try, but ChatGPT took a second try. Here is an [example chatGPT session using workflow tool](https://chatgpt.com/share/692c3001-01e0-800d-96a4-fa3aa7d92fd5).
 
 - It made a version [ISS Map - broken ](images/ISS-Map-4-simplified-styles-interactive-chatGPT-not-working.svg)
 - I explained it wasn't working and it diagnosed the problem.
