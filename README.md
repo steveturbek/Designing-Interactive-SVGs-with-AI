@@ -1,9 +1,5 @@
 # Designing Interactive SVGs with AI
 
-A short course for designers on making interactive SVGs with AI help. It will be presented as a [CreativeMornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026. [View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)
-
-<b class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></b>
-
 <div class="toc-wrapper" markdown="1">
 
 ## Contents
@@ -14,15 +10,53 @@ A short course for designers on making interactive SVGs with AI help. It will be
 {:toc}
 </div>
 
-<object data="images/oxygen.svg" type="image/svg+xml" width="300" class="interstitial_svg">
-  <img src="images/oxygen.svg" alt="Oxygen Gauge SVG" />
-</object>
+A short course for designers on making interactive SVGs with AI help.
+
+<b class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></b>
+
+This article will be presented as a [CreativeMornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.
+
+[View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)
 
 In years past, designers had tools like Macromedia Director and Flash, which blended the line between sketching and making, designing and programming. When Steve Jobs killed Flash in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash), complex JavaScript-driven websites took over. The web effectively became the domain of programmers rather than visual designers.
 
 **_Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others._**
 
 This workshop is about reclaiming some of that power.
+
+<figure>
+
+<div id="oxygen-interactive">
+   <div style="display: inline-block; text-align: center;">
+     <object data="images/oxygen2.svg" type="image/svg+xml" width="300" class="interstitial_svg">
+       <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
+     </object>
+     <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
+       <button class="oxygen2" type="button" id="oxygen2-decrease">-10</button>
+       <button class="oxygen2" type="button" id="oxygen2-increase">+10</button>
+     </div>
+   </div>
+   
+   <script type="text/javascript">
+      localStorage.setItem("oxygen2", "50");
+   
+      document.getElementById("oxygen2-decrease").addEventListener("click", function() {
+         let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
+         localStorage.setItem("oxygen2", Math.max(0, Math.min(100, currentValue - 10)));
+         window.dispatchEvent(new Event('storage'));
+      });
+   
+      document.getElementById("oxygen2-increase").addEventListener("click", function() {
+         let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
+         localStorage.setItem("oxygen2", Math.max(0, Math.min(100, currentValue + 10)));
+         window.dispatchEvent(new Event('storage'));
+      });
+   </script>
+</div>
+<figcaption>
+   An example data-driven interactive SVG, animated with AI in the workshop.  Click buttons to adjust it.
+</figcaption>
+</figure>
 
 ## TLDR
 
@@ -41,9 +75,14 @@ Design is all about precise communication, yet designers have struggled to commu
 
 _Note: All code on this site works solely in the browser, no data is retained._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome.
 
+<figure>
 <object data="images/pitch.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/pitch.svg" alt="Pitch Gauge SVG" />
 </object>
+<figcaption>
+   An example data-driven interactive SVG
+</figcaption>
+</figure>
 
 ## Background
 
@@ -51,9 +90,15 @@ I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interf
 
 These students had no coding experience, so I wrote a “Skill” to prep the AI to focus on the right things. It was pretty magical. This workshop extends this idea. It is not solely about dashboard design, but demonstrating a new way for designers to use AI, and rediscovering the power in the tools we designers always had.
 
+<figure>
 <object data="images/battery.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/battery.svg" alt="Battery Gauge SVG" />
 </object>
+
+<figcaption>
+   An example data-driven interactive SVG
+</figcaption>
+</figure>
 
 ## What is SVG and can it be cured?
 
@@ -74,9 +119,15 @@ SVGs are an **Graphic** file format, like JPEG, GIF, PNG. But SVGs store the inf
 
 SVGs are used everywhere today, especially on the web.
 
+<figure>
 <object data="images/compass.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/compass.svg" alt="Compass Gauge SVG" />
 </object>
+
+<figcaption>
+   An example data-driven interactive SVG
+</figcaption>
+</figure>
 
 ## Why do SVG matter today?
 
@@ -99,18 +150,30 @@ SVGs matter because:
 
 _One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details._
 
+<figure>
 <object data="images/speed.svg" type="image/svg+xml" width="400" class="interstitial_svg">
   <img src="images/speed.svg" alt="Speed Gauge SVG" />
 </object>
+<figcaption>
+   An example data-driven interactive SVG
+</figcaption>
+</figure>
+
 [_Thanks, Anthony Robinson for this cool font!_](https://www.1001fonts.com/14-segment-led-font.html)
 
 ## Animation in SVGs
 
 The animation capabilities in a SVG are quite powerful. I'm not going to go deep into animation as there are so many more competent people (see references). But I want to highlight one because it is so conceptually cool. I'm sure you have seen the animation of someone "drawing" a shape. This "drawing" animation is only a couple of lines of code - the conceptual idea was to make this outline have a dashed line style, but the dashes are really huge. The animation slides that dash along the line, making it look like a drawing.
 
+<figure>
 <object data="images/z-animation.svg" type="image/svg+xml" width="400" class="interstitial_svg">
   <img src="images/z-animation.svg" alt="Animation of a letter Z" />
 </object>
+
+<figcaption>
+   An example data-driven interactive SVG
+</figcaption>
+</figure>
 
 ## Interactivity in SVGs
 
@@ -126,17 +189,29 @@ I made this handy color wheel for our Goldman Sachs Design System (which was pub
 
 _Hover over any color segment to view its name, RGB values, and hex code. Click to lock the color information to copy values._
 
+<figure>
 <object data="images/GSDS-color-wheel-v2.svg" type="image/svg+xml" width="700" height="800" class="interstitial_svg">
   <img src="images/GSDS-color-wheel-v2.svg" alt="GS Design System Color Wheel" />
 </object>
+
+<figcaption>
+   An example data-driven interactive SVG
+</figcaption>
+</figure>
 
 ## Example 2: Currency Game : Data API & Game Logic
 
 This SVG demonstrates a simple "game" that tests a user's ability to trade the US Dollar against the Euro. In the real world, this skill could make you millions, but this toy just demonstrates using interactive button clicks and real time financial market currency prices to keep a running score. The filesize is under 4k!
 
+<figure>
 <object data="images/currency-game.svg" type="image/svg+xml" width="400" class="interstitial_svg">
   <img src="images/currency-game.svg" alt="currency trading game SVG" />
 </object>
+
+<figcaption>
+   An example data-driven interactive SVG
+</figcaption>
+</figure>
 
 ## Example 3: Submarine Instruments : Webpage / SVG Communication
 
@@ -146,7 +221,7 @@ Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9
 
 The technique we use in this interactive SVG is to communicate with the app webpage via a shared data source. I wanted this game to work locally on laptop with non-technical designers. Unfortunately for me, but fortunately for you, these browser security restrictions meant we had to be creative.
 
-Browser today have a neat feature called local storage. It's sort of like a website cookie, but can hold much more information and is more secure, it never leaves the browser. It also works across browser, windows, which was important because the game has a pop-up display window.
+Browsers today have a neat feature called localStorage to storea data locally on your computer. It's sort of like a website cookie, but can hold much more information and is more secure. The info never leaves the browser. It also works across browser, windows, which was important because the game has a pop-up display window.
 
 The basic strategy is to create an SVG, which has a built-in timer that looks for information and loads it regularly. This is essential, because otherwise extensive code needs to be written by the developers. When the code is encapsulated in the SVG, it is prevented from interfering with the rest of the webpage so you can be reasonably confident you can't break the rest of the website.
 
@@ -155,34 +230,6 @@ To make the game be able to communicate with the SVG, the game saves localStorag
 The full submarine dashboard is outside the scope of this workshop, but [here's the link if you're interested](https://github.com/steveturbek/Tangible-Interfaces-Submarine-Design-Project/tree/main). I'm particularly proud of the drag and drop layout editor, which downloads a new instruments.css file the student uses to save the layout.
 
 (Click buttons to adjust the Oxygen level.) These could just as easily be 2 SVGs communicating with each other.
-
-<div id="oxygen-interactive">
-   <div style="display: inline-block; text-align: center;">
-     <object data="images/oxygen2.svg" type="image/svg+xml" width="300" class="interstitial_svg">
-       <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
-     </object>
-     <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
-       <button class="oxygen2" type="button" id="oxygen2-decrease">-10</button>
-       <button class="oxygen2" type="button" id="oxygen2-increase">+10</button>
-     </div>
-   </div>
-   
-   <script type="text/javascript">
-      localStorage.setItem("oxygen2", "50");
-   
-      document.getElementById("oxygen2-decrease").addEventListener("click", function() {
-         let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
-         localStorage.setItem("oxygen2", currentValue - 10);
-         window.dispatchEvent(new Event('storage'));
-      });
-   
-      document.getElementById("oxygen2-increase").addEventListener("click", function() {
-         let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
-         localStorage.setItem("oxygen2", currentValue + 10);
-         window.dispatchEvent(new Event('storage'));
-      });
-   </script>
-</div>
 
 ## Pre-Workshop: What is the SVG AI Helper tool?
 
@@ -228,6 +275,8 @@ Let's start with a [Equirectangular World Map](https://commons.wikimedia.org/wik
 
 Equirectangular means they stretched a globe into a rectangle, which makes for easier math for this project. _I Just learned this also!_
 
+Let's edit the image to crop and simplify the colors
+
 ![World Map](images/ISS-Map-1-simplified-styles.svg)
 
 Let's add a red circle in the middle, to represent the International Space Station. Do it in your design program OR better yet just open the file in TextEdit and simply pasting this right before the `</svg>`
@@ -266,9 +315,15 @@ Claude got it right on the first try, but ChatGPT took a second try. Here is an 
 
 ### Working ISS Tracker!
 
+<figure>
 <object data="images/ISS-Map-4-simplified-styles-interactive-claude.svg" type="image/svg+xml" width="800" class="interstitial_svg">
   <img src="images/ISS-Map-4-simplified-styles-interactive-claude.svg" alt="Current Position of ISS" />
 </object>
+
+<figcaption>
+   The working ISS tracker
+</figcaption>
+</figure>
 
 ## Wrap up
 
