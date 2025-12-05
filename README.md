@@ -10,7 +10,7 @@
 {:toc}
 </div>
 
-A short course for designers on making interactive SVGs with AI help.
+A short intro for designers on making interactive SVGs with AI help.
 
 <b class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></b>
 
@@ -18,6 +18,7 @@ This article will be presented as a [CreativeMornings FieldTrip](https://creativ
 
 <!-- [View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg) -->
 
+"Should designers learn to code" has been discussed for decades.
 In years past, designers used tools like Macromedia Director and Flash to make customer facing
 , which blended the line between sketching and making, designing and programming. When Steve Jobs killed Flash in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash), complex JavaScript-driven websites took over. The web effectively became the domain of programmers rather than visual designers.
 
@@ -26,8 +27,7 @@ In years past, designers used tools like Macromedia Director and Flash to make c
 This workshop is about reclaiming some of that power.
 
 <figure>
-
-<div id="oxygen-interactive">
+<div id="oxygen-interactive" style="display: block;margin: 0 auto;">
    <div style="display: inline-block; text-align: center;">
      <object data="images/oxygen2.svg" type="image/svg+xml" width="300" class="interstitial_svg">
        <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
@@ -55,7 +55,9 @@ This workshop is about reclaiming some of that power.
    </script>
 </div>
 <figcaption>
-   An example data-driven interactive SVG, animated with AI in the workshop.  Click buttons to adjust it.
+   An example data-driven interactive SVG, animated with AI in the workshop.
+   
+   **Click buttons to adjust Oxygen Level.**
 </figcaption>
 </figure>
 
@@ -80,9 +82,9 @@ _Note: All code on this site works solely in the browser, no data is retained._ 
 <object data="images/pitch.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/pitch.svg" alt="Pitch Gauge SVG" />
 </object>
-<figcaption>
+<!--<figcaption>
    An example data-driven interactive SVG
-</figcaption>
+</figcaption> -->
 </figure>
 
 ## Background
@@ -96,9 +98,9 @@ These students had no coding experience, so I wrote a “Skill” to prep the AI
   <img src="images/battery.svg" alt="Battery Gauge SVG" />
 </object>
 
-<figcaption>
+<!--<figcaption>
    An example data-driven interactive SVG
-</figcaption>
+</figcaption> -->
 </figure>
 
 ## What is SVG and can it be cured?
@@ -125,9 +127,9 @@ SVGs are used everywhere today, especially on the web.
   <img src="images/compass.svg" alt="Compass Gauge SVG" />
 </object>
 
-<figcaption>
+<!--<figcaption>
    An example data-driven interactive SVG
-</figcaption>
+</figcaption> -->
 </figure>
 
 ## Why do SVG matter today?
@@ -155,9 +157,9 @@ _One of the reasons AI is bad at understanding your prompts, is your human langu
 <object data="images/speed.svg" type="image/svg+xml" width="400" class="interstitial_svg">
   <img src="images/speed.svg" alt="Speed Gauge SVG" />
 </object>
-<figcaption>
+<!--<figcaption>
    An example data-driven interactive SVG
-</figcaption>
+</figcaption> -->
 </figure>
 
 [_Thanks, Anthony Robinson for this cool font!_](https://www.1001fonts.com/14-segment-led-font.html)
@@ -171,9 +173,9 @@ The animation capabilities in a SVG are quite powerful. I'm not going to go deep
   <img src="images/z-animation.svg" alt="Animation of a letter Z" />
 </object>
 
-<figcaption>
+<!--<figcaption>
    An example data-driven interactive SVG
-</figcaption>
+</figcaption> -->
 </figure>
 
 ## Interactivity in SVGs
@@ -195,9 +197,9 @@ _Hover over any color segment to view its name, RGB values, and hex code. Click 
   <img src="images/GSDS-color-wheel-v2.svg" alt="GS Design System Color Wheel" />
 </object>
 
-<figcaption>
+<!--<figcaption>
    An example data-driven interactive SVG
-</figcaption>
+</figcaption> -->
 </figure>
 
 ## Example 2: Currency Game : Data API & Game Logic
@@ -209,9 +211,9 @@ This SVG demonstrates a simple "game" that tests a user's ability to trade the U
   <img src="images/currency-game.svg" alt="currency trading game SVG" />
 </object>
 
-<figcaption>
+<!--<figcaption>
    An example data-driven interactive SVG
-</figcaption>
+</figcaption> -->
 </figure>
 
 ## Example 3: Submarine Instruments : Webpage / SVG Communication
