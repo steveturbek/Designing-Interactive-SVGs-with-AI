@@ -37,7 +37,7 @@ This workshop is about reclaiming a piece of that power.
        <button class="oxygen2" type="button" id="oxygen2-decrease">-10</button>
        <button class="oxygen2" type="button" id="oxygen2-increase">+10</button>
       </div>
-   <p><b>Click buttons to adjust Oxygen Level</b></p>
+   <p><b>Click buttons to adjust oxygen level</b></p>
  </figcaption>
 </figure>
 
