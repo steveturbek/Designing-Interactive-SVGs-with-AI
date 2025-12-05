@@ -16,9 +16,10 @@ A short course for designers on making interactive SVGs with AI help.
 
 This article will be presented as a [CreativeMornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.
 
-[View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)
+<!-- [View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg) -->
 
-In years past, designers had tools like Macromedia Director and Flash, which blended the line between sketching and making, designing and programming. When Steve Jobs killed Flash in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash), complex JavaScript-driven websites took over. The web effectively became the domain of programmers rather than visual designers.
+In years past, designers used tools like Macromedia Director and Flash to make customer facing
+, which blended the line between sketching and making, designing and programming. When Steve Jobs killed Flash in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash), complex JavaScript-driven websites took over. The web effectively became the domain of programmers rather than visual designers.
 
 **_Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others._**
 
