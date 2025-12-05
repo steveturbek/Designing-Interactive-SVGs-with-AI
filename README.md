@@ -14,17 +14,17 @@ A short intro for designers on making interactive SVGs with AI help.
 
 <b class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></b>
 
-This article will be presented as a [CreativeMornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.
+This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.
 
 <!-- [View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg) -->
 
-"Should designers learn to code" has been discussed for decades.
-In years past, designers used tools like Macromedia Director and Flash to make customer facing
-, which blended the line between sketching and making, designing and programming. When Steve Jobs killed Flash in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash), complex JavaScript-driven websites took over. The web effectively became the domain of programmers rather than visual designers.
+"Should designers learn to code" has been discussed for decades, ever since early web design split into people who draw the UI and people who code it. In years past, designers also created complex interactive experiences using tools like Macromedia Director and Flash, which blended the line between sketching and making, designing and programming.
 
-**_Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others._**
+When Steve Jobs killed Flash in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash), LOL, complex JavaScript-driven websites took over. The web effectively became the domain of programmers rather than visual designers.
 
-This workshop is about reclaiming some of that power.
+Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others.
+
+This workshop is about reclaiming a piece of that power.
 
    <div style="text-align: center;display: block;margin: 0 auto;">
 <figure>
@@ -67,10 +67,9 @@ Design is all about precise communication, yet designers have struggled to commu
 - SVG is a vector format, but is written in a language like HTML
 - LLMs are great at manipulating language
 - With proper set up, a designer can upload an image and collaborate the interaction into life.
-- The SVG is now portable, contains its code.
 - One can 'round trip' between design programs and AI, made easier with the tools included here
 
-- **<a href="svg-ai-helper.html" target="new">SVG AI Helper</a>** used in this workshop to add interactivity to a SVG.
+I present a <a href="svg-ai-helper.html" target="new">SVG AI Helper</a> tool, used in this workshop to add interactivity to a SVG.
 
 _Note: All code on this site works solely in the browser, no data is retained._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome.
 
@@ -101,6 +100,7 @@ These students had no coding experience, so I wrote a “Skill” to prep the AI
 
 ## What is SVG and can it be cured?
 
+(A little history note)
 Human language is an incredibly flexible communication tool, but that flexibility comes at the cost of precision.
 
 Markup Languages were created with the idea to wrap data in tags so BOTH computers and people could understand it.
@@ -141,13 +141,35 @@ SVG is widely used on the web for icons and illustrations. BUT the SVG origin st
 SVGs matter because:
 
 1. You, a designer, can use your tools like (Figma, Adobe Illustrator, or the open source Inkscape) and save as SVG.
-1. You, a designer, can upload the SVG to your website, even locked down corporate Content Managed sites, where you can't get any dev resources to make your cool interactions.
-1. SVGs can carry their styling and interaction code inside the file, which is encapsulated, so it can't break the website it is on.
-1. They can use javascript to call out to the web and get data, like in a dashboard.
 1. SVGs are written as a language and AIs are excellent at interpreting language.
-1. As you, a designer, always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
+
+1. They can use javascript to call out to the web and get data, like in a dashboard.
+
+1. You, a designer, can upload the SVG to your website, even locked down corporate Content Managed sites, where you can't get any dev resources to make your cool interactions.
+1. SVGs can carry their styling and interaction code inside the file, "Sandboxed", so it can't break the website it is on.
 
 _One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details._
+
+1. As you, a designer, always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
+
+### What does SVG code look like?
+
+```
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#4A90E2" />
+</svg>
+```
+
+<figure>
+<object data="images/speed.svg" type="image/svg+xml" width="400" class="interstitial_svg">
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#4A90E2" />
+</svg>
+</object>
+<!--<figcaption>
+   An example data-driven interactive SVG
+</figcaption> -->
+</figure>
 
 <figure>
 <object data="images/speed.svg" type="image/svg+xml" width="400" class="interstitial_svg">
