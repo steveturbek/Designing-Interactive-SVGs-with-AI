@@ -27,8 +27,7 @@ In years past, designers used tools like Macromedia Director and Flash to make c
 This workshop is about reclaiming some of that power.
 
 <figure>
-<div id="oxygen-interactive" style="display: block;margin: 0 auto;">
-   <div style="display: inline-block; text-align: center;">
+   <div style="text-align: center;display: block;margin: 0 auto;">
      <object data="images/oxygen2.svg" type="image/svg+xml" width="300" class="interstitial_svg">
        <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
      </object>
@@ -53,7 +52,6 @@ This workshop is about reclaiming some of that power.
          window.dispatchEvent(new Event('storage'));
       });
    </script>
-</div>
 <figcaption>
    An example data-driven interactive SVG, animated with AI in the workshop.
    
