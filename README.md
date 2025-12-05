@@ -161,20 +161,16 @@ This gives the designer additional powers
 
 ```
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="40" fill="#4A90E2" />
+  <circle cx="50" cy="50" r="40" fill="#4A90E2"/>
 </svg>
 ```
 
-<figure>
-<object type="image/svg+xml" width="400" class="interstitial_svg">
+which gives you
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="40" fill="#4A90E2" />
+<circle cx="50" cy="50" r="40" fill="#4A90E2" />
 </svg>
-</object>
-<!--<figcaption>
-   An example data-driven interactive SVG
-</figcaption> -->
-</figure>
+
+For much more info on SVGs, see the references below.
 
 <figure>
 <object data="images/speed.svg" type="image/svg+xml" width="400" class="interstitial_svg">
@@ -376,13 +372,15 @@ I hope this is demonstrated some fun and thought-provoking new tools for designe
 
 For many years, there has been a debate about whether designers should "learn to code". Being a full programmer is a deeply skilled role, that neither a designer nor an AI will easily replace. But knowledge of the syntax of a programming language is only part of what it programmer does. It is routine in a design project that programmer will uncover the hidden cases while trying to write robust code. "where do we mail the check, if the person has no address, because they are homeless?" Far too often designers stick to the "happy path" when our job is to solve the problems our end-users have.
 
+When designing a system, like this class, the term 'Composability' kept coming up. By designing the elements to work independently, but as part of a larger system, you can better manage complexity. This is as important as a teacher as a designer. You want to empower the student/user, but in a structured way, so they don't get lost or overwhelmed.
+
 There is some irony in AI being created by programmers, who focus on programming problems, to develop AIs whose strongest skill is programming. But AI can be transformative for the designer, if harness properly. Any AI that is used to generate a design from scratch, necessarily means a generic design, as AI is fundamentally and averaging of the ideas of from the past.
 
 Ultimately design is the communication of ideas, whether it is the idea about a product yet to be made, or the ideas in a product communicated to the end user. If we designers become better communicators, using our visual design tools with our new skills of working with AI coding assistants, both we and society will benefit.
 
 ## Tips and Notes
 
-- To start off, these ideas are not the solution to every problem, they're more like a sketch of a recipe.
+- These ideas are not the solution to every problem, they're more like a sketch of a recipe.
 - The most important tip is to have as much patience as an AI. Ask it to explain.
 - Be a good communicator: your prompt to the AI should be at least a paragraph long.
 - Be a scientist, document each step. save versions.
