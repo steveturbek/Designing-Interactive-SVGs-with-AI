@@ -26,17 +26,21 @@ In years past, designers used tools like Macromedia Director and Flash to make c
 
 This workshop is about reclaiming some of that power.
 
-<figure>
    <div style="text-align: center;display: block;margin: 0 auto;">
+<figure>
      <object data="images/oxygen2.svg" type="image/svg+xml" width="300" class="interstitial_svg">
        <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
      </object>
+     <figcaption>
+   An example data-driven interactive SVG, animated with AI in the workshop.
+   <p><b>Click buttons to adjust Oxygen Level.</b></p>
+</figcaption>
+</figure>
      <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
        <button class="oxygen2" type="button" id="oxygen2-decrease">-10</button>
        <button class="oxygen2" type="button" id="oxygen2-increase">+10</button>
      </div>
-   </div>
-   
+ 
    <script type="text/javascript">
       localStorage.setItem("oxygen2", "50");
    
@@ -52,12 +56,6 @@ This workshop is about reclaiming some of that power.
          window.dispatchEvent(new Event('storage'));
       });
    </script>
-<figcaption>
-   An example data-driven interactive SVG, animated with AI in the workshop.
-   
-   **Click buttons to adjust Oxygen Level.**
-</figcaption>
-</figure>
 
 ## TLDR
 
