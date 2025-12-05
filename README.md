@@ -172,17 +172,6 @@ which gives you
 
 For much more info on SVGs, see the references below.
 
-<figure>
-<object data="images/speed.svg" type="image/svg+xml" width="400" class="interstitial_svg">
-  <img src="images/speed.svg" alt="Speed Gauge SVG" />
-</object>
-<!--<figcaption>
-   An example data-driven interactive SVG
-</figcaption> -->
-</figure>
-
-[_Thanks, Anthony Robinson for this cool font!_](https://www.1001fonts.com/14-segment-led-font.html)
-
 ## Animation in SVGs
 
 The animation capabilities in a SVG are quite powerful. I'm not going to go deep into animation as there are so many more competent people (see references). But I want to highlight one because it is so conceptually cool. I'm sure you have seen the animation of someone "drawing" a shape. This "drawing" animation is only a couple of lines of code - the conceptual idea was to make this outline have a dashed line style, but the dashes are really huge. The animation slides that dash along the line, making it look like a drawing.
@@ -203,22 +192,16 @@ Basically, everything you can do with a webpage: rollovers, buttons, etc can be 
 
 ## Example 1: Color Wheel : Basic Interactivity
 
-Interactive SVGs can be a game changer for designers working with Devs.
-
-A designer can add interactivity without developer help by uploading a SVG image, for example in Content Management Systems.
-
-I made this handy color wheel.
-
-_Hover over any color segment to view its name, RGB values, and hex code. Click to lock the color information to copy values._
+Interactive SVGs can be a game changer for designers wanting to add some useful tool. A designer can add interactivity without developer help by uploading a SVG image, for example in Content Management Systems. I made this handy color wheel for a design system page when we had no developers available.
 
 <figure>
 <object data="images/GSDS-color-wheel-v2.svg" type="image/svg+xml" width="700" height="800" class="interstitial_svg">
   <img src="images/GSDS-color-wheel-v2.svg" alt="GS Design System Color Wheel" />
 </object>
 
-<!--<figcaption>
-   An example data-driven interactive SVG
-</figcaption> -->
+<figcaption>
+   _Hover over any color segment to view its name, RGB values, and hex code. Click to lock the color information to copy values._
+</figcaption>
 </figure>
 
 ## Example 2: Currency Game : Data API & Game Logic
@@ -393,7 +376,17 @@ Ultimately design is the communication of ideas, whether it is the idea about a 
 - Organize your files. Name your layers!!
 - **Check:** If a layer is named yourElementName, Open your SVG in a text editor and search for `id="yourElementName"`
 - Some AIs have restrictions against uploading SVGs, at least on free plans. But pasting the SVG text is apparently fine.
-- One can use custom fonts in SVG. [Google fonts](https://fonts.google.com/), [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section), or just many free font stores. You need to tell the SVG where to find the file. See the Speed gauge code for more.
+- One can use custom fonts in SVG. [Google fonts](https://fonts.google.com/), [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section), or the many paid and free fonts online. You need to tell the SVG where to find the file. See the Speed gauge code for more.
+
+<figure>
+<object data="images/speed.svg" type="image/svg+xml" width="400" class="interstitial_svg">
+  <img src="images/speed.svg" alt="Speed Gauge SVG" />
+</object>
+<figcaption>
+   An example data-driven interactive SVG
+   [_Thanks, Anthony Robinson for this cool font!_](https://www.1001fonts.com/14-segment-led-font.html)
+</figcaption>
+</figure>
 
 ### Exporting SVGs
 
