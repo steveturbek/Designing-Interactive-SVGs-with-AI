@@ -215,7 +215,7 @@ Interactive SVGs can be a game changer for designers working with Devs.
 
 A designer can add interactivity without developer help by uploading a SVG image, for example in Content Management Systems.
 
-I made this handy color wheel for our Goldman Sachs Design System (which was public when I lead the team). It is still [available on Archive.org](https://web.archive.org/web/20220819072910/https://design.gs.com/home)
+I made this handy color wheel.
 
 _Hover over any color segment to view its name, RGB values, and hex code. Click to lock the color information to copy values._
 
