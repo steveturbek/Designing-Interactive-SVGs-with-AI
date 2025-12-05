@@ -134,7 +134,7 @@ SVGs are an **Graphic** file format, like JPEG, GIF, PNG. But SVGs store the inf
 </figcaption> -->
 </figure>
 
-## Why do SVG matter today?
+## Why does SVG matter today?
 
 SVG is widely used on the web for icons and illustrations. BUT the SVG origin story gives it secret powers from those ancient times.
 
@@ -156,10 +156,6 @@ This gives the designer additional powers
 - SVGs can carry their styling and interaction code inside the file, "Sandboxed", so it can't break the website it is on.
 - It is often possible to upload a SVG to a website, even locked down corporate Content Managed Sites.
 - During the build phase of a project (when the developers are busy and the designer has bandwidth) to make your cool interactions.
-
-_One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details._
-
-As you, a designer, always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
 
 ### What does SVG code look like?
 
@@ -237,7 +233,6 @@ This SVG demonstrates a simple "game" that tests a user's ability to trade the U
 <object data="images/currency-game.svg" type="image/svg+xml" width="400" class="interstitial_svg">
   <img src="images/currency-game.svg" alt="currency trading game SVG" />
 </object>
-
 <!--<figcaption>
    An example data-driven interactive SVG
 </figcaption> -->
@@ -245,21 +240,36 @@ This SVG demonstrates a simple "game" that tests a user's ability to trade the U
 
 ## Example 3: Submarine Instruments : Webpage / SVG Communication
 
-This project started out with a desire to empower my design students to connect physical controls to a computer game. We studied car dashboard design, and the interesting pros and cons of the screen-based driver experience.
+This project started out with a desire to empower my design students to connect physical controls to a computer game. We studied car dashboard design, and the interesting pros and cons of the screen-based driver experience. The full submarine dashboard is outside the scope of this workshop, [here's the link if you're interested](https://github.com/steveturbek/Tangible-Interfaces-Submarine-Design-Project/tree/main).
 
-Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9600-128b0e82be92){:target="\_blank"} to show the back and forth redesigning the dashboard speed instrument.
+<video autoplay muted loop playsinline>
+   <source src="images/dashboard.mp4" type="video/mp4" />
+</video>
+
+The drag and drop layout editor, which downloads a new instruments.css file the student uses to save the layout.
+
+<video autoplay muted loop playsinline>
+   <source src="images/dashboard_layout_editor.mp4" type="video/mp4" />
+</video>
 
 The technique we use in this interactive SVG is to communicate with the app webpage via a shared data source. I wanted this game to work locally on laptop with non-technical designers. Unfortunately for me, but fortunately for you, these browser security restrictions meant we had to be creative.
 
-Browsers today have a neat feature called localStorage to storea data locally on your computer. It's sort of like a website cookie, but can hold much more information and is more secure. The info never leaves the browser. It also works across browser, windows, which was important because the game has a pop-up display window.
+Browsers today have a neat feature called localStorage to store data locally on your computer. It's sort of like a website cookie, but can hold much more information and is more secure. The info never leaves the browser. It also works across browser, windows, which was important because the game has a pop-up display window.
 
 The basic strategy is to create an SVG, which has a built-in timer that looks for information and loads it regularly. This is essential, because otherwise extensive code needs to be written by the developers. When the code is encapsulated in the SVG, it is prevented from interfering with the rest of the webpage so you can be reasonably confident you can't break the rest of the website.
 
 To make the game be able to communicate with the SVG, the game saves localStorage with names like "oxygen", or "battery". The SVG's were programmed to look for the information for each of the dashboard instrument.
 
-The full submarine dashboard is outside the scope of this workshop, but [here's the link if you're interested](https://github.com/steveturbek/Tangible-Interfaces-Submarine-Design-Project/tree/main). I'm particularly proud of the drag and drop layout editor, which downloads a new instruments.css file the student uses to save the layout.
+Here is an [example chat session](https://chatgpt.com/share/690a222c-f46c-800d-9600-128b0e82be92){:target="\_blank"} to show the back and forth redesigning the dashboard speed instrument.
 
-(Click buttons to adjust the Oxygen level.) These could just as easily be 2 SVGs communicating with each other.
+<figure>
+<object data="images/depth.svg" type="image/svg+xml" width="200" class="interstitial_svg">
+  <img src="images/depth.svg" alt="Depth Gauge SVG" />
+</object>
+<!--<figcaption>
+   An example data-driven interactive SVG
+</figcaption> -->
+</figure>
 
 ## Pre-Workshop: What is the SVG AI Helper tool?
 
@@ -279,6 +289,11 @@ You will need:
 - Chrome browser and the internet
 - AI access. They all can work, ChatGPT allows SVG upload without paying.
 - 15-60 minutes, more if you use social media
+
+**Best Practices**
+This workshop is all about communication. One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details.
+
+As you, a designer, always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
 
 ### SVG AI Helper
 
@@ -378,7 +393,7 @@ Ultimately design is the communication of ideas, whether it is the idea about a 
 ### Technical tips
 
 - Organize your files. Name your layers!!
-- - **Check:** If a layer is named yourElementName, Open your SVG in a text editor and search for `id="yourElementName"`
+- **Check:** If a layer is named yourElementName, Open your SVG in a text editor and search for `id="yourElementName"`
 - Some AIs have restrictions against uploading SVGs, at least on free plans. But pasting the SVG text is apparently fine.
 - One can use custom fonts in SVG. [Google fonts](https://fonts.google.com/), [Adobe fonts](https://fonts.adobe.com/my_fonts#web_projects-section), or just many free font stores. You need to tell the SVG where to find the file. See the Speed gauge code for more.
 
@@ -509,10 +524,6 @@ Then check Console in browser to see the values.
 Like all code, javascript can be used to harm people. Some websites have strict rules against SVG or disable javascript in SVG to prevent people from stealing other people's data. Don't be evil.
 
 ![Meme of The Simpson's, with caption "Gentlemen, To Evil"](images/simpsons-gentlemen-to-evil.gif "Gentlemen, To Evil")
-
-<object data="images/depth.svg" type="image/svg+xml" width="200" class="interstitial_svg">
-  <img src="images/depth.svg" alt="Depth Gauge SVG" />
-</object>
 
 ## References
 
