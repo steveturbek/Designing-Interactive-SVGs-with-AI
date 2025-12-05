@@ -63,11 +63,12 @@ This workshop is about reclaiming a piece of that power.
 Design is all about precise communication, yet designers have struggled to communicate with computers. What if there was another way?
 
 - Designers know design tools, but coding and interaction is often a challenge
-- The SVG file format, known for icons, is unexpectedly, a powerful format similar to HTML. One can have style sheets and javascript in the file.
+- The SVG file format, known for icons, is unexpectedly, a powerful format similar to HTML.
 - Designers can use SVGs to include interactivity and delight in a project without breaking dev resources or code rules.
 - SVG is a vector format, but is written in a language like HTML
 - LLMs are great at manipulating language
 - With proper set up, a designer can upload an image and collaborate the interaction into life.
+- The style sheets and javascript are INSIDE the file, sandboxed from breaking wep page code.
 - One can 'round trip' between design programs and AI, made easier with the tools included here
 
 I present a <a href="svg-ai-helper.html" target="new">SVG AI Helper</a> tool, used in this workshop to add interactivity to a SVG.
@@ -85,9 +86,11 @@ _Note: All code on this site works solely in the browser, no data is retained._ 
 
 ## Background
 
-I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interfaces/)" Senior Design Studio in the Industrial Design program at Pratt Institute. In my class, the students designed a 'working' dashboard of instruments as part of a personal submarine design.
+I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interfaces/)" Senior Design Studio in the Industrial Design program at Pratt Institute. In my class, the students designed a personal submarine design, which included working steering controls and UX instruments dashboard.
 
-These students had no coding experience, so I wrote a “Skill” to prep the AI to focus on the right things. It was pretty magical. This workshop extends this idea. It is not solely about dashboard design, but demonstrating a new way for designers to use AI, and rediscovering the power in the tools we designers always had.
+These students had no coding experience, so I wrote a “Skill” to prep the AI to focus on the right things. The results were pretty magical and led to this workshop.
+
+This workshop is not solely about dashboard design, but demonstrating a new way for designers to use AI, and rediscovering the power in the tools we designers always had.
 
 <figure>
 <object data="images/battery.svg" type="image/svg+xml" width="300" class="interstitial_svg">
@@ -102,9 +105,11 @@ These students had no coding experience, so I wrote a “Skill” to prep the AI
 ## What is SVG and can it be cured?
 
 (A little history note)
-Human language is an incredibly flexible communication tool, but that flexibility comes at the cost of precision.
+Human language is an incredibly flexible communication tool, but that flexibility comes at the cost of precision. Sometimes the flexibility ends up in poetry, sometimes in bar fights. In any case, computers have struggled with human language until the current era of Large Language Models.
 
-Markup Languages were created with the idea to wrap data in tags so BOTH computers and people could understand it.
+Markup Languages are a very old idea: "Mark up" data in `<tags>` so both computers and people could understand it.
+
+A small example
 
 ```
 <person>
@@ -113,11 +118,11 @@ Markup Languages were created with the idea to wrap data in tags so BOTH compute
 </person>
 ```
 
-SGML or Standard Generalized Markup Language was created in the 70's and used in newspapers and magazines. It inspired HTML Hyper Text Markup Language, XML, and _SVG (Scalable Vector Graphic)_.
+SGML or Standard Generalized Markup Language was developed in the 70's and used in newspapers and magazines. It inspired HTML Hyper Text Markup Language, XML, and _SVG (Scalable Vector Graphics)_.
 
 SVGs are an **Graphic** file format, like JPEG, GIF, PNG. But SVGs store the information as math, not pixels. The drawing tools in Adobe Illustrator or Figma make **Vector** shapes like lines, rectangles, circles, and any complex curved shape. This means that the file size is tiny, but they are **Scalable** up to a billboard size without becoming blurry like a bitmap.
 
-SVGs are used everywhere today, especially on the web.
+<!-- SVGs are used everywhere today, especially on the web. -->
 
 <figure>
 <object data="images/compass.svg" type="image/svg+xml" width="300" class="interstitial_svg">
@@ -141,16 +146,15 @@ SVG is widely used on the web for icons and illustrations. BUT the SVG origin st
 
 SVGs matter because:
 
-1. You, a designer, can design using your tools (Figma, Adobe Illustrator, or the open source Inkscape) and save as SVG.
-1. SVGs are written as a language
-1. AIs are excellent at interpreting language.
+1. A designer can design using your tools (Figma, Adobe Illustrator, or the open source Inkscape) and save as SVG.
+1. SVGs are written as a language, which AIs are excellent at interpreting.
 1. You can collaborate with the AI to add sophisticated functionality and diagnose and fix problems.
 
 This gives the designer additional powers
 
 - They can use javascript to call out to the web and get data, like in a dashboard.
 - SVGs can carry their styling and interaction code inside the file, "Sandboxed", so it can't break the website it is on.
-- It can be possible to upload the SVG to your website, even locked down corporate Content Managed Sites
+- It is often possible to upload a SVG to a website, even locked down corporate Content Managed Sites.
 - During the build phase of a project (when the developers are busy and the designer has bandwidth) to make your cool interactions.
 
 _One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details._
@@ -166,7 +170,7 @@ As you, a designer, always name your design file layers (right??), you and the A
 ```
 
 <figure>
-<object data="images/speed.svg" type="image/svg+xml" width="400" class="interstitial_svg">
+<object type="image/svg+xml" width="400" class="interstitial_svg">
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="40" fill="#4A90E2" />
 </svg>
