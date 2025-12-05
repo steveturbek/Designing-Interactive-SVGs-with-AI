@@ -32,15 +32,15 @@ This workshop is about reclaiming a piece of that power.
        <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
      </object>
      <figcaption>
-   An example data-driven interactive SVG, animated with AI in the workshop.
-   <p><b>Click buttons to adjust Oxygen Level.</b></p>
-</figcaption>
-</figure>
+      An example data-driven interactive SVG, animated with AI in the workshop.
      <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
        <button class="oxygen2" type="button" id="oxygen2-decrease">-10</button>
        <button class="oxygen2" type="button" id="oxygen2-increase">+10</button>
-     </div>
- 
+      </div>
+   <p><b>Click buttons to adjust Oxygen Level</b></p>
+ </figcaption>
+</figure>
+
    <script type="text/javascript">
       localStorage.setItem("oxygen2", "50");
    
@@ -56,6 +56,7 @@ This workshop is about reclaiming a piece of that power.
          window.dispatchEvent(new Event('storage'));
       });
    </script>
+</div>
 
 ## TLDR
 
@@ -140,17 +141,21 @@ SVG is widely used on the web for icons and illustrations. BUT the SVG origin st
 
 SVGs matter because:
 
-1. You, a designer, can use your tools like (Figma, Adobe Illustrator, or the open source Inkscape) and save as SVG.
-1. SVGs are written as a language and AIs are excellent at interpreting language.
+1. You, a designer, can design using your tools (Figma, Adobe Illustrator, or the open source Inkscape) and save as SVG.
+1. SVGs are written as a language
+1. AIs are excellent at interpreting language.
+1. You can collaborate with the AI to add sophisticated functionality and diagnose and fix problems.
 
-1. They can use javascript to call out to the web and get data, like in a dashboard.
+This gives the designer additional powers
 
-1. You, a designer, can upload the SVG to your website, even locked down corporate Content Managed sites, where you can't get any dev resources to make your cool interactions.
-1. SVGs can carry their styling and interaction code inside the file, "Sandboxed", so it can't break the website it is on.
+- They can use javascript to call out to the web and get data, like in a dashboard.
+- SVGs can carry their styling and interaction code inside the file, "Sandboxed", so it can't break the website it is on.
+- It can be possible to upload the SVG to your website, even locked down corporate Content Managed Sites
+- During the build phase of a project (when the developers are busy and the designer has bandwidth) to make your cool interactions.
 
 _One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details._
 
-1. As you, a designer, always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
+As you, a designer, always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
 
 ### What does SVG code look like?
 
