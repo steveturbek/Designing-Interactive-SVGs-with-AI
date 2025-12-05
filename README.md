@@ -242,7 +242,7 @@ This SVG demonstrates a simple "game" that tests a user's ability to trade the U
 
 This project started out with a desire to empower my design students to connect physical controls to a computer game. We studied car dashboard design, and the interesting pros and cons of the screen-based driver experience. The full submarine dashboard is outside the scope of this workshop, [here's the link if you're interested](https://github.com/steveturbek/Tangible-Interfaces-Submarine-Design-Project/tree/main).
 
-<video autoplay muted loop playsinline>
+<video autoplay muted loop playsinline  width="100%" alt="video of dashboard instrument SVGs in action">
    <source src="images/dashboard.mp4" type="video/mp4" />
 </video>
 
