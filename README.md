@@ -556,7 +556,7 @@ Like all code, javascript can be used to harm people. Some websites have strict 
 
 ### APIs to consider
 
-(choosing ones that change frequently)
+These ones update frequently enough to use as a demo.
 
 - [Where is the International Space Station](http://api.open-notify.org/iss-now.json)
 - [Weather on Mt Everest](https://api.open-meteo.com/v1/forecast?latitude=27.9882&longitude=86.9254&current_weather=true)
@@ -568,43 +568,3 @@ Like all code, javascript can be used to harm people. Some websites have strict 
 ### SVG History
 
 [Wikipedia on SVG](https://en.wikipedia.org/wiki/SVG)
-
-**Early development (late 1990s)**
-
-- Multiple competing proposals submitted to W3C for vector graphics on the web
-- Microsoft had VML (Vector Markup Language)
-- Adobe, Sun, others had PGML (Precision Graphics Markup Language)
-- Macromedia had proposals too
-- W3C merged ideas into SVG specification
-
-**SVG 1.0 (2001)**
-
-- First official W3C recommendation
-- XML-based vector graphics format
-- Designed to work with other web standards (CSS, JavaScript, DOM)
-
-**The plugin era (2001-2010)**
-
-- Browsers had poor native support
-- Adobe SVG Viewer plugin was common
-- Competed with Flash, which dominated vector/animation on web
-- SVG existed but wasn't widely used for actual websites
-
-**Mobile/Flash's decline (2007-2010)**
-
-- iPhone didn't support Flash
-- Steve Jobs's famous letter against Flash (2010)
-- Suddenly need for open, standard vector format
-- Browsers started implementing native SVG support seriously
-- Mobile phones supported it before most desktop browsers.
-
-**Modern era (2010s+)**
-
-- All major browsers support SVG natively
-- Became standard for responsive icons, logos, data visualizations
-- Tools like D3.js made SVG the de facto standard for web-based charts
-- Design tools (Sketch, Figma, Illustrator) all export SVG
-
-**_The irony: took 10+ years to become useful because browser support lagged, then Flash's death suddenly made it essential._**
-
-Side note: its fascinating to see the present from the perspective of the past. Things that are fact today, was just one of many options being debated. People thought that slow phone speeds meant we should have a completely web for phone written in "[WML](https://en.wikipedia.org/wiki/Wireless_Markup_Language)".
