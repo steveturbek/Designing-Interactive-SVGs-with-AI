@@ -24,7 +24,7 @@ Designers can create interactive, data-driven experiences—they just need a lit
 
 When Steve Jobs killed Flash on the iPhone in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash) 🤔, complex JavaScript-driven websites took over. The web effectively became the domain of programmers with Computer Science degrees rather than English majors who learned design along with scrappy HTML skills.
 
-The many cheesy restaurant websites made with Flash in the 2000's have been replaced with centralized restaurant and delivery websites. I'm sure the coding standards are higher, but we also lost something local and handmade. In any case, I doubt those websites and app quality is worth a 30% cut of each meal.
+The many cheesy restaurant websites made with Flash in the 2000's have been replaced with centralized restaurant and delivery websites. I'm sure the coding standards are higher, but we also lost something local and handmade. In any case, are those websites and apps really earning a 30% cut of each meal?
 
 Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others. This workshop is about reclaiming a piece of that power.
 
@@ -176,7 +176,7 @@ For much more info on SVGs, see the references below.
 
 ## Animation in SVGs
 
-The animation capabilities in a SVG are quite powerful. I'm not going to go deep into animation as there are so many more competent people (see references). But I want to highlight one because it is so conceptually cool. I'm sure you have seen the animation of someone "drawing" a shape. This "drawing" animation is only a couple of lines of code - the conceptual idea was to make this outline have a dashed line style, but the dashes are really huge. The animation slides that dash along the line, making it look like a drawing.
+The animation capabilities in a SVG are quite powerful. I'm not going to go deep into animation as there are so many more competent people (see references). But this one is just so conceptually cool. I'm sure you have seen the animation of someone "drawing" a shape. This "drawing" animation is only a couple of lines of code - the conceptual idea was to make this outline have a dashed line style, but the dashes are really huge. The animation slides that dash along the line, making it look like a drawing.
 
 <figure>
 <object data="images/z-animation.svg" type="image/svg+xml" width="400" class="interstitial_svg">
@@ -233,7 +233,7 @@ The drag and drop layout editor, which downloads a new instruments.css file the 
    <source src="images/dashboard_layout_editor.mp4" type="video/mp4" />
 </video>
 
-The technique we use in this interactive SVG is to communicate with the app webpage via a shared data source. I wanted this game to work locally on laptop with non-technical designers. Unfortunately for me, but fortunately for you, these browser security restrictions meant we had to be creative.
+The technique we use in this interactive SVG is to communicate with the app webpage via a shared data source. This game had to work locally on a laptop; a local web server was too complex for these non-technical designers. Unfortunately for me, but fortunately for you, these browser security restrictions meant we had to be creative.
 
 Browsers today have a neat feature called localStorage to store data locally on your computer. It's sort of like a website cookie, but can hold much more information and is more secure. The info never leaves the browser. It also works across browser windows, which was important because the game has a pop-up display window.
 
@@ -301,7 +301,7 @@ The <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant
 
 Let's start with a [Equirectangular World Map](https://commons.wikimedia.org/wiki/File:Longitude-latitude.svg) _Thanks Sven nestle2 at Wikipedia_
 
-Equirectangular means they stretched a round globe proportionally into a rectangle. _I Just learned this also!_ (The Mercator projection is more common, but the math for this project would be way to complicated)
+Equirectangular means they stretched a round globe proportionally into a rectangle. _TIL!_ (The Mercator projection is more common, but the math would be way to complicated for this project.)
 
 Let's edit the image to crop and simplify the colors
 
@@ -321,7 +321,7 @@ Let's add a red circle in the middle, to represent the International Space Stati
 
 Let's use my [SVG AI Helper](svg-ai-helper.html). This workflow enables you to drop a SVG and describe what you want to happen. It combines it with special code instructions that can be pasted into a AI chat window. The AI is instructed to produce
 
-Here's the prompt I used to animate this SVG
+Here's the prompt used to animate this SVG
 
 ```
 There's an API for the International Space Station at http://api.open-notify.org/iss-now.json
