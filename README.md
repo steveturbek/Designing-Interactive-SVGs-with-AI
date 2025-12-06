@@ -514,8 +514,6 @@ Then check Console in browser to see the values.
 
 Like all code, javascript can be used to harm people. Some websites have strict rules against SVG or disable javascript in SVG to prevent people from stealing other people's data. Don't be evil.
 
-![Meme of The Simpson's, with caption "Gentlemen, To Evil"](images/simpsons-gentlemen-to-evil.gif "Gentlemen, To Evil")
-
 ## References
 
 - [The Secret Origin of SVG](https://www.w3.org/Graphics/SVG/WG/wiki/Secret_Origin_of_SVG)
