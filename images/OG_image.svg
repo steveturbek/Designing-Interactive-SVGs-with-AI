@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1200 630">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-size: 49.5px;
+      }
+
+      .st0, .st1, .st2, .st3, .st4, .st5, .st6 {
+        isolation: isolate;
+      }
+
+      .st0, .st3 {
+        fill: #222;
+      }
+
+      .st0, .st4 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .st7 {
+        fill: #111;
+        stroke: #333;
+      }
+
+      .st7, .st1 {
+        stroke-width: 3.8px;
+      }
+
+      .st1 {
+        opacity: .6;
+        stroke: #d8d0b6;
+      }
+
+      .st1, .st8, .st2, .st9, .st10, .st11, .st5 {
+        fill: none;
+      }
+
+      .st8 {
+        stroke-width: 9.5px;
+      }
+
+      .st8, .st2, .st9 {
+        stroke: #c22;
+      }
+
+      .st2, .st9, .st10, .st11, .st5 {
+        stroke-linecap: round;
+      }
+
+      .st2, .st5 {
+        opacity: .9;
+        stroke-width: 4.6px;
+      }
+
+      .st12 {
+        fill: #2b2b2b;
+        stroke-width: 3px;
+      }
+
+      .st12, .st11 {
+        stroke: #111;
+      }
+
+      .st12, .st13 {
+        display: none;
+      }
+
+      .st9, .st10, .st14 {
+        stroke-width: 7.6px;
+      }
+
+      .st3 {
+        font-family: HelveticaNeue-Bold, 'Helvetica Neue';
+        font-size: 76.1px;
+        font-weight: 700;
+        letter-spacing: 0em;
+      }
+
+      .st10, .st5 {
+        stroke: #222;
+      }
+
+      .st14 {
+        fill: url(#linear-gradient);
+        stroke: #b5ad93;
+      }
+
+      .st11 {
+        stroke-width: 11.4px;
+      }
+
+      .st4 {
+        fill: #444;
+        font-size: 45.7px;
+      }
+
+      .st13 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st6 {
+        fill: #fff;
+        opacity: 0;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-1823.1" y1="782.3" x2="-1823.1" y2="778.5" gradientTransform="translate(638695 273458) scale(350 -350)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7f1e3"/>
+      <stop offset="1" stop-color="#e9dfc8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="-1823.1" y1="782.3" x2="-1823.1" y2="778.5" gradientTransform="translate(638695 273458) scale(350 -350)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".5"/>
+      <stop offset=".4" stop-color="#fff" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect class="st12" x="410" y="125" width="380" height="380" rx="12" ry="12"/>
+  <rect class="st14" x="-65.9" y="-341.4" width="1331.9" height="1331.9" rx="38.1" ry="38.1"/>
+  <path class="st1" d="M171.6,305.5C308.2,68.9,610.8-12.2,847.4,124.5c75.2,43.4,137.6,105.8,181,181"/>
+  <g id="major-ticks">
+    <line class="st10" x1="270.5" y1="362.6" x2="171.6" y2="305.5"/>
+    <line class="st10" x1="376.3" y1="245" x2="309.2" y2="152.6"/>
+    <line class="st10" x1="520.9" y1="180.6" x2="497.1" y2="68.9"/>
+    <line class="st10" x1="679.1" y1="180.6" x2="702.9" y2="68.9"/>
+    <line class="st10" x1="823.7" y1="245" x2="890.8" y2="152.6"/>
+    <line class="st9" x1="929.5" y1="362.6" x2="1028.4" y2="305.5"/>
+  </g>
+  <g id="minor-ticks">
+    <line class="st5" x1="274.8" y1="260" x2="232.4" y2="221.8"/>
+    <line class="st5" x1="422" y1="153" x2="398.8" y2="100.9"/>
+    <line class="st5" x1="600" y1="115.2" x2="600" y2="58.1"/>
+    <line class="st5" x1="778" y1="153" x2="801.2" y2="100.9"/>
+    <line class="st2" x1="925.2" y1="260" x2="967.6" y2="221.8"/>
+  </g>
+  <g id="labels">
+    <text class="st0" transform="translate(306.1 391.1)"><tspan x="0" y="0">0</tspan></text>
+    <text class="st0" transform="translate(382.4 291.1)"><tspan x="0" y="0">20</tspan></text>
+    <text class="st0" transform="translate(505.2 236.5)"><tspan x="0" y="0">40</tspan></text>
+    <text class="st0" transform="translate(639.7 236.5)"><tspan x="0" y="0">60</tspan></text>
+    <text class="st0" transform="translate(762.6 291.1)"><tspan x="0" y="0">80</tspan></text>
+    <text class="st0" transform="translate(838.8 391.1)"><tspan x="0" y="0">100</tspan></text>
+  </g>
+  <g id="needleGroup">
+    <line id="line" class="st11" x1="600" y1="552.8" x2="785.7" y2="135.7"/>
+    <line class="st8" x1="785.7" y1="135.7" x2="801.2" y2="100.9"/>
+    <circle class="st7" cx="600" cy="552.8" r="22.8"/>
+    <circle class="st6" cx="600" cy="552.8" r="11.4"/>
+  </g>
+  <text class="st3" transform="translate(426.5 743.1)"><tspan x="0" y="0">OXYGEN</tspan></text>
+  <text class="st4" transform="translate(523.8 826.8)"><tspan x="0" y="0">percent</tspan></text>
+  <rect class="st13" x="-65.9" y="-341.4" width="1331.9" height="1331.9" rx="38.1" ry="38.1"/>
+</svg>
