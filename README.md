@@ -1,4 +1,4 @@
-# Designing Interactive SVGs with AI
+# Make it Go! Designing Interactive SVGs with AI Code Help
 
 <div class="toc-wrapper" markdown="1">
 
@@ -12,11 +12,13 @@
 
 A short intro for designers on making interactive SVGs with AI help.
 
-<b class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></b>
+<h1 class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></h1>
 
-This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.
+**This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.**
 
 <!-- [View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg) -->
+
+Designers can create interactive, data-driven experiences—they just need a little help. This workshop shows how to combine classic design tools like Figma and Illustrator with a guided AI workflow to add animation, interactivity, and live data to SVGs. We'll explore a new hybrid way of making rich digital experiences, no coding experience required.
 
 "Should designers learn to code" has been discussed for decades, ever since early web design split into people who draw the UI and people who code it. In years past, designers also created complex interactive experiences using tools like Macromedia Director and Flash, which blended the line between sketching and making, designing and programming.
 
