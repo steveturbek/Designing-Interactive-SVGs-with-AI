@@ -20,11 +20,9 @@ This article will be presented as a [Creative Mornings FieldTrip](https://creati
 
 "Should designers learn to code" has been discussed for decades, ever since early web design split into people who draw the UI and people who code it. In years past, designers also created complex interactive experiences using tools like Macromedia Director and Flash, which blended the line between sketching and making, designing and programming.
 
-When Steve Jobs killed Flash in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash), LOL, complex JavaScript-driven websites took over. The web effectively became the domain of programmers rather than visual designers.
+When Steve Jobs killed Flash on the iPhone in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash), 🤔, complex JavaScript-driven websites took over. The web effectively became the domain of programmers with Computer Science degrees rather than English majors who learned design along with scrappy HTML skills. The many annoying restaurant Flash websites of the 2000's have been replaced with centralized restaurant and delivery companies. I'm sure the coding standards are higher, but we also lost something local and handmade. In any case, I doubt those websites and apps are earning their 30% cut of each meal.
 
-Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others.
-
-This workshop is about reclaiming a piece of that power.
+Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others. This workshop is about reclaiming a piece of that power.
 
    <div style="text-align: center;display: block;margin: 0 auto;">
 <figure>
@@ -68,7 +66,7 @@ Design is all about precise communication, yet designers have struggled to commu
 - SVG is a vector format, but is written in a language like HTML
 - LLMs are great at manipulating language
 - With proper set up, a designer can upload an image and collaborate the interaction into life.
-- The style sheets and javascript are INSIDE the file, sandboxed from breaking wep page code.
+- The style sheets and javascript are INSIDE the file, and sandboxed (isolated from interacting or breaking web page code).
 - One can 'round trip' between design programs and AI, made easier with the tools included here
 
 I present a <a href="svg-ai-helper.html" target="new">SVG AI Helper</a> tool, used in this workshop to add interactivity to a SVG.
@@ -233,7 +231,7 @@ The drag and drop layout editor, which downloads a new instruments.css file the 
 
 The technique we use in this interactive SVG is to communicate with the app webpage via a shared data source. I wanted this game to work locally on laptop with non-technical designers. Unfortunately for me, but fortunately for you, these browser security restrictions meant we had to be creative.
 
-Browsers today have a neat feature called localStorage to store data locally on your computer. It's sort of like a website cookie, but can hold much more information and is more secure. The info never leaves the browser. It also works across browser, windows, which was important because the game has a pop-up display window.
+Browsers today have a neat feature called localStorage to store data locally on your computer. It's sort of like a website cookie, but can hold much more information and is more secure. The info never leaves the browser. It also works across browser windows, which was important because the game has a pop-up display window.
 
 The basic strategy is to create an SVG, which has a built-in timer that looks for information and loads it regularly. This is essential, because otherwise extensive code needs to be written by the developers. When the code is encapsulated in the SVG, it is prevented from interfering with the rest of the webpage so you can be reasonably confident you can't break the rest of the website.
 
@@ -297,7 +295,7 @@ The <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant
 
 Let's start with a [Equirectangular World Map](https://commons.wikimedia.org/wiki/File:Longitude-latitude.svg) _Thanks Sven nestle2 at Wikipedia_
 
-Equirectangular means they stretched a globe into a rectangle, which makes for easier math for this project. _I Just learned this also!_
+Equirectangular means they stretched a round globe proportionally into a rectangle. _I Just learned this also!_ (The Mercator projection is more common, but the math for this project would be way to complicated)
 
 Let's edit the image to crop and simplify the colors
 
