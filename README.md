@@ -270,7 +270,9 @@ You will need:
 **Best Practices**
 This workshop is all about communication. One of the reasons AI is bad at understanding your prompts, is your human language prompts are simply not detailed enough. The big enhancement of modern AIs is they just guess what you might have meant. For most people this is fine, but designers care about the details.
 
-As you, a designer, always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
+When designing a system, like this class, the term 'Composability' kept coming up. By designing the elements to work independently, but as part of a larger system, you can better manage complexity. As a designer, you are in a sense the teacher of the AI. You want to empower the AI/student/user, but in a structured way, so they don't get lost or overwhelmed.
+
+As you always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
 
 ### SVG AI Helper
 
@@ -352,8 +354,6 @@ Claude got it right on the first try, but ChatGPT took a second try. Here is an 
 I hope this is demonstrated some fun and thought-provoking new tools for designers. To make the thing and not just design the thing. To use some old tools in a new way to empower designers to create richer experiences, even if they don't have a programmer handy.
 
 For many years, there has been a debate about whether designers should "learn to code". Being a full programmer is a deeply skilled role, that neither a designer nor an AI will easily replace. But knowledge of the syntax of a programming language is only part of what it programmer does. It is routine in a design project that programmer will uncover the hidden cases while trying to write robust code. "where do we mail the check, if the person has no address, because they are homeless?" Far too often designers stick to the "happy path" when our job is to solve the problems our end-users have.
-
-When designing a system, like this class, the term 'Composability' kept coming up. By designing the elements to work independently, but as part of a larger system, you can better manage complexity. This is as important as a teacher as a designer. You want to empower the student/user, but in a structured way, so they don't get lost or overwhelmed.
 
 There is some irony in AI being created by programmers, who focus on programming problems, to develop AIs whose strongest skill is programming. But AI can be transformative for the designer, if harness properly. Any AI that is used to generate a design from scratch, necessarily means a generic design, as AI is fundamentally and averaging of the ideas of from the past.
 
