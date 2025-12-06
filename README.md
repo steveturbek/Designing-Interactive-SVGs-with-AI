@@ -1,4 +1,4 @@
-# Make it Go! Designing Interactive SVGs with AI Code Help
+# Make It Go! Designing Interactive SVGs with AI Code Help
 
 <div class="toc-wrapper" markdown="1">
 
