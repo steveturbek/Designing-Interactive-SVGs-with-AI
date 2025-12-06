@@ -383,7 +383,7 @@ Ultimately design is the communication of ideas, whether it is the idea about a 
   <img src="images/speed.svg" alt="Speed Gauge SVG" />
 </object>
 <figcaption>
-   An example data-driven interactive SVG
+   An example data-driven interactive SVG using a custom font.
    [_Thanks, Anthony Robinson for this cool font!_](https://www.1001fonts.com/14-segment-led-font.html)
 </figcaption>
 </figure>
@@ -416,7 +416,7 @@ Figma exports SVGs very well, but it is not a native SVG editor. You can import 
 <img src="images/Figma-export1.png"  class="detail_images"  class="detail_images">
 <img src="images/Figma-export-details.png"  class="detail_images"  class="detail_images">
 
-### Troubleshooting
+## Troubleshooting
 
 You WILL break the SVG at times. Don't panic! Usually it is some extra character or a missing ". Upload to an AI and give it the error message. They are VERY good at this.
 
@@ -449,7 +449,11 @@ Figma/Illustrator sometimes generates new random IDs.
    - **Old:** `document.getElementById('path_12345')`
    - **New:** `document.getElementById('needle')`
 
-### How to Read Error Messages
+## Code Quick Reference
+
+### Intro to Error Messages in the Chrome Javascript Console
+
+Sometimes the problem is quite simple, though the language is unfamiliar. These are a couple of common issues. Ask the AI for help.
 
 **"Cannot read property 'setAttribute' of null"**
 
@@ -466,15 +470,9 @@ Figma/Illustrator sometimes generates new random IDs.
 - **Means:** Variable name used before being created
 - **Fix:** Make sure `const value = ...` line comes before you use `value`
 
-### Code Quick Reference
+### Animation Inspiration - things you can animate with simple javascript code.
 
-#### Common Element Selection
-
-```javascript
-document.getElementById("elementName");
-```
-
-#### Common Transformations
+These examples can help you speak precisely to request your vision from the AI.
 
 ```javascript
 // Rotation
@@ -517,6 +515,7 @@ Like all code, javascript can be used to harm people. Some websites have strict 
 ## References
 
 - [The Secret Origin of SVG](https://www.w3.org/Graphics/SVG/WG/wiki/Secret_Origin_of_SVG)
+- [Wikipedia on SVG](https://en.wikipedia.org/wiki/SVG)
 - [History of Scalable Vector Graphics (SVG) File Format Family](https://www.loc.gov/preservation/digital/formats/fdd/fdd000515.shtml)
 - [W3C SVG 1.1 Specification - Scripting](https://www.w3.org/TR/SVG11/script.html)
 
@@ -552,7 +551,7 @@ Like all code, javascript can be used to harm people. Some websites have strict 
 - Figma
 - Affinity Designer (I haven't used)
 
-### APIs to consider
+## APIs to consider
 
 These ones update frequently enough to use as a demo.
 
@@ -562,7 +561,3 @@ These ones update frequently enough to use as a demo.
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)
 
 <!-- https://commons.wikimedia.org/wiki/File:International_Space_Station_top_view.svg -->
-
-### SVG History
-
-[Wikipedia on SVG](https://en.wikipedia.org/wiki/SVG)
