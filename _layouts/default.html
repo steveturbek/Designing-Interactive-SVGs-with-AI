@@ -159,6 +159,13 @@ figure{
         .toc-wrapper {
           display: none; /* Hide TOC on smaller screens */
         }
+
+        code{
+           white-space: pre-wrap;       /* Preserves formatting while allowing wrapping */
+          word-wrap: break-word;       /* Breaks long words if needed */
+          overflow-wrap: break-word;   /* Modern alternative to word-wrap */
+        }
+
       }
 
       @media screen and (max-width: 510px) {
@@ -171,6 +178,9 @@ figure{
         a {
           word-break: break-all;
         }
+
+
+
       }
 
       .interstitial_svg{
