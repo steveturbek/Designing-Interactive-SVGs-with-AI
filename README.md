@@ -398,7 +398,7 @@ Ultimately design is the communication of ideas, whether it is the idea about a 
 </object>
 <figcaption>
    An example data-driven interactive SVG using a custom font.
-   [_Thanks, Anthony Robinson for this cool font!_](https://www.1001fonts.com/14-segment-led-font.html)
+   <a href="https://www.1001fonts.com/14-segment-led-font.html">Thanks, Anthony Robinson for this cool font!</a>
 </figcaption>
 </figure>
 
