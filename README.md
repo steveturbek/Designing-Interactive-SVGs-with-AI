@@ -202,7 +202,7 @@ Interactive SVGs can be a game changer for designers wanting to add some useful 
 </object>
 
 <figcaption>
-   _Hover over any color segment to view its name, RGB values, and hex code. Click to lock the color information to copy values._
+   Hover over any color segment to view its name, RGB values, and hex code. Click to lock the color information to copy values.
 </figcaption>
 </figure>
 
