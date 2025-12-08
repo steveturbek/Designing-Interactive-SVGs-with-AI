@@ -197,7 +197,7 @@ Basically, everything you can do with a webpage: rollovers, buttons, etc can be 
 Interactive SVGs can be a game changer for designers wanting to add some useful tool. A designer can add interactivity without developer help by uploading a SVG image, for example in Content Management Systems. I made this handy color wheel for a design system page when we had no developers available.
 
 <figure>
-<object data="images/GSDS-color-wheel-v2.svg" type="image/svg+xml" width="700" height="800" class="interstitial_svg">
+<object data="images/GSDS-color-wheel-v2.svg" type="image/svg+xml" class="interstitial_svg">
   <img src="images/GSDS-color-wheel-v2.svg" alt="GS Design System Color Wheel" />
 </object>
 
