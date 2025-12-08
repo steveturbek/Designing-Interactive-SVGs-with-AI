@@ -305,7 +305,10 @@ Equirectangular means they stretched a round globe proportionally into a rectang
 
 Let's edit the image to crop and simplify the colors
 
-![World Map](images/ISS-Map-1-simplified-styles.svg)
+<figure>
+<object data="images/ISS-Map-1-simplified-styles.svg" type="image/svg+xml" class="interstitial_svg">
+  <img src="images/ISS-Map-1-simplified-styles.svg" alt="ISS map in progress" />
+</object>
 
 Let's add a red circle in the middle, to represent the International Space Station. Do it in your design program OR better yet just open the file in TextEdit and simply pasting this right before the `</svg>`
 
@@ -317,7 +320,10 @@ Let's add a red circle in the middle, to represent the International Space Stati
 
 (It makes a circle, in a group named ISS.). This is in a group, so when you open it in Illustrator it shows the group. Also, you could add more to the group layer later.
 
-![ISS Map](images/ISS-Map-3-simplified-styles.svg)
+<figure>
+<object data="images/ISS-Map-3-simplified-styles.svg" type="image/svg+xml" class="interstitial_svg">
+  <img src="images/ISS-Map-3-simplified-styles.svg" alt="ISS map in progress" />
+</object>
 
 Let's use my [SVG AI Helper](svg-ai-helper.html). This workflow enables you to drop a SVG and describe what you want to happen. It combines it with special code instructions that can be pasted into a AI chat window. The AI is instructed to produce
 
