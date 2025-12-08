@@ -278,19 +278,17 @@ When designing a system, like this class, the term 'Composability' kept coming u
 
 As you always name your design file layers (right??), you and the AI can have a specific conversation. "Rotate item carLogo 30 degrees" is very legible to an AI.
 
-### SVG AI Helper
+## SVG AI Helper
 
-**_The [SVG AI Helper](svg-ai-helper.html)_** is a webpage with JavaScript that helps prep your SVG to add interactivity using AI. It combines your files and my "AI SKill" instructions to guide the AI to understand the problem holistically.
+The [SVG AI Helper](svg-ai-helper.html) is a webpage with JavaScript that helps prep your SVG to add interactivity using AI. It combines your files and my "AI SKill" instructions to guide the AI to understand the problem holistically.
 
-1. You enter:
-   1. Your SVG file
-   1. Your text description of what you want to happen
+1. You add a SVG file and text description of what you want to happen
 1. You then paste the text into the chat window of the AI of your choice.
 1. It may ask follow up questions if you were not explicit enough.
 1. It should return some javascript code, which you can copy
 1. You paste this code back into the SVG AI Helper window
 1. You may get a working interactive SVG!
-   1. If not: note what is wrong and you want to happen and try again. See troubleshooting section below
+1. If not: note what is wrong and you want to happen and try again. See troubleshooting section below
 1. Iterate!
 
 _Note: All code on this site works solely in the browser, no data is retained or is visible to anyone except yourself._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome. All the AI Skill instructions text is freely accessible in the web page code.
