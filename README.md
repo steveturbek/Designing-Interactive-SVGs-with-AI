@@ -229,7 +229,7 @@ This project started out with a desire to empower my design students to connect 
 
 The drag and drop layout editor, which downloads a new instruments.css file the student uses to save the layout.
 
-<video autoplay muted loop playsinline>
+<video autoplay muted loop playsinline  width="100%" alt="video of dashboard instrument SVGs in action">
    <source src="images/dashboard_layout_editor.mp4" type="video/mp4" />
 </video>
 
@@ -344,7 +344,7 @@ Claude got it right on the first try, but ChatGPT took a second try. Here is an 
 ### Working ISS Tracker!
 
 <figure>
-<object data="images/ISS-Map-4-simplified-styles-interactive-claude.svg" type="image/svg+xml" width="800" class="interstitial_svg">
+<object data="images/ISS-Map-4-simplified-styles-interactive-claude.svg" type="image/svg+xml" class="interstitial_svg">
   <img src="images/ISS-Map-4-simplified-styles-interactive-claude.svg" alt="Current Position of ISS" />
 </object>
 
