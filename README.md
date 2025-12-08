@@ -309,6 +309,10 @@ Let's edit the image to crop and simplify the colors
 <object data="images/ISS-Map-1-simplified-styles.svg" type="image/svg+xml" class="interstitial_svg">
   <img src="images/ISS-Map-1-simplified-styles.svg" alt="ISS map in progress" />
 </object>
+<figcaption>
+   ISS map beginning
+</figcaption>
+</figure>
 
 Let's add a red circle in the middle, to represent the International Space Station. Do it in your design program OR better yet just open the file in TextEdit and simply pasting this right before the `</svg>`
 
@@ -324,7 +328,10 @@ Let's add a red circle in the middle, to represent the International Space Stati
 <object data="images/ISS-Map-3-simplified-styles.svg" type="image/svg+xml" class="interstitial_svg">
   <img src="images/ISS-Map-3-simplified-styles.svg" alt="ISS map in progress" />
 </object>
-
+<figcaption>
+   ISS map in progress
+</figcaption>
+</figure>
 Let's use my [SVG AI Helper](svg-ai-helper.html). This workflow enables you to drop a SVG and describe what you want to happen. It combines it with special code instructions that can be pasted into a AI chat window. The AI is instructed to produce
 
 Here's the prompt used to animate this SVG
