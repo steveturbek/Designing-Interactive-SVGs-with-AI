@@ -261,7 +261,6 @@ What we will do:
 
 - Design an image of a data visualization
 - Save as SVG
-- Add some code using my helpers
 - Work with AI to get it right
 
 You will need:
@@ -293,7 +292,7 @@ The [SVG AI Helper](svg-ai-helper.html) is a webpage with JavaScript that helps 
 
 _Note: All code on this site works solely in the browser, no data is retained or is visible to anyone except yourself._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome. All the AI Skill instructions text is freely accessible in the web page code.
 
-The <a href="/helpers/svg-code-transplant.html" target="new">SVG Code Transplant</a> tool is a webpage that copies SVG code from one SVG file to another. A typical use is if you make a working SVG, then edit in Illustrator (which deletes the code). This tool will copy it from the older working version to the new version. Assuming nothing important got changed, like layer names, it should work again.
+The <a href="svg-code-transplant.html" target="new">SVG Code Transplant</a> tool is a webpage that copies SVG code from one SVG file to another. A typical use is if you make a working SVG, then edit in Illustrator (which deletes the code). This tool will copy it from the older working version to the new version. Assuming nothing important got changed, like layer names, it should work again.
 
 ## Workshop: Chart the International Space Station's location on a map
 
@@ -410,7 +409,7 @@ Illustrator is the superior program for this specific workflow. It can import an
 Tips:
 
 - It does have an annoying habit of renaming element IDs and the CSS styles, so be careful!
-- It will delete the javascript code from the file, so use my [Code Transfer Tool](helpers/svg-code-transplant.html) to copy it back.
+- It will delete the javascript code from the file, so use my [Code Transfer Tool](svg-code-transplant.html) to copy it back.
 
 <style>
    .detail_images{
@@ -448,7 +447,7 @@ You WILL break the SVG at times. Don't panic! Usually it is some extra character
 
 Figma exports a fresh SVG without your previous code
 
-Use my [Code Transplant](helpers/svg-code-transplant.html) Tool with:
+Use my [Code Transplant](svg-code-transplant.html) Tool with:
 
 1. Your OLD SVG (has working code)
 2. Your NEW SVG (updated design, no code)
