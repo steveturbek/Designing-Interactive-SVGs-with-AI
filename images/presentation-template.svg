@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1600 900" style="background-color: black;">
+<defs>
+    <style>
+@import url("https://p.typekit.net/p.css?s=1&amp;k=vmw2zhf&amp;ht=tk&amp;f=28161.28163&amp;a=275708143&amp;app=typekit&amp;e=css");
+
+@font-face {
+font-family:"bookman-jf-pro";
+src:url("https://use.typekit.net/af/05a308/00000000000000007735b3f4/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i4&amp;v=3") format("woff2"),url("https://use.typekit.net/af/05a308/00000000000000007735b3f4/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i4&amp;v=3") format("woff"),url("https://use.typekit.net/af/05a308/00000000000000007735b3f4/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i4&amp;v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"bookman-jf-pro";
+src:url("https://use.typekit.net/af/d24cfd/00000000000000007735b3f6/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("woff2"),url("https://use.typekit.net/af/d24cfd/00000000000000007735b3f6/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("woff"),url("https://use.typekit.net/af/d24cfd/00000000000000007735b3f6/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+.tk-bookman-jf-pro { font-family: "bookman-jf-pro",serif; }
+
+.slide, .title, .slide-bg{
+    width: 100%;
+    height: 100%;
+}
+.slide, .title{
+    display: none;
+}
+
+.slide.active, .title.active{
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+text{
+    fill: black;
+    font-family: "bookman-jf-pro", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.heading{
+    font-size: 7vh;
+}
+
+.subtext{
+    font-size: 4vh;
+}
+
+.code{
+    font-family: monospace;
+    font-size: 3.2vh;
+}
+
+#templates{
+    display: none;
+}
+        </style>
+</defs>
+    <rect class="slide-bg"  fill="#d4d6cb" x="0" y="0" width="100%" height="100%" />
+
+
+<g class="slides">
+    <g class="title">
+        <text class="heading" x="2%" y="55%">First</text>
+        <text class="subtext" x="3%" y="65%">The quick brown fox jumps over and over and over</text>
+    </g>
+
+    <g class="slide">
+         <text class="heading" x="2%" y="13%">Second</text>
+        <text class="subtext" x="3%" y="30%">The quick brown fox jumps over</text>
+    </g>
+</g>
+
+</svg>
