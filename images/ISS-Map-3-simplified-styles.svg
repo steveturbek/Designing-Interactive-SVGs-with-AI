@@ -438,7 +438,7 @@
       <path class="st5" d="M1000,0v480"/>
     </g>
   </g>
-  <g id="ISS">
-    <circle id="circle" class="st6" cx="0" cy="0" r="5"/>
+  <g id="ISS2"><!-- note I changed ID to ISS2 so presentation would work-->
+    <circle id="circle" class="st6" cx="0" cy="0" r="5"/> 
   </g>
 </svg>

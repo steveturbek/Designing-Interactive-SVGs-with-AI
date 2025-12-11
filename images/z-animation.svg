@@ -5,8 +5,8 @@
 	stroke:#000;
 	stroke-width:4px;
 	fill:none;
-	stroke-dasharray:3100;
-	stroke-dashoffset:3100;
+	stroke-dasharray:1800;
+	stroke-dashoffset:1800;
 	animation:animateZ 5s linear alternate infinite;
 	/* animation:animate 5s forwards; */
 }

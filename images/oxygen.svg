@@ -88,7 +88,7 @@
   <!-- Needle: defined vertically up (x2 = 200, y2 = 140) and initially rotated to -150deg
        Pivot MUST remain x1="200" y1="260" for your handler to work unchanged. -->
   <g id="needleGroup">
-    <line id="line" x1="200" y1="260" x2="200" y2="140" class="needle" transform="rotate(0 200 260)"/>
+    <line id="Oxygenline" x1="200" y1="260" x2="200" y2="140" class="needle" transform="rotate(0 200 260)"/>
     <line x1="200" y1="140" x2="200" y2="130" class="needleTip" transform="rotate(0 200 260)"/>
     <circle cx="200" cy="260" r="6" class="pivot"/>
     <circle cx="200" cy="260" r="3" fill="#fff" opacity="0.08"/>
@@ -103,7 +103,7 @@
 
   <script type="application/ecmascript"><![CDATA[
 
-    function updateSVG(instrumentValue){
+    function updateOxygenSVG(instrumentValue){
     // ========================================
     // STUDENT EDIT ZONE
     // This sections controls how the gauge displays
@@ -122,7 +122,7 @@
       const angle = (instrumentValue - 50) * 1.2;
 
       // Get the needle line element
-      const line = document.getElementById('line');
+      const line = document.getElementById('Oxygenline');
       if (!line) {
         console.log('Cant find element to animate');
         return;
@@ -135,6 +135,7 @@
       // Rotate the needle around its pivot point
       line.setAttribute('transform', `rotate(${angle}, ${x1}, ${y1})`);
 
+//console.log('transform', `rotate(${angle}, ${x1}, ${y1})`);
 
     // ========================================
     // END STUDENT EDIT ZONE
@@ -153,36 +154,36 @@
 
 
 
-    if (instrumentValue !== null) {
+//    if (instrumentValue !== null) {
       // Make sure percentage is between 0 and 100
-      instrumentValue = Math.max(0, Math.min(100, instrumentValue));
+  //    instrumentValue = Math.max(0, Math.min(100, instrumentValue));
 
-    } else {
+    //} else {
     // no localStorage, so make up a number, so it swings back and forth
     // Initialize static variables if they don't exist
-    if (typeof window.testValue === 'undefined') {
-      window.testValue = 0;
-      window.testDirection = 1; // 1 for increasing, -1 for decreasing
+    if (typeof window.OxygentestValue === 'undefined') {
+      window.OxygentestValue = 0;
+      window.OxygentestDirection = 1; // 1 for increasing, -1 for decreasing
     }
 
     // Update the test value
-    window.testValue += window.testDirection * 2; // increment by 2 each time
+    window.OxygentestValue += window.OxygentestDirection * 2; // increment by 2 each time
 
     // Reverse direction at boundaries
-    if (window.testValue >= 100) {
-      window.testValue = 100;
-      window.testDirection = -1;
-    } else if (window.testValue <= 0) {
-      window.testValue = 0;
-      window.testDirection = 1;
+    if (window.OxygentestValue >= 100) {
+      window.OxygentestValue = 100;
+      window.OxygentestDirection = -1;
+    } else if (window.OxygentestValue <= 0) {
+      window.OxygentestValue = 0;
+      window.OxygentestDirection = 1;
     }
 
-    instrumentValue = window.testValue;
+    instrumentValue = window.OxygentestValue;
     //console.log('no local storage \"'+localStorageName+'\", using test value:', instrumentValue);
 
-     }
+     //}
 
-    updateSVG(instrumentValue)
+    updateOxygenSVG(instrumentValue)
 
 
 
