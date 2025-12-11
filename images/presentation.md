@@ -55,31 +55,16 @@ _2020s:_ "People Who Draw the UI and People Who Code It"
 
 ---
 
-# What We Lost
-
----
-
 # What if there was another way?
 
----
-
-# An _orphan with magic powers_ ?
+Could an _orphan with magic powers_ help us?
 
 ---
 
 ## What is SVG? Can It Be Cured?
 
-_Markup Languages:_ "Mark up" data in `<tags>` so both computers and people could understand it
-
-` `
-
-_SGML_ (1970s) → _HTML_ → _XML_ → _SVG_
-
----
-
-## SVG = Scalable Vector Graphics
-
-- _Graphic_ files, but _math, not pixels_
+- SVG = Scalable Vector Graphics
+- _Graphic_ files, but _shapes,_ not pixels
 - _Vector_ shapes lines, rectangles, circles, curves
 - _Scalable_ up to billboard size without blur
 - Tiny file size
@@ -87,33 +72,13 @@ _SGML_ (1970s) → _HTML_ → _XML_ → _SVG_
 
 ---
 
-## SVG's Secret Powers
+## Markup Languages
 
-- Style with CSS
-- Animate with CSS
-- JavaScript for interactivity
-- JavaScript to load data
-- _Code lives INSIDE the SVG file_
+"Mark up" data in `<tags>` so both computers and people could understand it
 
----
+` `
 
-## Why This Matters for Designers
-
-1. Design in your tools (Figma, Illustrator, Inkscape)
-2. Save as SVG
-3. AIs are excellent at interpreting language
-4. Collaborate with AI to add functionality
-5. Design Program ↔ AI ↔ Design Program
-
----
-
-## Designer Superpowers Unlocked
-
-- Call out to web APIs for live data
-- Carry styling and code inside file ("Sandboxed")
-- Can't break the website it's on
-- Upload to locked-down corporate CMS
-- Work during build phase when devs are busy
+_SGML_ (1970s) → _HTML_ → _XML_ → _SVG_
 
 ---
 
@@ -130,47 +95,75 @@ _SGML_ (1970s) → _HTML_ → _XML_ → _SVG_
 
 ---
 
-## Animation: The Drawing Effect
+## Why This Matters for Designers
 
-SVG animation with just a couple lines of code
-
-_Concept:_ Huge dashed line style that slides along the path, looking like drawing
-
-_[Show Z animation example]_
+1. Design in your tools (Figma, Illustrator, Inkscape)
+2. Save as SVG
+3. AIs are excellent at interpreting language
+4. Collaborate with AI to add functionality
+5. Design Program ↔ AI ↔ Design Program
 
 ---
 
-## Background: The Submarine Project
+## SVG's Secret Powers
 
-Students designed personal submarines with:
+- Style with CSS
+- Animate with CSS
+- JavaScript for interactivity
+- JavaScript to load data
+- _Code lives INSIDE the SVG file_
 
-- Working steering hardware
-- UX instruments dashboard
-- No coding experience
+---
+
+## Designer Superpowers Unlocked
+
+- Call out to web APIs for live data
+- Carry styling and code inside file ("Sandboxed")
+- Can't break the website it's on
+- Upload to locked-down corporate CMS
+- Work during build phase when devs are busy
+
+---
+
+## CSS Animation
+
+<image href="z-animation.svg" x="20%" y="0%" height="90%"/>
+
+```
+	stroke:#000;
+	stroke-dasharray:3100;
+	stroke-dashoffset:3100;
+	animation:animate 5s linear alternate infinite;
+```
 
 ---
 
 ## Color Wheel
 
-<image href="GSDS-color-wheel-v2.svg" x="30%" y="0%" height="50%"/>
+<image href="GSDS-color-wheel-v2.svg" x="30%" y="0%" height="90%"/>
 
 ---
 
-## Currency Trading _Game_
+## Currency Trading _Game ?_
 
-<image href="currency-game.svg" x="30%" y="50%" height="50%"/>
+<image href="currency-game.svg" x="0" y="30%" />
 
 ---
 
-## Example 3: Submarine Dashboard
+## Submarine Dashboard
 
-_Webpage ↔ SVG Communication_
+<image href="pitch.svg" x="400" y="30%" width="400" height="400"/>
 
-Strategy: localStorage for data sharing
+---
 
-- Game saves values like "oxygen", "battery"
-- SVG timer looks for updates regularly
-- Code encapsulated, can't break website
+# 🛠️ Workshop Time! 🛠️
+
+---
+
+## Track the International Space Station
+
+1. Equirectangular World Map
+2. Get location from Internet
 
 ---
 
@@ -196,22 +189,6 @@ _15-60 minutes_ (more if you use social media)
 
 ---
 
-# Communicating Design
-
-and Designing with Communication
-
----
-
-## Best Practices: Composability
-
-"By designing elements to work independently, but as part of a larger system, you can better manage complexity."
-
-_You are the teacher of the AI._
-
-"Rotate item carLogo 30 degrees" is very legible to an AI.
-
----
-
 ## The Helper Tool Workflow
 
 1. Enter your SVG file + text description
@@ -223,17 +200,6 @@ _You are the teacher of the AI._
 7. _Iterate!_
 
 All code works in browser only, no data retained.
-
----
-
-## Workshop: Track the ISS
-
-_International Space Station Location on Map_
-
-Starting point: Equirectangular World Map
-
-- Stretched globe proportionally into rectangle
-- Much simpler math than Mercator projection
 
 ---
 
@@ -265,6 +231,52 @@ _That's OK! Iterate._
 
 ---
 
+## Key Tips
+
+- Have as much patience as an AI
+- Be a good communicator: prompts should be a paragraph long
+- Be a scientist: document each step, save versions
+- Name your layers!!
+- Don't be afraid to start over
+- Try different AIs
+
+---
+
+## Technical Tips
+
+_Layer naming is critical:_
+
+- Name it `yourElementName` in Figma/Illustrator
+- Check SVG text for `id="yourElementName"`
+
+---
+
+## What You Can Animate
+
+```javascript
+element.setAttribute("transform", `rotate(${angle} centerX centerY)`);
+element.setAttribute("transform", `translate(${x} ${y})`);
+element.setAttribute("fill", "red");
+```
+
+---
+
+# Communicating Design
+
+and Designing with Communication
+
+---
+
+## Best Practices: Composability
+
+"By designing elements to work independently, but as part of a larger system, you can better manage complexity."
+
+_You are the teacher of the AI._
+
+"Rotate item carLogo 30 degrees" is very legible to an AI.
+
+---
+
 ## The AI Irony
 
 "AI created by programmers, who focus on programming problems= AIs strongest skill is programming."
@@ -292,41 +304,6 @@ _About empowering designers_
 ---
 
 # Design is Communication
-
----
-
-## Key Tips
-
-- Have as much patience as an AI
-- Be a good communicator: prompts should be a paragraph long
-- Be a scientist: document each step, save versions
-- Name your layers!!
-- Don't be afraid to start over
-- Try different AIs
-
----
-
-## Technical Tips
-
-_Layer naming is critical:_
-
-- Name it `yourElementName` in Figma/Illustrator
-- Check SVG text for `id="yourElementName"`
-
----
-
-## What You Can Animate
-
-```javascript
-// Rotation
-element.setAttribute("transform", `rotate(${angle} centerX centerY)`);
-
-// Move position
-element.setAttribute("transform", `translate(${x} ${y})`);
-
-// Change color
-element.setAttribute("fill", "red");
-```
 
 ---
 

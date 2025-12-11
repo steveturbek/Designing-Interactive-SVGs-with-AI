@@ -574,3 +574,12 @@ These ones update frequently enough to use as a demo.
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)
 
 <!-- https://commons.wikimedia.org/wiki/File:International_Space_Station_top_view.svg -->
+
+<script>
+localStorage.removeItem('pitch');
+localStorage.removeItem('depth');
+localStorage.removeItem('oxygen');
+localStorage.removeItem('battery');
+localStorage.removeItem('speed');
+localStorage.removeItem('compass');  
+</script>

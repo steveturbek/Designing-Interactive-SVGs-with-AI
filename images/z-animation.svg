@@ -7,10 +7,10 @@
 	fill:none;
 	stroke-dasharray:3100;
 	stroke-dashoffset:3100;
-	animation:animate 5s linear alternate infinite;
+	animation:animateZ 5s linear alternate infinite;
 	/* animation:animate 5s forwards; */
 }
-@keyframes animate {
+@keyframes animateZ {
 	to{  
 		stroke-dashoffset:0;
 	}
