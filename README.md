@@ -16,7 +16,7 @@ A short intro for designers on making interactive SVGs with AI help.
 
 **This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.**
 
-<!-- [View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg) -->
+**[View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)**
 
 Designers can create interactive, data-driven experiences—they just need a little help. This workshop shows how to combine classic design tools like Figma and Illustrator with a guided AI workflow to add animation, interactivity, and live data to SVGs. We'll explore a new hybrid way of making rich digital experiences, no coding experience required.
 

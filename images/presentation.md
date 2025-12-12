@@ -19,7 +19,7 @@ January 2026
 
 ## What We Shall Speak of Today
 
-- A new (?) way to make interactive graphics
+- A new hack to make interactive graphics
 - A short technical history detour
 - A new framework for designers to use AI
 - A few personal observations
@@ -110,7 +110,7 @@ _SGML_ (1970s) → _HTML_ → _XML_ → _SVG_
 	stroke:#000;
 	stroke-dasharray:1800;
 	stroke-dashoffset:1800;
-	animation:animate 5s linear alternate infinite;
+	animation:animateZ 5s linear alternate infinite;
 ```
 
 ---
@@ -136,11 +136,11 @@ _SGML_ (1970s) → _HTML_ → _XML_ → _SVG_
 
 ```
 
-But _how_?
+**But how?**
 
 ---
 
-# 🕹️ 🕹️ 🕹️ Demo Time! 🕹️ 🕹️ 🕹️
+# 🕹️ 🕹️ 🕹️ 🕹️ 🕹️ Demo Time! 🕹️ 🕹️ 🕹️ 🕹️
 
 ---
 
@@ -166,15 +166,35 @@ But _how_?
 
 ---
 
-# 🛠️ 🛠️ 🛠️ Workshop Time! 🛠️ 🛠️ 🛠️
+# 🛠️ 🛠️ 🛠️ 🛠️ Workshop Time! 🛠️ 🛠️ 🛠️ 🛠️
 
 ---
 
 ## Let's Track A Space Station!
 
-1. Equirectangular World Map
+1. World Map SVG
 2. Get location of ISS from internet
 3. Animate!
+
+<image href="International_Space_Station_top_view.svg" x="900" y="20%" width="600" height="600" />
+
+```
+
+
+
+```
+
+_NASA, Public domain, via Wikimedia Commons_
+
+---
+
+## You Will Need
+
+- Design software (Adobe Illustrator best for this demo)
+- Chrome browser + internet
+- Steve's SVG AI Helper Tool
+- AI access (ChatGPT allows SVG upload without paying)
+- Patience and iteration mindset
 
 ---
 
@@ -185,16 +205,6 @@ But _how_?
 3. What exactly do you want to happen?
 4. Work with AI to code it up
 5. Iterate!
-
----
-
-## You Will Need
-
-- Design software (Adobe Illustrator best for this demo)
-- Chrome browser + internet
-- SVG AI Helper Tool
-- AI access (ChatGPT allows SVG upload without paying)
-- Patience and iteration mindset
 
 ---
 
@@ -233,6 +243,19 @@ Thanks _Sven nestle2_ at Wikipedia
 
 ---
 
+## SVG AI Helper Tool Workflow
+
+1. Select your SVG file
+2. Describe what you want to happen
+3. Copy SVG AI Helper output; Paste into AI chat window
+4. AI may ask follow-up questions
+5. AI returns JavaScript code; Paste into SVG AI Helper
+6. You may get a working interactive SVG!
+
+_All SVG AI Helper code works in browser locally. No data transmitted or retained._
+
+---
+
 ## The Prompt
 
 ```
@@ -247,19 +270,6 @@ I want it to update once a second.
 
 ---
 
-## SVG AI Helper Tool Workflow
-
-1. Enter your SVG file + text description
-2. Paste into AI chat window
-3. AI may ask follow-up questions
-4. AI returns JavaScript code
-5. Paste back into SVG AI Helper
-6. You may get a working interactive SVG!
-
-All code works in browser only, no data retained.
-
----
-
 <image href="ISS-Map-5-simplified-styles-interactive-chatGPT-fixed.svg" x="0" y="0"  width="100%"  />
 
 ## 4 Working ISS Tracker!
@@ -269,9 +279,9 @@ All code works in browser only, no data retained.
 ## Key Tips
 
 - Have as much patience as an AI
+- Name your layers!!
 - Be a good communicator: prompts should be a paragraph long
 - Be a scientist: document each step, save versions
-- Name your layers!!
 - Don't be afraid to start over
 - Try different AIs
 
@@ -294,13 +304,11 @@ _That's OK! Iterate._
 - Not about replacing programmers
 - Designers can make the thing, not just design the thing
 - Use old tools in new ways
-- Make some cool stuff!
+- Let's make some cool stuff!
 
 ---
 
 # Design is the _Communication of Intent_
-
-“Rotate item carLogo 30 degrees” is very legible to an AI.
 
 ---
 
