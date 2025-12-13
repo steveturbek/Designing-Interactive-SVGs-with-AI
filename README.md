@@ -30,31 +30,31 @@ Flash had many issues as a technology, but we should mourn the loss of a tool th
 
    <div style="text-align: center;display: block;margin: 0 auto;">
 <figure>
-     <object data="images/oxygen2.svg" type="image/svg+xml" width="300" class="interstitial_svg">
-       <img src="images/oxygen2.svg" alt="Oxygen Gauge SVG" />
+     <object data="images/oxygenManual.svg" type="image/svg+xml" width="300" class="interstitial_svg">
+       <img src="images/oxygenManual.svg" alt="Oxygen Gauge SVG" />
      </object>
      <figcaption>
       An example data-driven interactive SVG, animated with AI in the workshop.
      <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
-       <button class="oxygen2" type="button" id="oxygen2-decrease">-10</button>
-       <button class="oxygen2" type="button" id="oxygen2-increase">+10</button>
+       <button class="oxygenManual" type="button" id="oxygenManual-decrease">-10</button>
+       <button class="oxygenManual" type="button" id="oxygenManual-increase">+10</button>
       </div>
    <p><b>Click buttons to adjust oxygen level</b></p>
  </figcaption>
 </figure>
 
    <script type="text/javascript">
-      localStorage.setItem("oxygen2", "50");
+      localStorage.setItem("oxygenManual", "50");
    
-      document.getElementById("oxygen2-decrease").addEventListener("click", function() {
-         let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
-         localStorage.setItem("oxygen2", Math.max(0, Math.min(100, currentValue - 10)));
+      document.getElementById("oxygenManual-decrease").addEventListener("click", function() {
+         let currentValue = parseInt(localStorage.getItem("oxygenManual")) || 50;
+         localStorage.setItem("oxygenManual", Math.max(0, Math.min(100, currentValue - 10)));
          window.dispatchEvent(new Event('storage'));
       });
    
-      document.getElementById("oxygen2-increase").addEventListener("click", function() {
-         let currentValue = parseInt(localStorage.getItem("oxygen2")) || 50;
-         localStorage.setItem("oxygen2", Math.max(0, Math.min(100, currentValue + 10)));
+      document.getElementById("oxygenManual-increase").addEventListener("click", function() {
+         let currentValue = parseInt(localStorage.getItem("oxygenManual")) || 50;
+         localStorage.setItem("oxygenManual", Math.max(0, Math.min(100, currentValue + 10)));
          window.dispatchEvent(new Event('storage'));
       });
    </script>

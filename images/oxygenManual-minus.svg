@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100px" height="100px" viewBox="0 0 100 100" version="1.1">
+  <g id="minusButton" style="cursor: pointer;" onclick="decrementOxygen()">
+    <text x="10" y="40" font-size="40">⬇️</text>
+  </g>
+
+  <script type="text/javascript">
+    <![CDATA[
+    function decrementOxygen() {
+      let currentValue = parseInt(localStorage.getItem("oxygenManual")) || 50;
+      let updatedCurrentValue = Math.max(0, Math.min(100, currentValue - 10));
+      localStorage.setItem("oxygenManual", updatedCurrentValue);
+      window.dispatchEvent(new Event('storage'));
+      console.log(currentValue, updatedCurrentValue);
+    }
+    ]]>
+  </script>
+</svg>

@@ -457,7 +457,7 @@
  */
 
 async function updateISS() {
-  console.log("Updating ISS...", new Date().toLocaleTimeString());
+  //console.log("Updating ISS...", new Date().toLocaleTimeString());
 
   try {
     // 1. Fetch ISS data

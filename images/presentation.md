@@ -166,6 +166,15 @@ _SGML_ (1970s) → _HTML_ → _XML_ → _SVG_
 
 ---
 
+## Data Visualization, Not Animation
+
+<image href="oxygenManual.svg" x="600" y="30%" width="400" height="400" />
+
+<image href="oxygenManual-minus.svg" x="600" y="80%" width="300" height="300" />
+<image href="oxygenManual-plus.svg" x="820" y="80%" width="300" height="300" />
+
+---
+
 # 🛠️ 🛠️ 🛠️ 🛠️ Workshop Time! 🛠️ 🛠️ 🛠️ 🛠️
 
 ---
@@ -242,6 +251,8 @@ Thanks _Sven nestle2_ at Wikipedia
 ```
 
 ---
+
+<image href="svg-ai-helper-wireframe.svg" x="420" y="20"  height="80%"  />
 
 ## SVG AI Helper Tool Workflow
 

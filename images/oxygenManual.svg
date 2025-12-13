@@ -103,7 +103,7 @@
 
   <script type="application/ecmascript"><![CDATA[
 
-    function updateSVG(instrumentValue){
+    function updateSVGoxygenManual(instrumentValue){
     // ========================================
     // STUDENT EDIT ZONE
     // This sections controls how the gauge displays
@@ -149,7 +149,7 @@
       const thisSVGfilename = window.location.pathname;
     // this SVG expects a localStorage with the same name as its file
       const localStorageName =  thisSVGfilename.substring(thisSVGfilename.lastIndexOf('/') + 1, thisSVGfilename.lastIndexOf('.'));
-      let instrumentValue = localStorage.getItem(localStorageName);
+      let instrumentValue = localStorage.getItem("oxygenManual");
 
 
 
@@ -182,7 +182,7 @@
 
      }
 
-    updateSVG(instrumentValue)
+    updateSVGoxygenManual(instrumentValue)
 
 
 
