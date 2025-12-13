@@ -49,25 +49,25 @@ text{
 }
 
 .titleSlide .heading{
-    font-size: 9vh;
+    font-size: 81px;
 }
 
 .titleSlide .subtext{
-    font-size: 4vh;
+    font-size: 36px;
 }
 
 
 .basicSlide .heading{
-    font-size: 7vh;
+    font-size: 63px;
 }
 
 .basicSlide .subtext{
-    font-size: 4vh;
+    font-size: 36px;
 }
 
 .code{
     font-family: monospace;
-    font-size: 3.2vh;
+    font-size: 29px;
 }
 
 #templates{
