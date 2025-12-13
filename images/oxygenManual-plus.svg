@@ -11,7 +11,6 @@
       let updatedCurrentValue = Math.max(0, Math.min(100, currentValue + 10));
       localStorage.setItem("oxygenManual", updatedCurrentValue);
       window.dispatchEvent(new Event('storage'));
-      console.log(currentValue, updatedCurrentValue)
     }
     ]]>
   </script>

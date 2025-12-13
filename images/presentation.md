@@ -252,7 +252,7 @@ Thanks _Sven nestle2_ at Wikipedia
 
 ---
 
-<image href="svg-ai-helper-wireframe.svg" x="420" y="20"  height="80%"  />
+<image href="svg-ai-helper-wireframe.svg" x="440" y="20"  height="80%"  />
 
 ## SVG AI Helper Tool Workflow
 

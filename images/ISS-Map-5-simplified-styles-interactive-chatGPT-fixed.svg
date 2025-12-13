@@ -505,10 +505,10 @@ async function updateISS() {
       iss.setAttribute("transform", `translate(${x}, ${y})`);
     }
 
-    console.log(
-      `ISS updated → lat:${lat.toFixed(2)} lon:${lon.toFixed(2)} → x:${x.toFixed(2)} y:${y.toFixed(2)}`,
-      new Date().toLocaleTimeString()
-    );
+   // console.log(
+   //   `ISS updated → lat:${lat.toFixed(2)} lon:${lon.toFixed(2)} → x:${x.toFixed(2)} y:${y.toFixed(2)}`,
+   //   new Date().toLocaleTimeString()
+   // );
 
   } catch (error) {
     console.error("Failed to update ISS:", error);
