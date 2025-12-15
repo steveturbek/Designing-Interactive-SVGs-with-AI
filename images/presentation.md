@@ -252,7 +252,7 @@ Thanks _Sven nestle2_ at Wikipedia
 
 ---
 
-<image href="svg-ai-helper-wireframe.svg" x="440" y="20"  height="80%"  />
+<image href="svg-ai-helper-wireframe.svg" x="450" y="130"  height="80%"  />
 
 ## SVG AI Helper Tool Workflow
 
@@ -263,7 +263,7 @@ Thanks _Sven nestle2_ at Wikipedia
 5. AI returns JavaScript code; Paste into SVG AI Helper
 6. You may get a working interactive SVG!
 
-_All SVG AI Helper code works in browser locally. No data transmitted or retained._
+_No data transmitted, Tool works locally in browser._
 
 ---
 
