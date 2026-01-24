@@ -1,7 +1,7 @@
 # Make It Go!
 
 <image href="oxygen.svg" x="60%" y="10%" width="400" height="400"/>
-Designing Interactive SVGs with AI Code Help
+Designing Interactive Graphics with AI Code Help
 
 Steve Turbek _turbek.com_
 

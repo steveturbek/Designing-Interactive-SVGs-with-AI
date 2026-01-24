@@ -1,4 +1,4 @@
-# Make It Go! Designing Interactive SVGs with AI Code Help
+# Make It Go! Designing Interactive Graphics with AI Code Help
 
 <div class="toc-wrapper" markdown="1">
 
@@ -14,7 +14,7 @@ A short intro for designers on making interactive SVGs with AI help.
 
 <h1 class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></h1>
 
-**This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/fieldtrips) in January 2026.**
+**This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/talks/level-up-make-it-go-designing-interactive-svgs-with-ai-code-help) in January 2026.**
 
 **[View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)**
 
