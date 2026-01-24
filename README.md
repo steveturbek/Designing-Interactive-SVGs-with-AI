@@ -62,8 +62,6 @@ Flash had many issues as a technology, but we should mourn the loss of a tool th
 
 ## TLDR
 
-Design is all about precise communication, yet designers have struggled to communicate with computers. What if there was another way?
-
 - Designers know design tools, but coding and interaction is often a challenge
 - The SVG file format, known for icons, is unexpectedly, a powerful format similar to HTML.
 - Designers can use SVGs to include interactivity and delight in a project without breaking dev resources or code rules.
@@ -73,7 +71,7 @@ Design is all about precise communication, yet designers have struggled to commu
 - The style sheets and javascript are INSIDE the file, and sandboxed (isolated from interacting or breaking web page code).
 - One can 'round trip' between design programs and AI, made easier with the tools included here
 
-I present a <a href="svg-ai-helper.html" target="new">SVG AI Helper</a> tool, used in this workshop to add interactivity to a SVG.
+Design is all about precise communication, yet designers have struggled to communicate with computers (AKA programming). What if there was another way? I present a <a href="svg-ai-helper.html" target="new">SVG AI Helper</a> tool, used in this workshop to add interactivity to a SVG.
 
 _Note: All code on this site works solely in the browser, no data is retained._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome.
 
@@ -81,33 +79,36 @@ _Note: All code on this site works solely in the browser, no data is retained._ 
 <object data="images/pitch.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/pitch.svg" alt="Pitch Gauge SVG" />
 </object>
-<!--<figcaption>
+<figcaption>
    An example data-driven interactive SVG
-</figcaption> -->
+</figcaption>
 </figure>
 
 ## Background
 
-I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interfaces/)" Senior Design Studio in the Industrial Design program at Pratt Institute. In my class, the students designed a personal submarine design, which included working steering controls and UX instruments dashboard.
+I teach the "[Tangible Interfaces](https://steveturbek.github.io/Tangible-Interfaces/)" Senior Design Studio in the Industrial Design program at Pratt Institute. In my class, the students designed a [personal submarine](), which included working steering controls and UX instruments dashboard. The Instruments dashboard was simply a HTML page of SVG files, which any designer one make in Figma or Illustrator.
 
-These students had no coding experience, so I wrote a “Skill” to prep the AI to focus on the right things. The results were pretty magical and led to this workshop.
+The submarine controls 'work', controlling a video game simulation. The UX instrument dashboard also needed to work, but these students had no coding experience.
 
-This workshop is not solely about dashboard design, but demonstrating a new way for designers to use AI, and rediscovering the power in the tools we designers always had.
+I have been coding interactive SVGs for years and wrote that experience into an AI “Skill”. A skill is basically a page of text that preps the AI to focus on the right things. The results in the class were pretty magical and led to this workshop.
+
+This workshop is not solely about dashboard design, but also demonstrates a new way for designers to use AI. And perhaps we can rediscover powers in the designer tools we always had.
 
 <figure>
 <object data="images/battery.svg" type="image/svg+xml" width="300" class="interstitial_svg">
   <img src="images/battery.svg" alt="Battery Gauge SVG" />
 </object>
 
-<!--<figcaption>
+<figcaption>
    An example data-driven interactive SVG
-</figcaption> -->
+</figcaption>
 </figure>
 
 ## What is SVG and can it be cured?
 
-(A little history note)
-Human language is an incredibly flexible communication tool, but that flexibility comes at the cost of precision. Sometimes the flexibility ends up in poetry, sometimes in bar fights. In any case, computers have struggled with human language until the current era of Large Language Models.
+(A little history detour)
+
+Human language is an incredibly flexible communication tool, but that flexibility comes at the cost of precision. Sometimes the flexibility ends up in poetry, sometimes in bar fights, but computers have struggled with the flexibility until the current era of Large Language Models.
 
 Markup Languages are a very old idea: "Mark up" data in `<tags>` so both computers and people could understand it.
 
@@ -120,7 +121,7 @@ A small example
 </person>
 ```
 
-SGML or Standard Generalized Markup Language was developed in the 70's and used in newspapers and magazines. It inspired HTML Hyper Text Markup Language, XML, and _SVG (Scalable Vector Graphics)_.
+SGML or Standard Generalized Markup Language was developed in the 70's and used in newspapers and magazines. It inspired HTML (Hyper Text Markup Language), XML, and _SVG (Scalable Vector Graphics)_.
 
 SVGs are an **Graphic** file format, like JPEG, GIF, PNG. But SVGs store the information as math, not pixels. The drawing tools in Adobe Illustrator or Figma make **Vector** shapes like lines, rectangles, circles, and any complex curved shape. This means that the file size is tiny, but they are **Scalable** up to a billboard size without becoming blurry like a bitmap.
 
