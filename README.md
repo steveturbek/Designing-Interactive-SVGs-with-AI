@@ -18,15 +18,17 @@ A short intro for designers on making interactive SVGs with AI help.
 
 **[View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)**
 
-Designers can create interactive, data-driven experiences—they just need a little help. This workshop shows how to combine classic design tools like Figma and Illustrator with a guided AI workflow to add animation, interactivity, and live data to SVGs. We'll explore a new hybrid way of making rich digital experiences, no coding experience required.
+Designers can create interactive, data-driven experiences —they just need a little help. This workshop shows how to combine classic design tools like Figma and Illustrator with a guided AI workflow to add animation, interactivity, and live data to SVGs. We'll explore a new hybrid way of making rich digital experiences, no coding experience required.
 
 "Should designers learn to code" has been discussed for decades, ever since early web design split into people who draw the UI and people who code it. In years past, designers also created complex interactive experiences using tools like Macromedia Director and Flash, which blended the line between sketching and making, designing and programming.
 
 When Steve Jobs killed Flash on the iPhone in 2010 for being a ["closed system"](https://en.wikipedia.org/wiki/Thoughts_on_Flash) 🤔, complex JavaScript-driven websites took over. The web effectively became the domain of programmers with Computer Science degrees rather than English majors who learned design along with scrappy HTML skills.
 
-The many cheesy restaurant websites made with Flash in the 2000's have been replaced with centralized restaurant and delivery websites. I'm sure the coding standards are higher, but we also lost something local and handmade. In any case, are those websites and apps really earning a 30% cut of each meal?
+The many cheesy restaurant websites made with Flash in the 2000's have been replaced with centralized restaurant and delivery websites. I'm sure the coding standards are higher, but we also lost something local and handmade.
 
-Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others. This workshop is about reclaiming a piece of that power.
+Flash had many issues as a technology, but we should mourn the loss of a tool that let designers create directly, rather than write specs for others.
+
+This workshop is about reclaiming a piece of that power.
 
    <div style="text-align: center;display: block;margin: 0 auto;">
 <figure>
@@ -149,7 +151,7 @@ SVG is widely used on the web for icons and illustrations. BUT the SVG origin st
 
 SVGs matter because:
 
-1. A designer can design using your tools (Figma, Adobe Illustrator, or the open source Inkscape) and save as SVG.
+1. They are made with standard designer tools (Figma, Adobe Illustrator, or the open source Inkscape) and save as SVG.
 1. SVGs are written as a language, which AIs are excellent at interpreting.
 1. You can collaborate with the AI to add sophisticated functionality and diagnose and fix problems.
 
@@ -525,6 +527,13 @@ Then check Console in browser to see the values.
 ### Security Note
 
 Like all code, javascript can be used to harm people. Some websites have strict rules against SVG or disable javascript in SVG to prevent people from stealing other people's data. Don't be evil.
+
+## SVG presentation maker
+
+**Note: this is a proof of concept app made for this talk, not professional software.**
+
+- [Presentation maker page](https://turbek.com/SVG-presentation-maker/)
+- [Open Source Github Repo](https://github.com/steveturbek/SVG-presentation-maker/)
 
 ## References
 

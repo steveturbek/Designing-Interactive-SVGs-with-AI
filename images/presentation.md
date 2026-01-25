@@ -12,7 +12,9 @@ January 2026
 ## Who Is Steve Turbek?
 
 - UX Designer, in recovery
-- "Tangible Interfaces" studio @Pratt Industrial Design
+- Teaching "Tangible Interfaces" studio at Pratt Industrial Design
+- Made the Bubble Calendar
+- Hobbyist programmer
 - Noted lollygagger, dillydallyer, & goldbricker
 
 ---
@@ -21,7 +23,7 @@ January 2026
 
 - A new hack to make interactive graphics
 - A short technical history detour
-- A new framework for designers to use AI
+- A new technique for UX designers to use AI
 - A few personal observations
 
 ---
@@ -307,6 +309,10 @@ _That's OK! Iterate._
 - I explained what wasn't working
 - AI diagnosed its mistake
 - Next version worked
+
+---
+
+## We are 'standing on the shoulders of giants'
 
 ---
 
