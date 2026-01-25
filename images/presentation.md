@@ -1,20 +1,20 @@
 # Make It Go!
 
+<!-- slide-bg=#d4d6cb -->
 <image href="oxygen.svg" x="60%" y="10%" width="400" height="400"/>
 Designing Interactive Graphics with AI Code Help
+turbek.com/Designing-Interactive-SVGs-with-AI
 
-Steve Turbek _turbek.com_
-
-January 2026
+Steve Turbek January 2026
 
 ---
 
 ## Who Is Steve Turbek?
 
 - UX Designer, in recovery
-- Teaching "Tangible Interfaces" studio at Pratt Industrial Design
-- Made the Bubble Calendar
 - Hobbyist programmer
+- Teaches "Tangible Interfaces" at Pratt Industrial Design
+- Made the Bubble Calendar
 - Noted lollygagger, dillydallyer, & goldbricker
 
 ---
@@ -24,22 +24,23 @@ January 2026
 - A new hack to make interactive graphics
 - A short technical history detour
 - A new technique for UX designers to use AI
-- A few personal observations
-
----
-
-## TLDR
-
-- SVG image files: powerful like HTML
-- Supported widely in browsers
-- Designer tools make SVGs
-- SVGs are written in a language
-- LLMs are great at manipulating language
-- Designers can _collaborate_ interaction into life
+- A few personal observations on design, tech, culture
 
 ---
 
 # Should designers learn to code?
+
+---
+
+# Thinking vs Coding
+
+---
+
+# What if there was another way?
+
+---
+
+# An _orphan with magic powers_ ?
 
 ---
 
@@ -57,14 +58,6 @@ _2020s:_ “People Who Draw the UI and People Who Code It”
 
 ---
 
-# What if there was another way?
-
----
-
-# An _orphan with magic powers_ ?
-
----
-
 ## What is SVG? Can It Be Cured?
 
 - SVG = Scalable Vector Graphics
@@ -78,11 +71,23 @@ _2020s:_ “People Who Draw the UI and People Who Code It”
 
 ## Markup Languages
 
-“Mark up” data in `<tags>` so both computers and people could understand it
+“Mark up” data with `<tags>` so computers and people understand
 
-` `
+```
+<person>
+   <name>Alice</name>
+   <age>30</age>
+</person>
+```
 
-_SGML_ (1970s) → _HTML_ → _XML_ → _SVG_
+---
+
+## Markup Languages
+
+_SGML_ (1970s)
+→ _HTML_ (1993)
+→ _XML_ (1998)
+→ _SVG_ (2001)
 
 ---
 
@@ -130,15 +135,18 @@ _SGML_ (1970s) → _HTML_ → _XML_ → _SVG_
 ## Why This Matters for Designers
 
 1. Design tools (Figma, Illustrator, Inkscape) save SVG
-2. Collaborate with AI to add functionality
-3. Design Program ↔ AI ↔ Design Program
+2. Add code into the file
+3. Collaborate with AI to add functionality
+4. Design Program ↔ AI ↔ Design Program
 
 ```
 
 
 ```
 
-**But how?**
+---
+
+# But how?
 
 ---
 
@@ -312,6 +320,21 @@ _That's OK! Iterate._
 
 ---
 
+## Summary
+
+- SVG image files: powerful like HTML
+- Supported widely in browsers
+- Designer tools make SVGs
+- SVGs are written in a language
+- LLMs are great at manipulating language
+- Designers can _collaborate_ interaction into life
+
+---
+
+# Design is the _Communication of Intent_
+
+---
+
 ## We are 'standing on the shoulders of giants'
 
 ---
@@ -322,10 +345,6 @@ _That's OK! Iterate._
 - Designers can make the thing, not just design the thing
 - Use old tools in new ways
 - Let's make some cool stuff!
-
----
-
-# Design is the _Communication of Intent_
 
 ---
 

@@ -14,9 +14,13 @@ A short intro for designers on making interactive SVGs with AI help.
 
 <h1 class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></h1>
 
-**This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/talks/level-up-make-it-go-designing-interactive-svgs-with-ai-code-help) in January 2026.**
+**This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/talks/level-up-make-it-go-designing-interactive-svgs-with-ai-code-help) in January 2026. **
 
-**[View Presentation](https://steveturbek.github.io/Designing-Interactive-SVGs-with-AI/presentation.svg)**
+## Links
+
+- [SVG AI Tool](https://turbek.com/Designing-Interactive-SVGs-with-AI/svg-ai-helper.html)
+- [Presentation](https://turbek.com/Designing-Interactive-SVGs-with-AI/presentation.svg)
+- <a  href="images/ISS-Map-3-simplified-styles.svg" download> Download SVG file used in workshop</a>
 
 Designers can create interactive, data-driven experiences —they just need a little help. This workshop shows how to combine classic design tools like Figma and Illustrator with a guided AI workflow to add animation, interactivity, and live data to SVGs. We'll explore a new hybrid way of making rich digital experiences, no coding experience required.
 
@@ -75,7 +79,8 @@ This workshop is about reclaiming a piece of that power.
 
 Design is all about precise communication, yet designers have struggled to communicate with computers (AKA programming). What if there was another way? I present a <a href="svg-ai-helper.html" target="new">SVG AI Helper</a> tool, used in this workshop to add interactivity to a SVG.
 
-_Note: All code on this site works solely in the browser, no data is retained._ You can [download these open source web pages on Github](https://github.com/steveturbek/Designing-Interactive-SVGs-with-AI). They are designed to also work locally on your computer in Chrome.
+_Note: All code on this site works solely in the browser, no data is retained._
+You can <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/svg-ai-helper.html" download>download these open source web pages on Github</a>. The page is designed to work locally on your computer, without internet access.
 
 <figure>
 <object data="images/pitch.svg" type="image/svg+xml" width="300" class="interstitial_svg">
