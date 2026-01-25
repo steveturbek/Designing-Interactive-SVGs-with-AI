@@ -14,13 +14,16 @@ A short intro for designers on making interactive SVGs with AI help.
 
 <h1 class="hideFromJekyll-showInGithubPreview">For the best experience, go to the <a href="https://turbek.com/Designing-Interactive-SVGs-with-AI/"> article</a></h1>
 
-**This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/talks/level-up-make-it-go-designing-interactive-svgs-with-ai-code-help) in January 2026. **
+**This article will be presented as a [Creative Mornings FieldTrip](https://creativemornings.com/talks/level-up-make-it-go-designing-interactive-svgs-with-ai-code-help) in January 2026.**
 
 ## Links
 
 - [SVG AI Tool](https://turbek.com/Designing-Interactive-SVGs-with-AI/svg-ai-helper.html)
+- <a href="images/ISS-Map-3-simplified-styles.svg" download> Download SVG file used in workshop</a>
 - [Presentation](https://turbek.com/Designing-Interactive-SVGs-with-AI/presentation.svg)
-- <a  href="images/ISS-Map-3-simplified-styles.svg" download> Download SVG file used in workshop</a>
+- [SVG presentation maker](https://github.com/steveturbek/SVG-presentation-maker)
+
+## Intro
 
 Designers can create interactive, data-driven experiences —they just need a little help. This workshop shows how to combine classic design tools like Figma and Illustrator with a guided AI workflow to add animation, interactivity, and live data to SVGs. We'll explore a new hybrid way of making rich digital experiences, no coding experience required.
 

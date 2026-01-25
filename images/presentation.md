@@ -154,25 +154,46 @@ _SGML_ (1970s)
 
 ---
 
-## Color Wheel
+## Submarine Project
 
-<image href="GSDS-color-wheel-v2.svg" x="10" y="15%" height="80%"/>
+<image href="https://turbek.com/Tangible-Interfaces-Submarine-Design-Project/artwork/steve-test-drive-wonderfour.jpg" x="40" y="15%" height="80%" />
+<image href="https://turbek.com/Tangible-Interfaces-Submarine-Design-Project/artwork/2025_fall_sub_marine.jpg" x="840" y="15%"  height="80%" />
 
 ---
 
-## Currency Trading Game _(?)_
+<image href="images/submarine-game.jpg" x="0" y="0" width="100%" />
 
-<image href="currency-game.svg" x="600" y="30%"  width="400" height="400"/>
+## Submarine Game
 
 ---
 
 ## Submarine Dashboard
+
+<image href="images/dashboard.jpg" x="10" y="15%" width="95%" />
+
+---
+
+## Submarine Dashboard Instruments
 
 <image href="pitch.svg" x="100" y="30%" width="400" height="400" />
 
 <image href="depth.svg" x="0" y="20%" height="600" />
 
 <image href="battery.svg" x="1100" y="30%" width="400" height="400" />
+
+---
+
+## How does this work? Javascript in the SVG
+
+```
+<script xmlns="http://www.w3.org/2000/svg" type="text/javascript">
+<![CDATA[
+async function updateSVG() {
+ // do stuff
+ }
+setInterval(updateSVG, 5000); // Update every 5 seconds
+]]></script>
+```
 
 ---
 
@@ -217,13 +238,18 @@ _NASA, Public domain, via Wikimedia Commons_
 
 ---
 
-## Process
+## http://api.open-notify.org/iss-now.json
 
-1. Design an image of a data visualization
-2. Save as SVG
-3. What exactly do you want to happen?
-4. Work with AI to code it up
-5. Iterate!
+```
+{
+  "message": "success",
+  "iss_position": {
+    "longitude": "134.2177",
+    "latitude": "-51.4344"
+  },
+  "timestamp": 1769371506
+}
+```
 
 ---
 
@@ -286,7 +312,7 @@ In my SVG there is an element with ID `ISS`
 I want to position it on my equirectangular map based on
 lat/long from the API.
 It doesn't need to be pixel-perfect.
-I want it to update once a second.
+I want it to update every 5 seconds.
 ```
 
 ---
@@ -294,6 +320,14 @@ I want it to update once a second.
 <image href="ISS-Map-5-simplified-styles-interactive-chatGPT-fixed.svg" x="0" y="0"  width="100%"  />
 
 ## 4 Working ISS Tracker!
+
+---
+
+## How did I know how to code this?
+
+- _I_ didn't.
+- I knew what I wanted
+- My buddy Claude helped me figure it out.
 
 ---
 
@@ -305,6 +339,41 @@ I want it to update once a second.
 - Be a scientist: document each step, save versions
 - Don't be afraid to start over
 - Try different AIs
+
+---
+
+## What else could you do?
+
+1. Data Dashboards
+2. Illustrations and animations
+3. Infographics
+4. A weather app
+5. Games
+6. Restaurant websites!!
+
+---
+
+## Color Wheel
+
+<image href="GSDS-color-wheel-v2.svg" x="10" y="15%" height="80%"/>
+
+---
+
+## Currency Trading Game _(?)_
+
+<image href="currency-game.svg" x="600" y="30%"  width="400" height="400"/>
+
+---
+
+## Process
+
+1. Design an image of a data visualization
+2. Save as SVG
+3. What exactly do you want to happen?
+4. Work with AI to define the problem
+5. Work with AI to write prompt
+6. Use SVG AI helper
+7. Iterate!
 
 ---
 
@@ -335,7 +404,13 @@ _That's OK! Iterate._
 
 ---
 
-## We are 'standing on the shoulders of giants'
+# "Compose-ability"
+
+---
+
+# We are 'standing on the shoulders of giants'
+
+- open standards > locked products
 
 ---
 
@@ -354,4 +429,5 @@ _That's OK! Iterate._
 
 # Thank You!
 
-Steve Turbek, turbek.com/Designing-Interactive-SVGs-with-AI
+Steve Turbek
+turbek.com/Designing-Interactive-SVGs-with-AI
