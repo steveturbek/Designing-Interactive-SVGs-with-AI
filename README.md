@@ -19,7 +19,7 @@ A short intro for designers on making interactive SVGs with AI help.
 ## Links
 
 - [SVG AI Tool](https://turbek.com/Designing-Interactive-SVGs-with-AI/svg-ai-helper.html)
-- <a href="images/ISS-Map-3-simplified-styles.svg" download> Download SVG file used in workshop</a>
+- <a href="images/ISS-Map-3-Demo-Start.svg" download> Download SVG file used in workshop</a>
 - [Presentation](https://turbek.com/Designing-Interactive-SVGs-with-AI/presentation.svg)
 - [SVG presentation maker](https://github.com/steveturbek/SVG-presentation-maker)
 
@@ -190,8 +190,8 @@ For much more info on SVGs, see the references below.
 The animation capabilities in a SVG are quite powerful. I'm not going to go deep into animation as there are so many more competent people (see references). But this one is just so conceptually cool. I'm sure you have seen the animation of someone "drawing" a shape. This "drawing" animation is only a couple of lines of code - the conceptual idea was to make this outline have a dashed line style, but the dashes are really huge. The animation slides that dash along the line, making it look like a drawing.
 
 <figure>
-<object data="images/z-animation.svg" type="image/svg+xml" width="400" class="interstitial_svg">
-  <img src="images/z-animation.svg" alt="Animation of a letter Z" />
+<object data="images/hello.svg" type="image/svg+xml" width="400" class="interstitial_svg">
+  <img src="images/hello.svg" alt="Animation of a hello" />
 </object>
 
 <!--<figcaption>
@@ -549,6 +549,8 @@ Like all code, javascript can be used to harm people. Some websites have strict 
 - [Wikipedia on SVG](https://en.wikipedia.org/wiki/SVG)
 - [History of Scalable Vector Graphics (SVG) File Format Family](https://www.loc.gov/preservation/digital/formats/fdd/fdd000515.shtml)
 - [W3C SVG 1.1 Specification - Scripting](https://www.w3.org/TR/SVG11/script.html)
+- [Jon Ferraiolo, Author of SVG specification ](https://www.paloaltoonline.com/news/2021/07/30/jon-ferraiolo-tech-entrepreneur-dies-after-battling-lou-gehrigs-disease/)
+- [Chris Lilley, W3C SVG ](https://www.w3.org/People/chris/)
 
 ### Online Guides for Learning CSS Animations for SVGs
 

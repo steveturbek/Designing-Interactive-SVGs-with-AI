@@ -13,9 +13,25 @@ Steve Turbek January 2026
 
 - UX Designer, in recovery
 - Hobbyist programmer
-- Teaches "Tangible Interfaces" at Pratt Industrial Design
-- Made the Bubble Calendar
-- Noted lollygagger, dillydallyer, & goldbricker
+
+---
+
+<image href="https://bubblecalendar.com/img/bubble_calendar_timeless_finger_L.jpg" x="0" y="0"  width="100%" />
+
+# Bubble Calendar
+
+---
+
+<image href="https://www.mechanical-library.org/img/site/mechanical-library-cabinet-photo-oblique.jpeg" x="0" y="0"  width="100%" />
+
+# Mechanical-library.org
+
+---
+
+## Tangible Interfaces Design Studio at Pratt
+
+<image href="https://turbek.com/Tangible-Interfaces-Submarine-Design-Project/artwork/steve-test-drive-wonderfour.jpg" x="40" y="15%" height="80%" />
+<image href="https://turbek.com/Tangible-Interfaces-Submarine-Design-Project/artwork/2025_fall_sub_marine.jpg" x="840" y="15%"  height="80%" />
 
 ---
 
@@ -28,11 +44,46 @@ Steve Turbek January 2026
 
 ---
 
+## TLDR
+
+- Designers today lack a good UI for making interactive experiences
+- SVG image files: powerful like HTML, widely supported
+- SVGs are written in a language
+- LLMs are great at manipulating language
+- Designers can _collaborate_ interaction into life
+- Here are some tips and tools to get started
+
+---
+
+# Why does AI design disappoint?
+
+---
+
+<image href="images/midjourney-humidifier.jpg" x="0" y="0" width="100%" />
+
+# AGI = Another Generic Iteration
+
+---
+
+<image href="images/krea-industrial-design.jpg" x="0" y="0" width="100%" />
+
+## A Failure to Communicate
+
+---
+
+# Design is the _Communication of Intent_
+
+---
+
 # Should designers learn to code?
 
 ---
 
-# Thinking vs Coding
+# Coding vs Thinking
+
+---
+
+# We lack a UI for Coding Interaction
 
 ---
 
@@ -54,7 +105,31 @@ _2000s:_ Many restaurant Flash websites were made...
 
 _2010s:_ Steve Jobs killed Flash for being “closed” 🤔
 
-_2020s:_ “People Who Draw the UI and People Who Code It”
+_2020s:_ “Designers draw the UI, Programmers code the UI”
+
+---
+
+## Markup Languages
+
+“Mark up” data with `<tags>` so computers and people understand
+
+```
+<person>
+    <name>Alice</name>
+        <age>30</age>
+</person>
+```
+
+---
+
+## Markup Languages History
+
+_SGML_ Standard Generalized Markup Language (1970s)
+→ _HTML_ HyperText Markup Language (1993)
+→ _XML_ eXtensible Markup Language (1998)
+→ _SVG_ Scalable Vector Graphics (2001)
+...
+→ _VRML_ Virtual Reality Markup Language (1995!)
 
 ---
 
@@ -69,29 +144,7 @@ _2020s:_ “People Who Draw the UI and People Who Code It”
 
 ---
 
-## Markup Languages
-
-“Mark up” data with `<tags>` so computers and people understand
-
-```
-<person>
-   <name>Alice</name>
-   <age>30</age>
-</person>
-```
-
----
-
-## Markup Languages
-
-_SGML_ (1970s)
-→ _HTML_ (1993)
-→ _XML_ (1998)
-→ _SVG_ (2001)
-
----
-
-## What SVG Code Looks Like
+## SVG is Text
 
 ```
 <svg width="100" height="100"
@@ -104,21 +157,25 @@ _SGML_ (1970s)
 
 ---
 
-## CSS Animation
+# SVG is an open standard
 
-<image href="z-animation.svg" x="25%" y="10%" height="50%"/>
+---
 
-```
+<image href="https://i0.wp.com/www.paloaltoonline.com/wp-content/uploads/2021/07/93278_original.jpg?resize=1568%2C1045&ssl=1" x="0" y="0"  width="100%" />
 
-```
+# Adobe & SVG : Jon Ferraiolo
 
-```
+---
 
-	stroke:#000;
-	stroke-dasharray:1800;
-	stroke-dashoffset:1800;
-	animation:animateZ 5s linear alternate infinite;
-```
+<image href="images/illustrator_green_circle.jpg" x="0" y="0"  width="100%" />
+
+## Illustrator does SVG
+
+---
+
+<image href="images/Illustrator_SVG_export_Advanced_Options.png" x="50%" y="2%" width="40%" />
+
+## Illustrator Export
 
 ---
 
@@ -132,17 +189,31 @@ _SGML_ (1970s)
 
 ---
 
-## Why This Matters for Designers
+## CSS Animation
 
-1. Design tools (Figma, Illustrator, Inkscape) save SVG
-2. Add code into the file
-3. Collaborate with AI to add functionality
-4. Design Program ↔ AI ↔ Design Program
+<image href="hello.svg" x="0" y="0" width="100%"/>
 
 ```
+ .st0 {
+        fill: none;
+        stroke: #2e368f;
+        stroke-width: 7px;
+      stroke-dashoffset:2800;
+	animation:animateZ 5s linear alternate infinite;
+      }
 
-
+@keyframes animateZ {
+to{
+		stroke-dashoffset:0;
+	}
+}
 ```
+
+---
+
+## Color Wheel
+
+<image href="GSDS-color-wheel-v2.svg" x="10" y="15%" height="80%"/>
 
 ---
 
@@ -169,7 +240,7 @@ _SGML_ (1970s)
 
 ## Submarine Dashboard
 
-<image href="images/dashboard.jpg" x="10" y="15%" width="95%" />
+<image href="images/dashboard.jpg" x="30" y="15%" width="95%" />
 
 ---
 
@@ -199,10 +270,22 @@ setInterval(updateSVG, 5000); // Update every 5 seconds
 
 ## Data Visualization, Not Animation
 
-<image href="oxygenManual.svg" x="600" y="30%" width="400" height="400" />
+```
+// Get the angle
+angle = localStorage.getItem("oxygen");
 
-<image href="oxygenManual-minus.svg" x="600" y="80%" width="300" height="300" />
-<image href="oxygenManual-plus.svg" x="820" y="80%" width="300" height="300" />
+// Select the needle line SVG element
+line = document.getElementById('line');
+
+// Rotate the needle around its end point
+line.setAttribute('transform', `rotate(${angle}, y1, y1)`);
+
+```
+
+<image href="oxygenManual.svg" x="900" y="20%" width="400" height="400" />
+
+<image href="oxygenManual-minus.svg" x="900" y="70%" width="300" height="300" />
+<image href="oxygenManual-plus.svg" x="1120" y="70%" width="300" height="300" />
 
 ---
 
@@ -238,21 +321,6 @@ _NASA, Public domain, via Wikimedia Commons_
 
 ---
 
-## http://api.open-notify.org/iss-now.json
-
-```
-{
-  "message": "success",
-  "iss_position": {
-    "longitude": "134.2177",
-    "latitude": "-51.4344"
-  },
-  "timestamp": 1769371506
-}
-```
-
----
-
 <image href="ISS-Map-0-original.svg" x="200" y="10%" width="50%" />
 
 ## 1 The Artwork
@@ -270,7 +338,7 @@ Thanks _Sven nestle2_ at Wikipedia
 
 ---
 
-<image href="ISS-Map-1-simplified-styles.svg" x="0" y="0"  width="100%" />
+<image href="ISS-Map-1-simplified-styles.svg" x="0" y="0"  width="100%" >
 
 ## 2 Edited Vector File
 
@@ -284,6 +352,21 @@ Thanks _Sven nestle2_ at Wikipedia
   <g id="ISS">
     <circle id="circle" class="st6" cx="0" cy="0" r="5"/>
   </g>
+```
+
+---
+
+## http://api.open-notify.org/iss-now.json
+
+```
+{
+  "message": "success",
+  "iss_position": {
+    "longitude": "134.2177",
+    "latitude": "-51.4344"
+  },
+  "timestamp": 1769371506
+}
 ```
 
 ---
@@ -353,12 +436,6 @@ I want it to update every 5 seconds.
 
 ---
 
-## Color Wheel
-
-<image href="GSDS-color-wheel-v2.svg" x="10" y="15%" height="80%"/>
-
----
-
 ## Currency Trading Game _(?)_
 
 <image href="currency-game.svg" x="600" y="30%"  width="400" height="400"/>
@@ -404,13 +481,7 @@ _That's OK! Iterate._
 
 ---
 
-# "Compose-ability"
-
----
-
 # We are 'standing on the shoulders of giants'
-
-- open standards > locked products
 
 ---
 

@@ -13,6 +13,7 @@
     "dillydallyer",
     "docname",
     "Equirectangular",
+    "Ferraiolo",
     "fullscreenchange",
     "gridtolerance",
     "GSDS",
@@ -20,7 +21,9 @@
     "indo",
     "Infographics",
     "katman",
+    "krea",
     "labelledby",
+    "Lilley",
     "linejoin",
     "lollygagger",
     "Macromedia",
@@ -44,6 +47,7 @@
     "SVGJS",
     "Toptal",
     "tspan",
-    "viewbox"
+    "viewbox",
+    "VRML"
   ]
 }
