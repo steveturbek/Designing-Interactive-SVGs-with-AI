@@ -240,7 +240,7 @@ to{
 
 ## Submarine Dashboard
 
-<image href="images/dashboard.jpg" x="30" y="15%" width="95%" />
+<image href="images/dashboard.jpg" x="40" y="15%" width="95%" />
 
 ---
 
