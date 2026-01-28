@@ -587,7 +587,7 @@ Like all code, javascript can be used to harm people. Some websites have strict 
 
 These ones update frequently enough to use as a demo.
 
-- [Where is the International Space Station](http://api.open-notify.org/iss-now.json)
+- [Where is the International Space Station](https://api.wheretheiss.at/v1/satellites/25544)
 - [Weather on Mt Everest](https://api.open-meteo.com/v1/forecast?latitude=27.9882&longitude=86.9254&current_weather=true)
 - [USD to GBP Exchange Rate](https://api.coinbase.com/v2/prices/GBP-USD/spot)
 - [USD to EUR Exchange Rate](https://api.coinbase.com/v2/prices/EUR-USD/spot)

@@ -63,6 +63,10 @@ Steve Turbek January 2026
 
 # Design is the _Communication of Intent_
 
+- 🖌️ Depict
+- ✍️ Describe
+- 📐 Design
+
 ---
 
 # Should designers learn to code?
@@ -77,7 +81,11 @@ Steve Turbek January 2026
 
 ---
 
-# We lack a UI for Coding Interaction
+# A mockup is worth a thousand prompts
+
+---
+
+# We lack a UI for coding interactions
 
 ---
 
@@ -118,12 +126,12 @@ _2020s:_ “Designers draw the UI, Programmers code the UI”
 
 ## Markup Languages History
 
-_SGML_ Standard Generalized Markup Language (1970s)
-→ _HTML_ HyperText Markup Language (1993)
-→ _XML_ eXtensible Markup Language (1998)
-→ _SVG_ Scalable Vector Graphics (2001)
+_1970s_ SGML: Standard Generalized Markup Language
+_1993_ HTML: HyperText Markup Language
+_1998_ XML: eXtensible Markup Language
+_2001_ SVG: Scalable Vector Graphics
 ...
-→ _VRML_ Virtual Reality Markup Language (1995!)
+_1995_ VRML: Virtual Reality Markup Language
 
 ---
 
@@ -193,19 +201,13 @@ _SGML_ Standard Generalized Markup Language (1970s)
 <image href="hello.svg" x="0" y="0" width="100%"/>
 
 ```
- .st0 {
-        fill: none;
-        stroke: #2e368f;
-        stroke-width: 7px;
-      stroke-dashoffset:2800;
-	animation:animateZ 5s linear alternate infinite;
-      }
 
-@keyframes animateZ {
-to{
-		stroke-dashoffset:0;
-	}
-}
+fill: none;
+stroke: #2e368f;
+stroke-width: 7px;
+stroke-dasharray:3000;
+stroke-dashoffset:3000;
+animation:animateZ 5s linear alternate infinite;
 ```
 
 ---
@@ -237,7 +239,7 @@ to{
 
 ---
 
-<video src="images/dashboard.mp4" x="0" y="0" width="100%" height="100%" autoplay loop muted />
+<video src="images/dashboard.mp4" x="0" y="10%" width="100%" height="100%" autoplay loop muted />
 
 ## Submarine Dashboard
 
@@ -337,7 +339,7 @@ Thanks _Sven nestle2_ at Wikipedia
 
 ---
 
-<image href="ISS-Map-1-simplified-styles.svg" x="0" y="0"  width="100%" >
+<image href="ISS-Map-1-simplified-styles.svg" x="0" y="0"  width="100%" />
 
 ## 2 Edited Vector File
 
@@ -355,16 +357,23 @@ Thanks _Sven nestle2_ at Wikipedia
 
 ---
 
-## http://api.open-notify.org/iss-now.json
+## https://api.wheretheiss.at/v1/satellites/25544
 
 ```
 {
-  "message": "success",
-  "iss_position": {
-    "longitude": "134.2177",
-    "latitude": "-51.4344"
-  },
-  "timestamp": 1769371506
+  "name": "iss",
+  "id": 25544,
+  "latitude": -51.704193597782,
+  "longitude": 102.13435954688,
+  "altitude": 444.24120384636,
+  "velocity": 27513.867576207,
+  "visibility": "daylight",
+  "footprint": 4628.7910951374,
+  "timestamp": 1769633602,
+  "daynum": 2461069.3703935,
+  "solar_lat": -18.020194285052,
+  "solar_lon": 229.90476289451,
+  "units": "kilometers"
 }
 ```
 
