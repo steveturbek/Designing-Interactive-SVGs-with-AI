@@ -346,11 +346,10 @@ Here's the prompt used to animate this SVG
 
 ```
 There's an API for the International Space Station at
-https://corsproxy.io/?http://api.open-notify.org/iss-now.json
-It returns: `{"timestamp": 1764169128, "iss_position":
-   {"longitude": "12.3732", "latitude": "51.2351"}, "message": "success"}`
+https://api.wheretheiss.at/v1/satellites/25544
+It returns: `{"name":"iss","id":25544,"latitude":-23.316958619104,"longitude":31.677031345303,"altitude":435.78710948733,"velocity":27526.435812994,"visibility":"eclipsed","footprint":4586.9246082066,"timestamp":1769632629,"daynum":2461069.3591319,"solar_lat":-18.023202266704,"solar_lon":233.95842078519,"units":"kilometers"}`
 In my SVG there is an element with ID `ISS`
-I want to position it on my equirectangular map based on lat/long from the API.
+I want to position it on my equirectangular map based on latitude/longitude from the API response.
 It doesn't need to be pixel-perfect.
 I want it to update once a second
 ```
