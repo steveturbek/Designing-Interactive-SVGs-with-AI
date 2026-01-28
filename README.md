@@ -359,8 +359,8 @@ I want it to update once a second
 
 Claude got it right on the first try, but ChatGPT took a second try. Here is an [example chatGPT session using workflow tool](https://chatgpt.com/share/692c3001-01e0-800d-96a4-fa3aa7d92fd5).
 
-- It made a version [ISS Map - broken ](images/ISS-Map-4-simplified-styles-interactive-chatGPT-not-working.svg)
-- I explained it wasn't working and it diagnosed the problem.
+- It made a broken version
+- I uploaded it and explained it wasn't working and it diagnosed the problem.
 - It made a fixed version. [ISS Map - fixed](images/ISS-Map-5-simplified-styles-interactive-chatGPT-fixed.svg)
 
 ### Working ISS Tracker!
