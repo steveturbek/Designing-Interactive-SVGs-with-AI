@@ -18,10 +18,9 @@ A short intro for designers on making interactive SVGs with AI help.
 
 ## Links
 
-- [SVG AI Tool](https://turbek.com/Designing-Interactive-SVGs-with-AI/svg-ai-helper.html)
-- <a href="images/ISS-Map-3-Demo-Start.svg" download> Download SVG file used in workshop</a>
 - [Presentation](https://turbek.com/Designing-Interactive-SVGs-with-AI/presentation.svg)
-- [SVG presentation maker](https://github.com/steveturbek/SVG-presentation-maker)
+- [SVG AI Helper Tool](https://turbek.com/Designing-Interactive-SVGs-with-AI/svg-ai-helper.html)
+- <a href="images/ISS-Map-3-Demo-Start.svg" download> Download SVG file used in workshop</a>
 
 ## Intro
 
