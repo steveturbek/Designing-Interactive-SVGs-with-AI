@@ -22,9 +22,9 @@ Steve Turbek January 2026
 
 ---
 
-<image href="https://www.mechanical-library.org/img/site/mechanical-library-cabinet-photo-oblique.jpeg" x="0" y="0"  width="100%" />
+<video src="https://www.mechanical-library.org/img/site/mechanical-library-cabinet-video.mp4" x="0" y="0" width="100%" height="110%" autoplay loop muted />
 
-# Mechanical-library.org
+# Mechanical-Library.org
 
 ---
 
@@ -38,20 +38,18 @@ Steve Turbek January 2026
 ## What We Shall Speak of Today
 
 - A new hack to make interactive graphics
-- A short technical history detour
-- A new technique for UX designers to use AI
+- A short tech history detour
+- A new tool for UX designers to use AI
 - A few personal observations on design, tech, culture
 
 ---
 
 ## TLDR
 
-- Designers today lack a good UI for making interactive experiences
-- SVG image files: powerful like HTML, widely supported
-- SVGs are written in a language
-- LLMs are great at manipulating language
-- Designers can _collaborate_ interaction into life
-- Here are some tips and tools to get started
+1. SVG image files: powerful like HTML, widely supported
+2. SVGs images are actually written in a language
+3. LLMs are great at manipulating language
+4. Designers can _collaborate_ interaction into life
 
 ---
 
@@ -60,14 +58,6 @@ Steve Turbek January 2026
 ---
 
 <image href="images/midjourney-humidifier.jpg" x="0" y="0" width="100%" />
-
-# AGI = Another Generic Iteration
-
----
-
-<image href="images/krea-industrial-design.jpg" x="0" y="0" width="100%" />
-
-## A Failure to Communicate
 
 ---
 
@@ -80,6 +70,10 @@ Steve Turbek January 2026
 ---
 
 # Coding vs Thinking
+
+---
+
+<image href="images/krea-industrial-design.jpg" x="0" y="0" width="100%" />
 
 ---
 
@@ -101,7 +95,7 @@ _1990s:_ English majors learned design & HTML
 
 _2000s:_ Designers created complex interactive experiences
 
-_2000s:_ Many restaurant Flash websites were made...
+........ Many restaurant Flash websites were made
 
 _2010s:_ Steve Jobs killed Flash for being “closed” 🤔
 
@@ -167,15 +161,20 @@ _SGML_ Standard Generalized Markup Language (1970s)
 
 ---
 
-<image href="images/illustrator_green_circle.jpg" x="0" y="0"  width="100%" />
+## Illustrator layers define the SVG code
 
-## Illustrator does SVG
+```
+<svg id="Layer_1" viewBox="0 0 100 100">
+  <g id="shapes">
+    <rect id="BrownBox" x="4" y="8" width="43" height="43"/>
+    <circle id="BlueCircle"cx="71" cy="70" r="24"/>
+  </g>
+<text class="st0" transform="translate(60.2 40.2)">
+<tspan x="0" y="0">T</tspan></text>
+</svg>
+```
 
----
-
-<image href="images/Illustrator_SVG_export_Advanced_Options.png" x="50%" y="2%" width="40%" />
-
-## Illustrator Export
+<image href="images/illustrator_layers_example.jpg" x="60%" y="25%" width="35%" />
 
 ---
 
@@ -221,7 +220,7 @@ to{
 
 ---
 
-# 🕹️ 🕹️ 🕹️ 🕹️ 🕹️ Demo Time! 🕹️ 🕹️ 🕹️ 🕹️
+# 🕹️ 🕹️ 🕹️ 🕹️ Demo Time! 🕹️ 🕹️ 🕹️ 🕹️
 
 ---
 
@@ -232,15 +231,15 @@ to{
 
 ---
 
-<image href="images/submarine-game.jpg" x="0" y="0" width="100%" />
+<video src="images/game-video-clip.mp4" x="0" y="0" width="100%" height="100%" autoplay loop muted />
 
 ## Submarine Game
 
 ---
 
-## Submarine Dashboard
+<video src="images/dashboard.mp4" x="0" y="0" width="100%" height="100%" autoplay loop muted />
 
-<image href="images/dashboard.jpg" x="40" y="15%" width="95%" />
+## Submarine Dashboard
 
 ---
 
@@ -409,19 +408,20 @@ I want it to update every 5 seconds.
 ## How did I know how to code this?
 
 - _I_ didn't.
-- I knew what I wanted
+- I knew what I wanted.
 - My buddy Claude helped me figure it out.
 
 ---
 
-## Key Tips
+## It May Not Work on First Try
 
-- Have as much patience as an AI
-- Name your layers!!
-- Be a good communicator: prompts should be a paragraph long
-- Be a scientist: document each step, save versions
-- Don't be afraid to start over
-- Try different AIs
+_That's OK! Iterate._
+
+- Claude got it right first try
+- ChatGPT took a second try
+- I explained what wasn't working
+- AI diagnosed its mistake
+- Next version worked
 
 ---
 
@@ -438,7 +438,7 @@ I want it to update every 5 seconds.
 
 ## Currency Trading Game _(?)_
 
-<image href="currency-game.svg" x="600" y="30%"  width="400" height="400"/>
+<image href="currency-game.svg" x="300" y="20%"  width="800" height="800"/>
 
 ---
 
@@ -454,15 +454,14 @@ I want it to update every 5 seconds.
 
 ---
 
-## It May Not Work on First Try
+## Tips
 
-_That's OK! Iterate._
-
-- Claude got it right first try
-- ChatGPT took a second try
-- I explained what wasn't working
-- AI diagnosed its mistake
-- Next version worked
+- Name your layers!!
+- Have as much patience as an AI
+- Be a good communicator: prompts should be a paragraph long
+- Be a scientist: document each step, save versions
+- Don't be afraid to start over
+- Try different AIs
 
 ---
 
@@ -481,7 +480,7 @@ _That's OK! Iterate._
 
 ---
 
-# We are 'standing on the shoulders of giants'
+# ❤️ Open Standards ❤️
 
 ---
 
