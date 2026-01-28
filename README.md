@@ -346,7 +346,7 @@ Here's the prompt used to animate this SVG
 
 ```
 There's an API for the International Space Station at
-http://api.open-notify.org/iss-now.json
+https://corsproxy.io/?http://api.open-notify.org/iss-now.json
 It returns: `{"timestamp": 1764169128, "iss_position":
    {"longitude": "12.3732", "latitude": "51.2351"}, "message": "success"}`
 In my SVG there is an element with ID `ISS`

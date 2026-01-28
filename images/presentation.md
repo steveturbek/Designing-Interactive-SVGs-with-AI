@@ -389,7 +389,7 @@ _No data transmitted, Tool works locally in browser._
 
 ```
 There's an API for the International Space Station at
-http://api.open-notify.org/iss-now.json
+https://corsproxy.io/?http://api.open-notify.org/iss-now.json
 In my SVG there is an element with ID `ISS`
 I want to position it on my equirectangular map based on
 lat/long from the API.
