@@ -408,9 +408,7 @@ I want it to update once a second
 
 ---
 
-<image href="ISS-Map-5-simplified-styles-interactive-chatGPT-fixed.svg" x="0" y="0"  width="100%"  />
-
-## 4 Working ISS Tracker!
+# 🛠️ 🛠️ 🛠️ 🛠️ LIVE DEMO 🛠️ 🛠️ 🛠️ 🛠️
 
 ---
 
@@ -431,23 +429,6 @@ _That's OK! Iterate._
 - I explained what wasn't working
 - AI diagnosed its mistake
 - Next version worked
-
----
-
-## What else could you do?
-
-1. Data Dashboards
-2. Illustrations and animations
-3. Infographics
-4. A weather app
-5. Games
-6. Restaurant websites!!
-
----
-
-## Currency Trading Game _(?)_
-
-<image href="currency-game.svg" x="300" y="20%"  width="800" height="800"/>
 
 ---
 
@@ -474,6 +455,17 @@ _That's OK! Iterate._
 
 ---
 
+## What else could you do?
+
+1. Data Dashboards
+2. Illustrations and animations
+3. Infographics
+4. A weather app
+5. Games
+6. Restaurant websites!!
+
+---
+
 ## Summary
 
 - SVG image files: powerful like HTML
@@ -489,16 +481,19 @@ _That's OK! Iterate._
 
 ---
 
-# ❤️ Open Standards ❤️
+# Open Standards Rock!
 
 ---
 
-## Wrap Up: A New Toy, A New Tool
+# Wrap Up: A New Toy, A New Tool
 
-- Not about replacing programmers
-- Designers can make the thing, not just design the thing
-- Use old tools in new ways
-- Let's make some cool stuff!
+---
+
+# Designers can make the thing, not just design the thing
+
+---
+
+# Let's make some cool stuff!
 
 ---
 
