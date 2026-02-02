@@ -580,7 +580,7 @@ Like all code, javascript can be used to harm people. Some websites have strict 
 - Adobe Illustrator
 - Inkscape
 - Figma
-- Affinity Designer (I haven't used)
+- Affinity Designer (Note I haven't used)
 
 ## APIs to consider
 
