@@ -9,10 +9,11 @@ Steve Turbek January 2026
 
 ---
 
-## Who Is Steve Turbek?
+# Who Is Steve Turbek?
 
 - UX Designer, in recovery
 - Hobbyist programmer
+- ...
 
 ---
 
