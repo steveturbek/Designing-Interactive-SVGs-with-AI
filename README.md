@@ -532,7 +532,7 @@ Then check Console in browser to see the values.
 
 ### Security Note
 
-Like all code, javascript can be used to harm people. Some websites have strict rules against SVG or disable javascript in SVG to prevent people from stealing other people's data. Don't be evil.
+Like all code, javascript can be used to harm people. Some websites have strict rules against SVG or disable javascript in SVG to prevent people from stealing other people's data. Don't be evil!
 
 ## SVG presentation maker
 
