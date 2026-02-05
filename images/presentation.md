@@ -90,6 +90,10 @@ Steve Turbek January 2026
 
 ---
 
+<image href="images/flash_screenshot.png" x="0" y="0" width="100%" />
+
+---
+
 # What if there was another way?
 
 ---
